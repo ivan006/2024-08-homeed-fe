@@ -1,8 +1,8 @@
 import MyBaseModel from '../helpers/MyBaseModel';
 
-export default class TravelingProfile extends MyBaseModel {
-  static entity = 'traveling-profiles';
-  static entityUrl = '/api/auth/preference/orm-api/traveling-profiles';
+export default class Post extends MyBaseModel {
+  static entity = 'posts';
+  static entityUrl = '/api/posts';
   static primaryKey = 'id';
 
   static parentWithables = [
@@ -12,10 +12,7 @@ export default class TravelingProfile extends MyBaseModel {
   static fields() {
     return {
       id: this.attr(null),
-      name: this.attr(null),
-      description: this.attr(null).nullable(),
-      owner: this.attr(null),
-      status: this.attr(null),
+      name: this.attr(null).nullable(),
       created_at: this.attr(null).nullable(),
       updated_at: this.attr(null).nullable()
     };

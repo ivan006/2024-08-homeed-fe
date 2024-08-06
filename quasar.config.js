@@ -52,7 +52,7 @@ module.exports = configure(function (/* ctx */) {
 
       vueRouterMode: 'hash', // available values: 'hash', 'history'
 
-      publicPath: '/wp-content/themes/omni/quasar-project/dist/spa/',
+      publicPath: '',
 
       minify: 'esbuild',
       esbuild: {

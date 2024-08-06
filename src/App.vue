@@ -22,6 +22,7 @@ onMounted(() => {
   // Initialize Vuex ORM with Axios plugin
   VuexORM.use(VuexORMAxios, {axios, baseURL: 'http://aiv-team-2.0.test/api'});
 
+
   // Ensure router and routes are available
   if (router && router.options && router.options.routes) {
     generateRouteLineages(router.options.routes);
