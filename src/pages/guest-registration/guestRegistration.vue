@@ -107,6 +107,7 @@ $lg-breakpoint: 1920px;
   }
 }
 
+
 .guestRegistration {
   .q-stepper__step-inner {
     padding: 5px;
