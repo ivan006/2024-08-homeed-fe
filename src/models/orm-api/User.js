@@ -22,7 +22,7 @@ export default class User extends MyBaseModel {
     }
 
     static parentWithables = [
-        
+
     ];
 
     static rules = {
@@ -58,19 +58,19 @@ export default class User extends MyBaseModel {
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
             'attendances': this.hasMany(Attendance, 'created_by'),
-            'attendances': this.hasMany(Attendance, 'updated_by'),
-            'childrens': this.hasMany(Child, 'created_by'),
-            'childrens': this.hasMany(Child, 'updated_by'),
+            'attendancesUpdatedBy': this.hasMany(Attendance, 'updated_by'),
+            'children': this.hasMany(Child, 'created_by'),
+            'childrenUpdatedBy': this.hasMany(Child, 'updated_by'),
             'events': this.hasMany(Event, 'created_by'),
-            'events': this.hasMany(Event, 'updated_by'),
+            'eventsUpdatedBy': this.hasMany(Event, 'updated_by'),
             'families': this.hasMany(Family, 'created_by'),
-            'families': this.hasMany(Family, 'updated_by'),
-            'families': this.hasMany(Family, 'user_id'),
+            'familiesUpdatedBy': this.hasMany(Family, 'updated_by'),
+            'familiesUserId': this.hasMany(Family, 'user_id'),
             'memberships': this.hasMany(Membership, 'created_by'),
-            'memberships': this.hasMany(Membership, 'updated_by'),
+            'membershipsUpdatedBy': this.hasMany(Membership, 'updated_by'),
             'schools': this.hasMany(School, 'created_by'),
-            'schools': this.hasMany(School, 'updated_by'),
-            'schools': this.hasMany(School, 'user_id')
+            'schoolsUpdatedBy': this.hasMany(School, 'updated_by'),
+            'schoolsUserId': this.hasMany(School, 'user_id')
         };
     }
 

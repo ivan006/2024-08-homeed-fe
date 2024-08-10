@@ -3,12 +3,12 @@ import router from 'src/router';
 
 export default class Migration extends MyBaseModel {
     static entity = 'migration';
-    static entityUrl = '/api/migration-s';
+    static entityUrl = '/api/migrations';
     static primaryKey = 'id';
     static titleKey = 'id';
     static openRecord(pKey){
       router.push({
-        name: '/lists/migration-s/:rId',
+        name: '/lists/migrations/:rId',
         params: {
           rId: pKey,
         },
@@ -16,7 +16,7 @@ export default class Migration extends MyBaseModel {
     }
 
     static parentWithables = [
-        
+
     ];
 
     static rules = {
@@ -37,7 +37,7 @@ export default class Migration extends MyBaseModel {
             'id': this.attr('').nullable(),
             'migration': this.attr('').nullable(),
             'batch': this.attr('').nullable(),
-            
+
         };
     }
 

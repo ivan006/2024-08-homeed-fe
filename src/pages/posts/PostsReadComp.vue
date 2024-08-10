@@ -10,7 +10,7 @@
         :relationships="[
           // 'bookings.clients',
           // 'clients',
-          // 'bookings.childrens',
+          // 'bookings.children',
           // 'journey.countries',
         ]"
         :templateForm="templateForm"
