@@ -66,6 +66,67 @@ const linksList = [
     title: 'Posts',
     route: '/posts'
   },
+  {
+    groupTitle: 'Lists',
+    links: [
+      {
+        title: 'Attendance S',
+        route: '/lists/attendance-s',
+      },
+      {
+        title: 'Childrens',
+        route: '/lists/childrens',
+      },
+      {
+        title: 'Events',
+        route: '/lists/events',
+      },
+      {
+        title: 'Failed Jobs',
+        route: '/lists/failed-jobs',
+      },
+      {
+        title: 'Families',
+        route: '/lists/families',
+      },
+      {
+        title: 'Memberships',
+        route: '/lists/memberships',
+      },
+      {
+        title: 'Migration S',
+        route: '/lists/migration-s',
+      },
+      {
+        title: 'Password Reset Tokens',
+        route: '/lists/password-reset-tokens',
+      },
+      {
+        title: 'Personal Access Tokens',
+        route: '/lists/personal-access-tokens',
+      },
+      {
+        title: 'Post Tags',
+        route: '/lists/post-tags',
+      },
+      {
+        title: 'Posts',
+        route: '/lists/posts',
+      },
+      {
+        title: 'Schools',
+        route: '/lists/schools',
+      },
+      {
+        title: 'Tags',
+        route: '/lists/tags',
+      },
+      {
+        title: 'Users',
+        route: '/lists/users',
+      }
+    ],
+  },
 ];
 
 function updateActiveRoute(newRoute) {
