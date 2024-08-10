@@ -1,75 +1,107 @@
-import MyBaseModel from '../helpers/MyBaseModel';
+import MyBaseModel from 'src/models/model-helpers/MyBaseModel';
+import router from 'src/router';
 
 export default class Post extends MyBaseModel {
-  static entity = 'posts';
-  static entityUrl = '/api/posts';
-  static primaryKey = 'id';
+    static entity = 'post';
+    static entityUrl = '/api/posts';
+    static primaryKey = 'id';
+    static titleKey = 'id';
+    static openRecord(pKey){
+      router.push({
+        name: '/lists/posts/:rId',
+        params: {
+          rId: pKey,
+        },
+      })
+    }
 
-  static parentWithables = [
-  ];
+    static parentWithables = [
 
+    ];
 
-  static fields() {
-    return {
-      id: this.attr(null),
-      name: this.attr(null).nullable(),
-      created_at: this.attr(null).nullable(),
-      updated_at: this.attr(null).nullable()
+    static rules = {
+        readables: () => true,
+        readable: (item) => true,
+        editable: (item) => true,
+        creatable: () => true,
     };
-  }
 
-  static FetchAll(relationships = [], flags = {}, moreHeaders = {}, options = { page: 1, limit: 15, filters: {}, clearPrimaryModelOnly: false }) {
-    return this.customSupabaseApiFetchAll(
-      `${this.baseUrl}${this.entityUrl}`,
-      [...this.parentWithables, ...relationships],
-      flags,
-      this.mergeHeaders(moreHeaders),
-      options,
-      this
-    );
-  }
+    static fieldsMetadata = {
+        'id': {},
+            'created_at': {},
+            'updated_at': {},
+            'name': {}
+    };
 
-  static FetchById(id, relationships = [], flags = {}, moreHeaders = {}) {
-    return this.customSupabaseApiFetchById(
-      `${this.baseUrl}${this.entityUrl}`,
-      id,
-      [...this.parentWithables, ...relationships],
-      flags,
-      this.mergeHeaders(moreHeaders),
-      this
-    );
-  }
+    static fields() {
+        return {
+            'id': this.attr('').nullable(),
+            'created_at': this.attr('').nullable(),
+            'updated_at': this.attr('').nullable(),
+            'name': this.attr('').nullable(),
 
-  static Store(entity, relationships = [], flags = {}, moreHeaders = {}) {
-    return this.customSupabaseApiStore(
-      `${this.baseUrl}${this.entityUrl}`,
-      entity,
-      [...this.parentWithables, ...relationships],
-      flags,
-      this.mergeHeaders(moreHeaders),
-      this
-    );
-  }
+        };
+    }
 
-  static Update(entity, relationships = [], flags = {}, moreHeaders = {}, supportFiles = false) {
-    return this.customSupabaseApiUpdate(
-      `${this.baseUrl}${this.entityUrl}`,
-      entity,
-      [...this.parentWithables, ...relationships],
-      flags,
-      this.mergeHeaders(moreHeaders),
-      this,
-      supportFiles
-    );
-  }
+    static templateListGrid = {
+        // Define templateListGrid
+    };
 
-  static Delete(entityId, options = { flags: {}, moreHeaders: {} }) {
-    return this.customSupabaseApiDelete(
-      `${this.baseUrl}${this.entityUrl}`,
-      entityId,
-      options.flags,
-      this.mergeHeaders(options.moreHeaders),
-      this
-    );
-  }
+    static templateOverview = {
+        // Define templateOverview
+    };
+
+    static FetchAll(relationships = [], flags = {}, moreHeaders = {}, options = { page: 1, limit: 15, filters: {}, clearPrimaryModelOnly: false }) {
+        return this.customSupabaseApiFetchAll(
+            `${this.baseUrl}${this.entityUrl}`,
+            [...this.parentWithables, ...relationships],
+            flags,
+            this.mergeHeaders(moreHeaders),
+            options,
+            this
+        );
+    }
+
+    static FetchById(id, relationships = [], flags = {}, moreHeaders = {}) {
+        return this.customSupabaseApiFetchById(
+            `${this.baseUrl}${this.entityUrl}`,
+            id,
+            [...this.parentWithables, ...relationships],
+            flags,
+            this.mergeHeaders(moreHeaders),
+            this
+        );
+    }
+
+    static Store(entity, relationships = [], flags = {}, moreHeaders = {}) {
+        return this.customSupabaseApiStore(
+            `${this.baseUrl}${this.entityUrl}`,
+            entity,
+            [...this.parentWithables, ...relationships],
+            flags,
+            this.mergeHeaders(moreHeaders),
+            this
+        );
+    }
+
+    static Update(entity, relationships = [], flags = {}, moreHeaders = {}) {
+        return this.customSupabaseApiUpdate(
+            `${this.baseUrl}${this.entityUrl}`,
+            entity,
+            [...this.parentWithables, ...relationships],
+            flags,
+            this.mergeHeaders(moreHeaders),
+            this
+        );
+    }
+
+    static Delete(entityId, flags = {}, moreHeaders = {}) {
+        return this.customSupabaseApiDelete(
+            `${this.baseUrl}${this.entityUrl}`,
+            entityId,
+            flags,
+            this.mergeHeaders(moreHeaders),
+            this
+        );
+    }
 }
