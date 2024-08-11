@@ -6,8 +6,18 @@ const routes = [
     meta: { requiresAuth: false },
     children: [
       {
+        path: 'login-old',
+        component: () => import('pages/auth/LoginPageOld.vue'),
+        meta: { requiresAuth: false }
+      },
+      {
         path: 'login',
-        component: () => import('pages/auth/LoginPage.vue'),
+        component: () => import('pages/auth/SigninView.vue'),
+        meta: { requiresAuth: false }
+      },
+      {
+        path: 'register',
+        component: () => import('pages/auth/JoinView.vue'),
         meta: { requiresAuth: false }
       },
       {

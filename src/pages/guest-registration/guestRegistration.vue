@@ -10,7 +10,8 @@
     <!--  <q-card-section  class="q-pa-none">-->
 
         <template v-if="!session">
-          <step0-register @next="checkToken()" />
+          <!--<step0-register @next="checkToken()" />-->
+          ddd
         </template>
 
     <!--  </q-card-section>-->
@@ -21,7 +22,7 @@
 <script setup>
 import {computed, ref} from 'vue'
 // import VueCookies from 'vue-cookies'
-import Step0Register from "pages/guest-registration/step0Register.vue";
+// import Step0Register from "pages/guest-registration/step0Register.vue";
 import VueCookies from 'vue-cookies'
 // import Session from 'src/models/Session';
 const step = ref(1);

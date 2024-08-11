@@ -70,4 +70,16 @@ export default class Session extends MyBaseModel {
       this
     );
   }
+
+
+  static signIn(entity, relationships = [], flags = {}, moreHeaders = {}) {
+    return this.customSupabaseApiStore(
+      `${this.baseUrl}/api/login`,
+      entity,
+      [...this.parentWithables, ...relationships],
+      flags,
+      this.mergeHeaders(moreHeaders),
+      this
+    );
+  }
 }
