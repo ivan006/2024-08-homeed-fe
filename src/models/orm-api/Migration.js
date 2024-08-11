@@ -1,4 +1,4 @@
-import MyBaseModel from 'src/models/model-helpers/MyBaseModel';
+import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import router from 'src/router';
 
 export default class Migration extends MyBaseModel {

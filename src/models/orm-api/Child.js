@@ -1,8 +1,8 @@
-import MyBaseModel from 'src/models/model-helpers/MyBaseModel';
+import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import router from 'src/router';
-import User from 'src/models/User';
-import Family from 'src/models/Family';
-import Attendance from 'src/models/Attendance';
+import User from 'src/models/orm-api/User';
+import Family from 'src/models/orm-api/Family';
+import Attendance from 'src/models/orm-api/Attendance';
 
 export default class Child extends MyBaseModel {
     static entity = 'child';

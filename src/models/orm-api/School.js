@@ -1,8 +1,8 @@
-import MyBaseModel from 'src/models/model-helpers/MyBaseModel';
+import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import router from 'src/router';
-import User from 'src/models/User';
-import Event from 'src/models/Event';
-import Membership from 'src/models/Membership';
+import User from 'src/models/orm-api/User';
+import Event from 'src/models/orm-api/Event';
+import Membership from 'src/models/orm-api/Membership';
 
 export default class School extends MyBaseModel {
     static entity = 'school';

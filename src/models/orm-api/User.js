@@ -1,11 +1,11 @@
-import MyBaseModel from 'src/models/model-helpers/MyBaseModel';
+import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import router from 'src/router';
-import Attendance from 'src/models/Attendance';
-import Child from 'src/models/Child';
-import Event from 'src/models/Event';
-import Family from 'src/models/Family';
-import Membership from 'src/models/Membership';
-import School from 'src/models/School';
+import Attendance from 'src/models/orm-api/Attendance';
+import Child from 'src/models/orm-api/Child';
+import Event from 'src/models/orm-api/Event';
+import Family from 'src/models/orm-api/Family';
+import Membership from 'src/models/orm-api/Membership';
+import School from 'src/models/orm-api/School';
 
 export default class User extends MyBaseModel {
     static entity = 'user';

@@ -1,8 +1,8 @@
-import MyBaseModel from 'src/models/model-helpers/MyBaseModel';
+import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import router from 'src/router';
-import User from 'src/models/User';
-import School from 'src/models/School';
-import Attendance from 'src/models/Attendance';
+import User from 'src/models/orm-api/User';
+import School from 'src/models/orm-api/School';
+import Attendance from 'src/models/orm-api/Attendance';
 
 export default class Event extends MyBaseModel {
     static entity = 'event';

@@ -1,4 +1,4 @@
-import MyBaseModel from 'src/models/model-helpers/MyBaseModel';
+import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import router from 'src/router';
 
 export default class Tag extends MyBaseModel {
@@ -16,7 +16,7 @@ export default class Tag extends MyBaseModel {
     }
 
     static parentWithables = [
-        
+
     ];
 
     static rules = {
@@ -39,7 +39,7 @@ export default class Tag extends MyBaseModel {
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
             'name': this.attr('').nullable(),
-            
+
         };
     }
 
