@@ -6,12 +6,12 @@ import Attendance from 'src/models/orm-api/Attendance';
 
 export default class Child extends MyBaseModel {
     static entity = 'child';
-    static entityUrl = '/api/children';
+    static entityUrl = '/api/childrens';
     static primaryKey = 'id';
     static titleKey = 'id';
     static openRecord(pKey){
       router.push({
-        name: '/lists/children/:rId',
+        name: '/lists/childrens/:rId',
         params: {
           rId: pKey,
         },
@@ -20,8 +20,8 @@ export default class Child extends MyBaseModel {
 
     static parentWithables = [
         'family',
-        'created_by',
-        'updated_by'
+        'creator',
+        'updater'
     ];
 
     static rules = {
@@ -35,8 +35,8 @@ export default class Child extends MyBaseModel {
         'id': {},
             'name': {},
             'family_id': { relationRules: { linkables: (user) => { return {} } } },
-            'created_by': { relationRules: { linkables: (user) => { return {} } } },
-            'updated_by': { relationRules: { linkables: (user) => { return {} } } },
+            'creator_id': { relationRules: { linkables: (user) => { return {} } } },
+            'updater_id': { relationRules: { linkables: (user) => { return {} } } },
             'created_at': {},
             'updated_at': {}
     };
@@ -46,13 +46,13 @@ export default class Child extends MyBaseModel {
             'id': this.attr('').nullable(),
             'name': this.attr('').nullable(),
             'family_id': this.attr('').nullable(),
-            'created_by': this.attr('').nullable(),
-            'updated_by': this.attr('').nullable(),
+            'creator_id': this.attr('').nullable(),
+            'updater_id': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
-            'created_by': this.belongsTo(User, 'created_by'),
+            'creator': this.belongsTo(User, 'creator_id'),
             'family': this.belongsTo(Family, 'family_id'),
-            'updated_by': this.belongsTo(User, 'updated_by'),
+            'updater': this.belongsTo(User, 'updater_id'),
             'attendances': this.hasMany(Attendance, 'child_id')
         };
     }

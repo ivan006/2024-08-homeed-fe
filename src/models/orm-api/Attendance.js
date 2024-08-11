@@ -21,8 +21,8 @@ export default class Attendance extends MyBaseModel {
     static parentWithables = [
         'event',
         'child',
-        'created_by',
-        'updated_by'
+        'creator',
+        'updater'
     ];
 
     static rules = {
@@ -36,8 +36,8 @@ export default class Attendance extends MyBaseModel {
         'id': {},
             'event_id': { relationRules: { linkables: (user) => { return {} } } },
             'child_id': { relationRules: { linkables: (user) => { return {} } } },
-            'created_by': { relationRules: { linkables: (user) => { return {} } } },
-            'updated_by': { relationRules: { linkables: (user) => { return {} } } },
+            'creator_id': { relationRules: { linkables: (user) => { return {} } } },
+            'updater_id': { relationRules: { linkables: (user) => { return {} } } },
             'created_at': {},
             'updated_at': {}
     };
@@ -47,14 +47,14 @@ export default class Attendance extends MyBaseModel {
             'id': this.attr('').nullable(),
             'event_id': this.attr('').nullable(),
             'child_id': this.attr('').nullable(),
-            'created_by': this.attr('').nullable(),
-            'updated_by': this.attr('').nullable(),
+            'creator_id': this.attr('').nullable(),
+            'updater_id': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
             'child': this.belongsTo(Child, 'child_id'),
-            'created_by': this.belongsTo(User, 'created_by'),
+            'creator': this.belongsTo(User, 'creator_id'),
             'event': this.belongsTo(Event, 'event_id'),
-            'updated_by': this.belongsTo(User, 'updated_by')
+            'updater': this.belongsTo(User, 'updater_id')
         };
     }
 

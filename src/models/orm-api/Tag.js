@@ -16,7 +16,7 @@ export default class Tag extends MyBaseModel {
     }
 
     static parentWithables = [
-
+        
     ];
 
     static rules = {
@@ -39,7 +39,7 @@ export default class Tag extends MyBaseModel {
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
             'name': this.attr('').nullable(),
-
+            
         };
     }
 

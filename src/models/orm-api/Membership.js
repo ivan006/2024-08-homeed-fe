@@ -21,8 +21,8 @@ export default class Membership extends MyBaseModel {
     static parentWithables = [
         'family',
         'school',
-        'created_by',
-        'updated_by'
+        'creator',
+        'updater'
     ];
 
     static rules = {
@@ -36,8 +36,8 @@ export default class Membership extends MyBaseModel {
         'id': {},
             'family_id': { relationRules: { linkables: (user) => { return {} } } },
             'school_id': { relationRules: { linkables: (user) => { return {} } } },
-            'created_by': { relationRules: { linkables: (user) => { return {} } } },
-            'updated_by': { relationRules: { linkables: (user) => { return {} } } },
+            'creator_id': { relationRules: { linkables: (user) => { return {} } } },
+            'updater_id': { relationRules: { linkables: (user) => { return {} } } },
             'created_at': {},
             'updated_at': {}
     };
@@ -47,14 +47,14 @@ export default class Membership extends MyBaseModel {
             'id': this.attr('').nullable(),
             'family_id': this.attr('').nullable(),
             'school_id': this.attr('').nullable(),
-            'created_by': this.attr('').nullable(),
-            'updated_by': this.attr('').nullable(),
+            'creator_id': this.attr('').nullable(),
+            'updater_id': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
-            'created_by': this.belongsTo(User, 'created_by'),
+            'creator': this.belongsTo(User, 'creator_id'),
             'family': this.belongsTo(Family, 'family_id'),
             'school': this.belongsTo(School, 'school_id'),
-            'updated_by': this.belongsTo(User, 'updated_by')
+            'updater': this.belongsTo(User, 'updater_id')
         };
     }
 

@@ -22,7 +22,7 @@ export default class User extends MyBaseModel {
     }
 
     static parentWithables = [
-
+        
     ];
 
     static rules = {
@@ -57,19 +57,19 @@ export default class User extends MyBaseModel {
             'remember_token': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
-            'attendances': this.hasMany(Attendance, 'created_by'),
-            'attendancesUpdatedBy': this.hasMany(Attendance, 'updated_by'),
-            'children': this.hasMany(Child, 'created_by'),
-            'childrenUpdatedBy': this.hasMany(Child, 'updated_by'),
-            'events': this.hasMany(Event, 'created_by'),
-            'eventsUpdatedBy': this.hasMany(Event, 'updated_by'),
-            'families': this.hasMany(Family, 'created_by'),
-            'familiesUpdatedBy': this.hasMany(Family, 'updated_by'),
+            'attendances': this.hasMany(Attendance, 'creator_id'),
+            'attendancesUpdaterId': this.hasMany(Attendance, 'updater_id'),
+            'childrens': this.hasMany(Child, 'creator_id'),
+            'childrensUpdaterId': this.hasMany(Child, 'updater_id'),
+            'events': this.hasMany(Event, 'creator_id'),
+            'eventsUpdaterId': this.hasMany(Event, 'updater_id'),
+            'families': this.hasMany(Family, 'creator_id'),
+            'familiesUpdaterId': this.hasMany(Family, 'updater_id'),
             'familiesUserId': this.hasMany(Family, 'user_id'),
-            'memberships': this.hasMany(Membership, 'created_by'),
-            'membershipsUpdatedBy': this.hasMany(Membership, 'updated_by'),
-            'schools': this.hasMany(School, 'created_by'),
-            'schoolsUpdatedBy': this.hasMany(School, 'updated_by'),
+            'memberships': this.hasMany(Membership, 'creator_id'),
+            'membershipsUpdaterId': this.hasMany(Membership, 'updater_id'),
+            'schools': this.hasMany(School, 'creator_id'),
+            'schoolsUpdaterId': this.hasMany(School, 'updater_id'),
             'schoolsUserId': this.hasMany(School, 'user_id')
         };
     }

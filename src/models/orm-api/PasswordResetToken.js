@@ -16,7 +16,7 @@ export default class PasswordResetToken extends MyBaseModel {
     }
 
     static parentWithables = [
-
+        
     ];
 
     static rules = {
@@ -37,7 +37,7 @@ export default class PasswordResetToken extends MyBaseModel {
             'email': this.attr('').nullable(),
             'token': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
-
+            
         };
     }
 

@@ -16,7 +16,7 @@ export default class PostTag extends MyBaseModel {
     }
 
     static parentWithables = [
-
+        
     ];
 
     static rules = {
@@ -41,7 +41,7 @@ export default class PostTag extends MyBaseModel {
             'updated_at': this.attr('').nullable(),
             'post_id': this.attr('').nullable(),
             'tag_id': this.attr('').nullable(),
-
+            
         };
     }
 
