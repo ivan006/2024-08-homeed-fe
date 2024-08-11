@@ -1,11 +1,11 @@
-import MyBaseModel from 'src/models/model-helpers/MyBaseModel';
+import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import router from 'src/router';
-import Attendance from 'src/models/Attendance';
-import Child from 'src/models/Child';
-import Event from 'src/models/Event';
-import Family from 'src/models/Family';
-import Membership from 'src/models/Membership';
-import School from 'src/models/School';
+import Attendance from 'src/models/orm-api/Attendance';
+import Child from 'src/models/orm-api/Child';
+import Event from 'src/models/orm-api/Event';
+import Family from 'src/models/orm-api/Family';
+import Membership from 'src/models/orm-api/Membership';
+import School from 'src/models/orm-api/School';
 
 export default class User extends MyBaseModel {
   static entity = 'user';
@@ -57,20 +57,20 @@ export default class User extends MyBaseModel {
       'remember_token': this.attr('').nullable(),
       'created_at': this.attr('').nullable(),
       'updated_at': this.attr('').nullable(),
-      'attendances': this.hasMany(Attendance, 'created_by'),
-      'attendances': this.hasMany(Attendance, 'updated_by'),
-      'children': this.hasMany(Child, 'created_by'),
-      'children': this.hasMany(Child, 'updated_by'),
-      'events': this.hasMany(Event, 'created_by'),
-      'events': this.hasMany(Event, 'updated_by'),
-      'families': this.hasMany(Family, 'created_by'),
-      'families': this.hasMany(Family, 'updated_by'),
-      'families': this.hasMany(Family, 'user_id'),
-      'memberships': this.hasMany(Membership, 'created_by'),
-      'memberships': this.hasMany(Membership, 'updated_by'),
-      'schools': this.hasMany(School, 'created_by'),
-      'schools': this.hasMany(School, 'updated_by'),
-      'schools': this.hasMany(School, 'user_id')
+      'attendances': this.hasMany(Attendance, 'creator_id'),
+      'attendancesUpdaterId': this.hasMany(Attendance, 'updater_id'),
+      'childrens': this.hasMany(Child, 'creator_id'),
+      'childrensUpdaterId': this.hasMany(Child, 'updater_id'),
+      'events': this.hasMany(Event, 'creator_id'),
+      'eventsUpdaterId': this.hasMany(Event, 'updater_id'),
+      'families': this.hasMany(Family, 'creator_id'),
+      'familiesUpdaterId': this.hasMany(Family, 'updater_id'),
+      'familiesUserId': this.hasMany(Family, 'user_id'),
+      'memberships': this.hasMany(Membership, 'creator_id'),
+      'membershipsUpdaterId': this.hasMany(Membership, 'updater_id'),
+      'schools': this.hasMany(School, 'creator_id'),
+      'schoolsUpdaterId': this.hasMany(School, 'updater_id'),
+      'schoolsUserId': this.hasMany(School, 'user_id')
     };
   }
 
