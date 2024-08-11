@@ -14,7 +14,7 @@
 
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
-import Attendance from '@/models/Attendance'
+import Attendance from 'src/models/orm-api/Attendance'
 import router from '@/router'
 
 export default {

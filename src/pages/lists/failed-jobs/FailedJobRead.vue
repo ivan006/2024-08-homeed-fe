@@ -14,7 +14,7 @@
 
 <script>
 import { SuperRecord } from 'quicklists-vue-orm-ui'
-import FailedJob from '@/models/FailedJob'
+import FailedJob from 'src/models/orm-api/FailedJob'
 
 export default {
     name: 'FailedJob-read',

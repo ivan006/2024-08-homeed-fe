@@ -14,7 +14,7 @@
 
 <script>
 import { SuperRecord } from 'quicklists-vue-orm-ui'
-import PostTag from '@/models/PostTag'
+import PostTag from 'src/models/orm-api/PostTag'
 
 export default {
     name: 'PostTag-read',

@@ -14,7 +14,7 @@
 
 <script>
 import { SuperRecord } from 'quicklists-vue-orm-ui'
-import Attendance from '@/models/Attendance'
+import Attendance from 'src/models/orm-api/Attendance'
 
 export default {
     name: 'Attendance-read',

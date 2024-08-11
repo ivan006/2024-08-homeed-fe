@@ -14,7 +14,7 @@
 
 <script>
 import { SuperRecord } from 'quicklists-vue-orm-ui'
-import Post from '@/models/Post'
+import Post from 'src/models/orm-api/Post'
 
 export default {
     name: 'Post-read',

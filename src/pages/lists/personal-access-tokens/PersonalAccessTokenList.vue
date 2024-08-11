@@ -14,7 +14,7 @@
 
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
-import PersonalAccessToken from '@/models/PersonalAccessToken'
+import PersonalAccessToken from 'src/models/orm-api/PersonalAccessToken'
 import router from '@/router'
 
 export default {

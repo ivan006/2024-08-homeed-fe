@@ -14,7 +14,7 @@
 
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
-import Post from '@/models/Post'
+import Post from 'src/models/orm-api/Post'
 import router from '@/router'
 
 export default {

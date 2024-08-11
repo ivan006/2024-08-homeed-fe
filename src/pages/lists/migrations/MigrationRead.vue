@@ -14,7 +14,7 @@
 
 <script>
 import { SuperRecord } from 'quicklists-vue-orm-ui'
-import Migration from '@/models/Migration'
+import Migration from 'src/models/orm-api/Migration'
 
 export default {
     name: 'Migration-read',

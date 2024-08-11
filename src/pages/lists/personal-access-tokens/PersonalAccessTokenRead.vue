@@ -14,7 +14,7 @@
 
 <script>
 import { SuperRecord } from 'quicklists-vue-orm-ui'
-import PersonalAccessToken from '@/models/PersonalAccessToken'
+import PersonalAccessToken from 'src/models/orm-api/PersonalAccessToken'
 
 export default {
     name: 'PersonalAccessToken-read',

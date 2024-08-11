@@ -14,7 +14,7 @@
 
 <script>
 import { SuperRecord } from 'quicklists-vue-orm-ui'
-import Event from '@/models/Event'
+import Event from 'src/models/orm-api/Event'
 
 export default {
     name: 'Event-read',

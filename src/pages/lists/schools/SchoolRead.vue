@@ -14,7 +14,7 @@
 
 <script>
 import { SuperRecord } from 'quicklists-vue-orm-ui'
-import School from '@/models/School'
+import School from 'src/models/orm-api/School'
 
 export default {
     name: 'School-read',

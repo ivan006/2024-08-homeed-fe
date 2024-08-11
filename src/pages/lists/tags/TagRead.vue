@@ -14,7 +14,7 @@
 
 <script>
 import { SuperRecord } from 'quicklists-vue-orm-ui'
-import Tag from '@/models/Tag'
+import Tag from 'src/models/orm-api/Tag'
 
 export default {
     name: 'Tag-read',

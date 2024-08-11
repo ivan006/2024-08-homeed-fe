@@ -14,7 +14,7 @@
 
 <script>
 import { SuperRecord } from 'quicklists-vue-orm-ui'
-import PasswordResetToken from '@/models/PasswordResetToken'
+import PasswordResetToken from 'src/models/orm-api/PasswordResetToken'
 
 export default {
     name: 'PasswordResetToken-read',

@@ -14,7 +14,7 @@
 
 <script>
 import { SuperRecord } from 'quicklists-vue-orm-ui'
-import Membership from '@/models/Membership'
+import Membership from 'src/models/orm-api/Membership'
 
 export default {
     name: 'Membership-read',
