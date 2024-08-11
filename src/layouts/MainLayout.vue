@@ -71,11 +71,11 @@ const linksList = [
     links: [
       {
         title: 'Attendance S',
-        route: '/lists/attendance-s',
+        route: '/lists/attendances',
       },
       {
         title: 'Childrens',
-        route: '/lists/childrens',
+        route: '/lists/children',
       },
       {
         title: 'Events',
@@ -95,7 +95,7 @@ const linksList = [
       },
       {
         title: 'Migration S',
-        route: '/lists/migration-s',
+        route: '/lists/migrations',
       },
       {
         title: 'Password Reset Tokens',

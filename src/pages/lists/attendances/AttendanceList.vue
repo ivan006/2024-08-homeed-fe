@@ -39,7 +39,7 @@ export default {
     methods: {
         openRecord(e) {
             //router.push({
-            //    name: '/lists/attendance-s/:rId',
+            //    name: '/lists/attendances/:rId',
             //    params: {
             //        rId: e.id,
             //    },

@@ -59,8 +59,8 @@ export default class User extends MyBaseModel {
       'updated_at': this.attr('').nullable(),
       'attendances': this.hasMany(Attendance, 'creator_id'),
       'attendancesUpdaterId': this.hasMany(Attendance, 'updater_id'),
-      'childrens': this.hasMany(Child, 'creator_id'),
-      'childrensUpdaterId': this.hasMany(Child, 'updater_id'),
+      'children': this.hasMany(Child, 'creator_id'),
+      'childrenUpdaterId': this.hasMany(Child, 'updater_id'),
       'events': this.hasMany(Event, 'creator_id'),
       'eventsUpdaterId': this.hasMany(Event, 'updater_id'),
       'families': this.hasMany(Family, 'creator_id'),
@@ -130,6 +130,17 @@ export default class User extends MyBaseModel {
     return this.customSupabaseApiDelete(
       `${this.baseUrl}${this.entityUrl}`,
       entityId,
+      flags,
+      this.mergeHeaders(moreHeaders),
+      this
+    );
+  }
+
+  static Register(entity, relationships = [], flags = {}, moreHeaders = {}) {
+    return this.customSupabaseApiStore(
+      `${this.baseUrl}/api/register`,
+      entity,
+      [...this.parentWithables, ...relationships],
       flags,
       this.mergeHeaders(moreHeaders),
       this

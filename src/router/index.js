@@ -18,8 +18,8 @@ export default route(function (/* { store, ssrContext } */) {
     const sessionitem = VueCookies.get('VITE_AUTH');
     const requiresAuth = to.matched.some(record => record.meta.requiresAuth !== false);
 
-    if (requiresAuth && !sessionitem?.user?.clients[0].profile_is_complete) {
-      next({ path: '/guest-registration' });
+    if (requiresAuth && !sessionitem?.user) {
+      next({ path: '/login' });
     } else {
       next();
     }

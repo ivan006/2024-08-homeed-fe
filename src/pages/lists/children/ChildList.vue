@@ -39,7 +39,7 @@ export default {
     methods: {
         openRecord(e) {
             //router.push({
-            //    name: '/lists/childrens/:rId',
+            //    name: '/lists/children/:rId',
             //    params: {
             //        rId: e.id,
             //    },
