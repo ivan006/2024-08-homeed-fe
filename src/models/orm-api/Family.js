@@ -53,7 +53,7 @@ export default class Family extends MyBaseModel {
             'creator': this.belongsTo(User, 'creator_id'),
             'updater': this.belongsTo(User, 'updater_id'),
             'user': this.belongsTo(User, 'user_id'),
-            'childrens': this.hasMany(Child, 'family_id'),
+            'children': this.hasMany(Child, 'family_id'),
             'memberships': this.hasMany(Membership, 'family_id')
         };
     }

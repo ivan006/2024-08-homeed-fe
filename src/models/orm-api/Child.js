@@ -6,12 +6,12 @@ import Attendance from 'src/models/orm-api/Attendance';
 
 export default class Child extends MyBaseModel {
     static entity = 'child';
-    static entityUrl = '/api/childrens';
+    static entityUrl = '/api/children';
     static primaryKey = 'id';
     static titleKey = 'id';
     static openRecord(pKey){
       router.push({
-        name: '/lists/childrens/:rId',
+        name: '/lists/children/:rId',
         params: {
           rId: pKey,
         },

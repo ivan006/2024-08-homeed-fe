@@ -6,12 +6,12 @@ import Event from 'src/models/orm-api/Event';
 
 export default class Attendance extends MyBaseModel {
     static entity = 'attendance';
-    static entityUrl = '/api/attendance-s';
+    static entityUrl = '/api/attendances';
     static primaryKey = 'id';
     static titleKey = 'id';
     static openRecord(pKey){
       router.push({
-        name: '/lists/attendance-s/:rId',
+        name: '/lists/attendances/:rId',
         params: {
           rId: pKey,
         },
