@@ -15,7 +15,7 @@
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
 import FailedJob from 'src/models/orm-api/FailedJob'
-import router from '@/router'
+import router from 'src/router'
 
 export default {
     name: 'FailedJob-list',

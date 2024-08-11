@@ -15,7 +15,7 @@
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
 import Event from 'src/models/orm-api/Event'
-import router from '@/router'
+import router from 'src/router'
 
 export default {
     name: 'Event-list',

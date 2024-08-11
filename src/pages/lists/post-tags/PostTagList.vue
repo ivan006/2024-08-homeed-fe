@@ -15,7 +15,7 @@
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
 import PostTag from 'src/models/orm-api/PostTag'
-import router from '@/router'
+import router from 'src/router'
 
 export default {
     name: 'PostTag-list',

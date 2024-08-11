@@ -15,7 +15,7 @@
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
 import School from 'src/models/orm-api/School'
-import router from '@/router'
+import router from 'src/router'
 
 export default {
     name: 'School-list',

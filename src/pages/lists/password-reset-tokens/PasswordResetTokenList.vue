@@ -15,7 +15,7 @@
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
 import PasswordResetToken from 'src/models/orm-api/PasswordResetToken'
-import router from '@/router'
+import router from 'src/router'
 
 export default {
     name: 'PasswordResetToken-list',

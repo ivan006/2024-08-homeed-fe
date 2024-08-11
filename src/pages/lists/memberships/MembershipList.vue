@@ -15,7 +15,7 @@
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
 import Membership from 'src/models/orm-api/Membership'
-import router from '@/router'
+import router from 'src/router'
 
 export default {
     name: 'Membership-list',
