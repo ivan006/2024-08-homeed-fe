@@ -6,9 +6,9 @@ export default class RouteLineage extends Model {
 
   static fields() {
     return {
-      id: this.attr(null),
+      id: this.attr(null).nullable(),
       name: this.attr(''),
-      path: this.attr(''),
+      label: this.attr(''),
       parent: this.attr(null),
       lineage: this.attr([]),
     };

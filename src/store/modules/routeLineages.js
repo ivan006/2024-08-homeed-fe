@@ -26,26 +26,26 @@ function processRouteForLineage(route, flatRoutes) {
   let currentRoute = route;
 
   while (currentRoute) {
-    const currentRoutePath = standardizePath(currentRoute.path || '');
-    if (lineage.includes(currentRoutePath)) break; // Break if lineage already includes the path to prevent infinite loop
+    const currentRouteName = currentRoute.name || '';
+    if (lineage.includes(currentRouteName)) break; // Break if lineage already includes the name to prevent infinite loop
 
-    lineage.unshift(currentRoutePath);
-    const parentRouteName = currentRoute.meta?.breadcrumbParent || null;
+    lineage.unshift(currentRouteName);
+    const parentRouteName = currentRoute.meta?.breadcrumbParentName || null;
 
-    // If no breadcrumbParent, treat as root route and include itself in the lineage
+    // If no breadcrumbParentName, treat as root route and include itself in the lineage
     if (!parentRouteName) {
       break;
     }
 
-    const parentRoutePath = parentRouteName ? standardizePath(parentRouteName) : null;
-    currentRoute = flatRoutes[parentRoutePath] || null;
+    const parentRoute = parentRouteName ? flatRoutes[standardizePath(parentRouteName)] : null;
+    currentRoute = parentRoute || null;
   }
 
-  const breadcrumbName = route.meta?.breadcrumbName || '';
+  const breadcrumbLabel = route.meta?.breadcrumbName || '';
   const routeLineageData = {
-    name: breadcrumbName,
-    path: standardizedPath,
-    parent: route.meta?.breadcrumbParent ? standardizePath(route.meta.breadcrumbParent) : null,
+    label: breadcrumbLabel,
+    name: route.name || '',
+    parent: route.meta?.breadcrumbParentName ? standardizePath(route.meta.breadcrumbParentName) : null,
     lineage: lineage,
   };
 

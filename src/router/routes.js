@@ -34,8 +34,8 @@ const routes = [
             name: 'posts',
             component: () => import('pages/posts/PostsListComp.vue'),
             meta: {
-              breadcrumbName: 'posts',
-              breadcrumbParent: '',
+              breadcrumbName: 'Posts',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -45,7 +45,7 @@ const routes = [
             component: () => import('pages/posts/PostsReadComp.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: 'posts',
+              breadcrumbParentName: 'posts',
               meta: { requiresAuth: false }
             },
           },
@@ -54,8 +54,8 @@ const routes = [
             name: '/lists/attendances',
             component: () => import('src/pages/lists/attendances/AttendanceList.vue'),
             meta: {
-              breadcrumbName: 'attendances',
-              breadcrumbParent: '',
+              breadcrumbName: 'Attendances',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -65,7 +65,7 @@ const routes = [
             component: () => import('src/pages/lists/attendances/AttendanceRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: '/lists/attendances',
+              breadcrumbParentName: '/lists/attendances',
               meta: { requiresAuth: false }
             },
           },
@@ -74,8 +74,8 @@ const routes = [
             name: '/lists/children',
             component: () => import('src/pages/lists/children/ChildList.vue'),
             meta: {
-              breadcrumbName: 'xxxx',
-              breadcrumbParent: '',
+              breadcrumbName: 'Children',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -85,7 +85,7 @@ const routes = [
             component: () => import('src/pages/lists/children/ChildRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: '/lists/posts',
+              breadcrumbParentName: '/lists/posts',
               meta: { requiresAuth: false }
             },
           },
@@ -94,8 +94,8 @@ const routes = [
             name: '/lists/events',
             component: () => import('src/pages/lists/events/EventList.vue'),
             meta: {
-              breadcrumbName: 'events',
-              breadcrumbParent: '',
+              breadcrumbName: 'Events',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -105,7 +105,7 @@ const routes = [
             component: () => import('src/pages/lists/events/EventRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: '/lists/events',
+              breadcrumbParentName: '/lists/events',
               meta: { requiresAuth: false }
             },
           },
@@ -114,8 +114,8 @@ const routes = [
             name: '/lists/failed-jobs',
             component: () => import('src/pages/lists/failed-jobs/FailedJobList.vue'),
             meta: {
-              breadcrumbName: 'failed-jobs',
-              breadcrumbParent: '',
+              breadcrumbName: 'Failed-jobs',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -125,7 +125,7 @@ const routes = [
             component: () => import('src/pages/lists/failed-jobs/FailedJobRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: '/lists/failed-jobs',
+              breadcrumbParentName: '/lists/failed-jobs',
               meta: { requiresAuth: false }
             },
           },
@@ -134,8 +134,8 @@ const routes = [
             name: '/lists/families',
             component: () => import('src/pages/lists/families/FamilyList.vue'),
             meta: {
-              breadcrumbName: 'families',
-              breadcrumbParent: '',
+              breadcrumbName: 'Families',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -145,7 +145,7 @@ const routes = [
             component: () => import('src/pages/lists/families/FamilyRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: '/lists/families',
+              breadcrumbParentName: '/lists/families',
               meta: { requiresAuth: false }
             },
           },
@@ -154,8 +154,8 @@ const routes = [
             name: '/lists/memberships',
             component: () => import('src/pages/lists/memberships/MembershipList.vue'),
             meta: {
-              breadcrumbName: 'memberships',
-              breadcrumbParent: '',
+              breadcrumbName: 'Memberships',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -165,7 +165,7 @@ const routes = [
             component: () => import('src/pages/lists/memberships/MembershipRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: '/lists/memberships',
+              breadcrumbParentName: '/lists/memberships',
               meta: { requiresAuth: false }
             },
           },
@@ -174,8 +174,8 @@ const routes = [
             name: '/lists/migrations',
             component: () => import('src/pages/lists/migrations/MigrationList.vue'),
             meta: {
-              breadcrumbName: 'migrations',
-              breadcrumbParent: '',
+              breadcrumbName: 'Migrations',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -185,7 +185,7 @@ const routes = [
             component: () => import('src/pages/lists/migrations/MigrationRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: '/lists/migrations',
+              breadcrumbParentName: '/lists/migrations',
               meta: { requiresAuth: false }
             },
           },
@@ -194,8 +194,8 @@ const routes = [
             name: '/lists/password-reset-tokens',
             component: () => import('src/pages/lists/password-reset-tokens/PasswordResetTokenList.vue'),
             meta: {
-              breadcrumbName: 'password-reset-tokens',
-              breadcrumbParent: '',
+              breadcrumbName: 'Password-reset-tokens',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -205,7 +205,7 @@ const routes = [
             component: () => import('src/pages/lists/password-reset-tokens/PasswordResetTokenRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: '/lists/password-reset-tokens',
+              breadcrumbParentName: '/lists/password-reset-tokens',
               meta: { requiresAuth: false }
             },
           },
@@ -214,8 +214,8 @@ const routes = [
             name: '/lists/personal-access-tokens',
             component: () => import('src/pages/lists/personal-access-tokens/PersonalAccessTokenList.vue'),
             meta: {
-              breadcrumbName: 'personal-access-tokens',
-              breadcrumbParent: '',
+              breadcrumbName: 'Personal-access-tokens',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -225,7 +225,7 @@ const routes = [
             component: () => import('src/pages/lists/personal-access-tokens/PersonalAccessTokenRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: '/lists/personal-access-tokens',
+              breadcrumbParentName: '/lists/personal-access-tokens',
               meta: { requiresAuth: false }
             },
           },
@@ -234,8 +234,8 @@ const routes = [
             name: '/lists/post-tags',
             component: () => import('src/pages/lists/post-tags/PostTagList.vue'),
             meta: {
-              breadcrumbName: 'post-tags',
-              breadcrumbParent: '',
+              breadcrumbName: 'Post-tags',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -245,7 +245,7 @@ const routes = [
             component: () => import('src/pages/lists/post-tags/PostTagRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: '/lists/post-tags',
+              breadcrumbParentName: '/lists/post-tags',
               meta: { requiresAuth: false }
             },
           },
@@ -254,8 +254,8 @@ const routes = [
             name: '/lists/posts',
             component: () => import('src/pages/lists/posts/PostList.vue'),
             meta: {
-              breadcrumbName: 'posts',
-              breadcrumbParent: '',
+              breadcrumbName: 'Posts',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -265,7 +265,7 @@ const routes = [
             component: () => import('src/pages/lists/posts/PostRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: '/lists/posts',
+              breadcrumbParentName: '/lists/posts',
               meta: { requiresAuth: false }
             },
           },
@@ -274,8 +274,8 @@ const routes = [
             name: '/lists/schools',
             component: () => import('src/pages/lists/schools/SchoolList.vue'),
             meta: {
-              breadcrumbName: 'schools',
-              breadcrumbParent: '',
+              breadcrumbName: 'Schools',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -285,7 +285,7 @@ const routes = [
             component: () => import('src/pages/lists/schools/SchoolRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: '/lists/schools',
+              breadcrumbParentName: '/lists/schools',
               meta: { requiresAuth: false }
             },
           },
@@ -294,8 +294,8 @@ const routes = [
             name: '/lists/tags',
             component: () => import('src/pages/lists/tags/TagList.vue'),
             meta: {
-              breadcrumbName: 'tags',
-              breadcrumbParent: '',
+              breadcrumbName: 'Tags',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -305,7 +305,7 @@ const routes = [
             component: () => import('src/pages/lists/tags/TagRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: '/lists/tags',
+              breadcrumbParentName: '/lists/tags',
               meta: { requiresAuth: false }
             },
           },
@@ -314,8 +314,8 @@ const routes = [
             name: '/lists/users',
             component: () => import('src/pages/lists/users/UserList.vue'),
             meta: {
-              breadcrumbName: 'users',
-              breadcrumbParent: '',
+              breadcrumbName: 'Users',
+              breadcrumbParentName: '',
               meta: { requiresAuth: false }
             },
           },
@@ -325,7 +325,7 @@ const routes = [
             component: () => import('src/pages/lists/users/UserRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParent: '/lists/users',
+              breadcrumbParentName: '/lists/users',
               meta: { requiresAuth: false }
             },
           }

@@ -1,10 +1,5 @@
-<!-- src/components/Breadcrumbs.vue -->
 <template>
   <div>
-    <!--<pre>{{route}}</pre>-->
-    <!--<pre>{{routeMatch}}</pre>-->
-    <!--<pre>{{breadcrumbs}}</pre>-->
-    <!--<pre>{{lineages.length}}</pre>-->
     <q-breadcrumbs class="q-mt-md">
       <!-- Add Home breadcrumb -->
       <q-breadcrumbs-el
@@ -16,8 +11,8 @@
         class="text-subtitle2"
         v-for="(crumb, index) in breadcrumbs"
         :key="index"
-        :label="getBreadcrumbName(crumb)"
-        :to="{ path: '/' + crumb.path }"
+        :label="getBreadcrumbLabel(crumb)"
+        @click="goToRoute(crumb.name)"
       />
     </q-breadcrumbs>
   </div>
@@ -31,42 +26,48 @@ import { useRoute, useRouter } from 'vue-router';
 const store = useStore();
 const route = useRoute();
 const router = useRouter();
-console.log(route);
 
 function standardizePath(path) {
   return typeof path === 'string' ? path.replace(/^\//, '') : '';
 }
 
 const lineages = computed(() => {
-  const result = store.$db().model('routeLineages').query().get();
-  console.log(result);
-  return result;
+  return store.$db().model('routeLineages').query().get();
 });
+
+const goToRoute = (routeName) => {
+  router.push({
+    name: routeName, // The name of the route you want to navigate to
+    params: route.params, // Pass along the current params
+    query: route.query // Optional: Pass along the current query params
+  });
+}
 
 const routeMatch = computed(() => router.resolve(route.path));
 
 const breadcrumbs = computed(() => {
-  // Find the route pattern
   const exactMatch = routeMatch.value.matched[routeMatch.value.matched.length - 1];
   const standardizedPath = standardizePath(exactMatch.path);
-  const currentRouteLineage = store.$db().model('routeLineages').query().where('path', standardizedPath).first();
+
+  // Find the current route lineage using the route name instead of path
+  const currentRouteLineage = store.$db().model('routeLineages').query().where('name', exactMatch.name).first();
 
   if (currentRouteLineage) {
-    return currentRouteLineage.lineage.map(path => {
-      return store.$db().model('routeLineages').query().where('path', standardizePath(path)).first();
+    return currentRouteLineage.lineage.map(name => {
+      return store.$db().model('routeLineages').query().where('name', name).first();
     });
   }
   return [];
 });
 
-const getBreadcrumbName = (crumb) => {
+const getBreadcrumbLabel = (crumb) => {
   if (crumb) {
-    const dynamicMatch = crumb.name.match(/:(\w+)/);
+    const dynamicMatch = crumb.label.match(/:(\w+)/);
     if (dynamicMatch) {
       const paramName = dynamicMatch[1];
-      return route.params[paramName] || crumb.name;
+      return route.params[paramName] || crumb.label;
     }
-    return crumb.name;
+    return crumb.label;
   }
   return '';
 };
