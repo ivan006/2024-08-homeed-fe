@@ -44,8 +44,8 @@ export default class School extends MyBaseModel {
     static fields() {
         return {
             'id': this.attr('').nullable(),
-            'name': this.attr('').nullable(),
-            'user_id': this.attr('').nullable(),
+            'name': this.attr(''),
+            'user_id': this.attr(''),
             'creator_id': this.attr('').nullable(),
             'updater_id': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),

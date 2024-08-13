@@ -11,7 +11,7 @@ export default class User extends MyBaseModel {
   static entity = 'user';
   static entityUrl = '/api/users';
   static primaryKey = 'id';
-  static titleKey = 'id';
+  static titleKey = 'name';
   static openRecord(pKey){
     router.push({
       name: '/lists/users/:rId',
