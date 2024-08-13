@@ -8,7 +8,7 @@ export default class Child extends MyBaseModel {
     static entity = 'child';
     static entityUrl = '/api/children';
     static primaryKey = 'id';
-    static titleKey = 'id';
+    static titleKey = 'name';
     static openRecord(pKey){
       router.push({
         name: '/lists/children/:rId',
@@ -33,19 +33,19 @@ export default class Child extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-            'name': {},
-            'family_id': { relationRules: { linkables: (user) => { return {} } } },
-            'creator_id': { relationRules: { linkables: (user) => { return {} } } },
-            'updater_id': { relationRules: { linkables: (user) => { return {} } } },
-            'created_at': {},
-            'updated_at': {}
+        'name': {},
+        'family_id': { relationRules: { linkables: (user) => { return {} } } },
+        'creator_id': { relationRules: { linkables: (user) => { return {} } } },
+        'updater_id': { relationRules: { linkables: (user) => { return {} } } },
+        'created_at': {},
+        'updated_at': {}
     };
 
     static fields() {
         return {
             'id': this.attr('').nullable(),
-            'name': this.attr('').nullable(),
-            'family_id': this.attr('').nullable(),
+            'name': this.attr(''),
+            'family_id': this.attr(''),
             'creator_id': this.attr('').nullable(),
             'updater_id': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),

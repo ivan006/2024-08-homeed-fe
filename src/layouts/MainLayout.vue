@@ -70,21 +70,21 @@ const linksList = [
     groupTitle: 'Lists',
     links: [
       {
-        title: 'Attendance S',
+        title: 'Attendances',
         route: '/lists/attendances',
       },
       {
-        title: 'Childrens',
+        title: 'Children',
         route: '/lists/children',
       },
       {
         title: 'Events',
         route: '/lists/events',
       },
-      {
-        title: 'Failed Jobs',
-        route: '/lists/failed-jobs',
-      },
+      // {
+      //   title: 'Failed Jobs',
+      //   route: '/lists/failed-jobs',
+      // },
       {
         title: 'Families',
         route: '/lists/families',
@@ -93,34 +93,34 @@ const linksList = [
         title: 'Memberships',
         route: '/lists/memberships',
       },
-      {
-        title: 'Migration S',
-        route: '/lists/migrations',
-      },
-      {
-        title: 'Password Reset Tokens',
-        route: '/lists/password-reset-tokens',
-      },
-      {
-        title: 'Personal Access Tokens',
-        route: '/lists/personal-access-tokens',
-      },
-      {
-        title: 'Post Tags',
-        route: '/lists/post-tags',
-      },
-      {
-        title: 'Posts',
-        route: '/lists/posts',
-      },
+      // {
+      //   title: 'Migration S',
+      //   route: '/lists/migrations',
+      // },
+      // {
+      //   title: 'Password Reset Tokens',
+      //   route: '/lists/password-reset-tokens',
+      // },
+      // {
+      //   title: 'Personal Access Tokens',
+      //   route: '/lists/personal-access-tokens',
+      // },
+      // {
+      //   title: 'Post Tags',
+      //   route: '/lists/post-tags',
+      // },
+      // {
+      //   title: 'Posts',
+      //   route: '/lists/posts',
+      // },
       {
         title: 'Schools',
         route: '/lists/schools',
       },
-      {
-        title: 'Tags',
-        route: '/lists/tags',
-      },
+      // {
+      //   title: 'Tags',
+      //   route: '/lists/tags',
+      // },
       {
         title: 'Users',
         route: '/lists/users',

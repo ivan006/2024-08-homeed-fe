@@ -45,8 +45,8 @@ export default class Membership extends MyBaseModel {
     static fields() {
         return {
             'id': this.attr('').nullable(),
-            'family_id': this.attr('').nullable(),
-            'school_id': this.attr('').nullable(),
+            'family_id': this.attr(''),
+            'school_id': this.attr(''),
             'creator_id': this.attr('').nullable(),
             'updater_id': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),

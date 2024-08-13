@@ -8,7 +8,7 @@ export default class Event extends MyBaseModel {
     static entity = 'event';
     static entityUrl = '/api/events';
     static primaryKey = 'id';
-    static titleKey = 'id';
+    static titleKey = 'name';
     static openRecord(pKey){
       router.push({
         name: '/lists/events/:rId',
@@ -33,23 +33,27 @@ export default class Event extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-            'name': {},
-            'start_datetime': {},
-            'end_datetime': {},
-            'school_id': { relationRules: { linkables: (user) => { return {} } } },
-            'creator_id': { relationRules: { linkables: (user) => { return {} } } },
-            'updater_id': { relationRules: { linkables: (user) => { return {} } } },
-            'created_at': {},
-            'updated_at': {}
+        'name': {},
+        'start_datetime': {
+          usageType: "dateType"
+        },
+        'end_datetime': {
+          usageType: "dateType"
+        },
+        'school_id': { relationRules: { linkables: (user) => { return {} } } },
+        'creator_id': { relationRules: { linkables: (user) => { return {} } } },
+        'updater_id': { relationRules: { linkables: (user) => { return {} } } },
+        'created_at': {},
+        'updated_at': {}
     };
 
     static fields() {
         return {
             'id': this.attr('').nullable(),
-            'name': this.attr('').nullable(),
-            'start_datetime': this.attr('').nullable(),
-            'end_datetime': this.attr('').nullable(),
-            'school_id': this.attr('').nullable(),
+            'name': this.attr(''),
+            'start_datetime': this.attr(''),
+            'end_datetime': this.attr(''),
+            'school_id': this.attr(''),
             'creator_id': this.attr('').nullable(),
             'updater_id': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),

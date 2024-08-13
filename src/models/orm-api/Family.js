@@ -8,7 +8,7 @@ export default class Family extends MyBaseModel {
     static entity = 'family';
     static entityUrl = '/api/families';
     static primaryKey = 'id';
-    static titleKey = 'id';
+    static titleKey = 'name';
     static openRecord(pKey){
       router.push({
         name: '/lists/families/:rId',
