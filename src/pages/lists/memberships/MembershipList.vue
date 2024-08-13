@@ -5,7 +5,7 @@
                 :user="user"
                 :showMap="true"
                 :model="superTableModel"
-                @update:modelValue="openRecord"
+                @clickRow="openRecord"
                 :displayMapField="false"
             />
         </q-card>
@@ -37,13 +37,15 @@ export default {
         },
     },
     methods: {
-        openRecord(e) {
-            //router.push({
-            //    name: '/lists/memberships/:rId',
-            //    params: {
-            //        rId: e.id,
-            //    },
-            //})
+        openRecord(item) {
+          console.log(item)
+            this.$router.push({
+                name: '/lists/memberships/:rId/:rName',
+                params: {
+                    rId: item.id,
+                    rName: item.name,
+                },
+            })
         },
     },
 }

@@ -8,7 +8,7 @@ export default class PersonalAccessToken extends MyBaseModel {
     static titleKey = 'id';
     static openRecord(pKey){
       router.push({
-        name: '/lists/personal-access-tokens/:rId',
+        name: '/lists/personal-access-tokens/:rId/:rName',
         params: {
           rId: pKey,
         },
@@ -16,7 +16,7 @@ export default class PersonalAccessToken extends MyBaseModel {
     }
 
     static parentWithables = [
-        
+
     ];
 
     static rules = {
@@ -51,7 +51,7 @@ export default class PersonalAccessToken extends MyBaseModel {
             'expires_at': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
-            
+
         };
     }
 

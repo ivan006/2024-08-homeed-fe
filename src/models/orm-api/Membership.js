@@ -11,7 +11,7 @@ export default class Membership extends MyBaseModel {
     static titleKey = 'id';
     static openRecord(pKey){
       router.push({
-        name: '/lists/memberships/:rId',
+        name: '/lists/memberships/:rId/:rName',
         params: {
           rId: pKey,
         },

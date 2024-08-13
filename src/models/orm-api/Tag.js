@@ -8,7 +8,7 @@ export default class Tag extends MyBaseModel {
     static titleKey = 'id';
     static openRecord(pKey){
       router.push({
-        name: '/lists/tags/:rId',
+        name: '/lists/tags/:rId/:rName',
         params: {
           rId: pKey,
         },
@@ -16,7 +16,7 @@ export default class Tag extends MyBaseModel {
     }
 
     static parentWithables = [
-        
+
     ];
 
     static rules = {
@@ -39,7 +39,7 @@ export default class Tag extends MyBaseModel {
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
             'name': this.attr('').nullable(),
-            
+
         };
     }
 

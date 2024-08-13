@@ -8,7 +8,7 @@ export default class Post extends MyBaseModel {
     static titleKey = 'id';
     static openRecord(pKey){
       router.push({
-        name: '/lists/posts/:rId',
+        name: '/lists/posts/:rId/:rName',
         params: {
           rId: pKey,
         },
@@ -16,7 +16,7 @@ export default class Post extends MyBaseModel {
     }
 
     static parentWithables = [
-        
+
     ];
 
     static rules = {
@@ -39,7 +39,7 @@ export default class Post extends MyBaseModel {
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
             'name': this.attr('').nullable(),
-            
+
         };
     }
 

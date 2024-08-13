@@ -11,7 +11,7 @@ export default class Attendance extends MyBaseModel {
     static titleKey = 'id';
     static openRecord(pKey){
       router.push({
-        name: '/lists/attendances/:rId',
+        name: '/lists/attendances/:rId/:rName',
         params: {
           rId: pKey,
         },

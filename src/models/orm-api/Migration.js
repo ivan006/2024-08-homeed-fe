@@ -8,7 +8,7 @@ export default class Migration extends MyBaseModel {
     static titleKey = 'id';
     static openRecord(pKey){
       router.push({
-        name: '/lists/migrations/:rId',
+        name: '/lists/migrations/:rId/:rName',
         params: {
           rId: pKey,
         },

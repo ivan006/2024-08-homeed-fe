@@ -11,7 +11,7 @@ export default class Event extends MyBaseModel {
     static titleKey = 'name';
     static openRecord(pKey){
       router.push({
-        name: '/lists/events/:rId',
+        name: '/lists/events/:rId/:rName',
         params: {
           rId: pKey,
         },

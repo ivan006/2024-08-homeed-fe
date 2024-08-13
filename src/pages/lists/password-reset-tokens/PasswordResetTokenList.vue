@@ -5,7 +5,7 @@
                 :user="user"
                 :showMap="true"
                 :model="superTableModel"
-                @update:modelValue="openRecord"
+                @clickRow="openRecord"
                 :displayMapField="false"
             />
         </q-card>
@@ -37,13 +37,14 @@ export default {
         },
     },
     methods: {
-        openRecord(e) {
-            //router.push({
-            //    name: '/lists/password-reset-tokens/:rId',
-            //    params: {
-            //        rId: e.id,
-            //    },
-            //})
+        openRecord(item) {
+            router.push({
+                name: '/lists/password-reset-tokens/:rId/:rName',
+                params: {
+                    rId: item.id,
+                    rName: item.name,
+                },
+            })
         },
     },
 }

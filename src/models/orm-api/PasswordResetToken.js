@@ -8,7 +8,7 @@ export default class PasswordResetToken extends MyBaseModel {
     static titleKey = 'email';
     static openRecord(pKey){
       router.push({
-        name: '/lists/password-reset-tokens/:rId',
+        name: '/lists/password-reset-tokens/:rId/:rName',
         params: {
           rId: pKey,
         },
@@ -16,7 +16,7 @@ export default class PasswordResetToken extends MyBaseModel {
     }
 
     static parentWithables = [
-        
+
     ];
 
     static rules = {
@@ -37,7 +37,7 @@ export default class PasswordResetToken extends MyBaseModel {
             'email': this.attr('').nullable(),
             'token': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
-            
+
         };
     }
 
