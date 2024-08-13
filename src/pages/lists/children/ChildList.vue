@@ -38,7 +38,7 @@ export default {
     },
     methods: {
         openRecord(item) {
-            router.push({
+            this.$router.push({
                 name: '/lists/children/:rId/:rName',
                 params: {
                     rId: item.id,

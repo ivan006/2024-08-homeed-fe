@@ -38,12 +38,13 @@ export default {
     },
     methods: {
         openRecord(item) {
+          console.log("item")
           console.log(item)
-            this.$router.push({
+            this.$this.$router.push({
                 name: '/lists/memberships/:rId/:rName',
                 params: {
                     rId: item.id,
-                    rName: item.name,
+                    rName: `${item.family.name} ${item.school.name}`,
                 },
             })
         },

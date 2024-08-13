@@ -38,7 +38,7 @@ export default {
     },
     methods: {
         openRecord(item) {
-            router.push({
+            this.$router.push({
                 name: '/lists/personal-access-tokens/:rId/:rName',
                 params: {
                     rId: item.id,
