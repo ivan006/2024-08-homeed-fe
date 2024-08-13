@@ -22,7 +22,7 @@ import PostTag from 'src/models/orm-api/PostTag';
 // import Post from 'src/models/orm-api/Post';
 import School from 'src/models/orm-api/School';
 import Tag from 'src/models/orm-api/Tag';
-// import User from 'src/models/orm-api/User';
+// import User from 'src/models/User';
 
 
 // Initialize the database

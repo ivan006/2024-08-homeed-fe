@@ -1,6 +1,6 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import router from 'src/router';
-import User from 'src/models/orm-api/User';
+import User from 'src/models/User';
 import Family from 'src/models/orm-api/Family';
 import Attendance from 'src/models/orm-api/Attendance';
 
