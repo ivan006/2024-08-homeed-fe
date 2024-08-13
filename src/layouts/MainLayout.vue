@@ -62,71 +62,72 @@ const linksList = [
   //     },
   //   ]
   // },
+  // {
+  //   title: 'Posts',
+  //   route: '/posts'
+  // },
+  // {
+  //   groupTitle: 'Lists',
+  //   links: [
+  //   ],
+  // },
+
   {
-    title: 'Posts',
-    route: '/posts'
+    title: 'Attendances',
+    route: '/lists/attendances',
   },
   {
-    groupTitle: 'Lists',
-    links: [
-      {
-        title: 'Attendances',
-        route: '/lists/attendances',
-      },
-      {
-        title: 'Children',
-        route: '/lists/children',
-      },
-      {
-        title: 'Events',
-        route: '/lists/events',
-      },
-      // {
-      //   title: 'Failed Jobs',
-      //   route: '/lists/failed-jobs',
-      // },
-      {
-        title: 'Families',
-        route: '/lists/families',
-      },
-      {
-        title: 'Memberships',
-        route: '/lists/memberships',
-      },
-      // {
-      //   title: 'Migration S',
-      //   route: '/lists/migrations',
-      // },
-      // {
-      //   title: 'Password Reset Tokens',
-      //   route: '/lists/password-reset-tokens',
-      // },
-      // {
-      //   title: 'Personal Access Tokens',
-      //   route: '/lists/personal-access-tokens',
-      // },
-      // {
-      //   title: 'Post Tags',
-      //   route: '/lists/post-tags',
-      // },
-      // {
-      //   title: 'Posts',
-      //   route: '/lists/posts',
-      // },
-      {
-        title: 'Schools',
-        route: '/lists/schools',
-      },
-      // {
-      //   title: 'Tags',
-      //   route: '/lists/tags',
-      // },
-      {
-        title: 'Users',
-        route: '/lists/users',
-      }
-    ],
+    title: 'Children',
+    route: '/lists/children',
   },
+  {
+    title: 'Events',
+    route: '/lists/events',
+  },
+  // {
+  //   title: 'Failed Jobs',
+  //   route: '/lists/failed-jobs',
+  // },
+  {
+    title: 'Families',
+    route: '/lists/families',
+  },
+  {
+    title: 'Memberships',
+    route: '/lists/memberships',
+  },
+  // {
+  //   title: 'Migration S',
+  //   route: '/lists/migrations',
+  // },
+  // {
+  //   title: 'Password Reset Tokens',
+  //   route: '/lists/password-reset-tokens',
+  // },
+  // {
+  //   title: 'Personal Access Tokens',
+  //   route: '/lists/personal-access-tokens',
+  // },
+  // {
+  //   title: 'Post Tags',
+  //   route: '/lists/post-tags',
+  // },
+  // {
+  //   title: 'Posts',
+  //   route: '/lists/posts',
+  // },
+  {
+    title: 'Schools',
+    route: '/lists/schools',
+  },
+  // {
+  //   title: 'Tags',
+  //   route: '/lists/tags',
+  // },
+  {
+    title: 'Users',
+    route: '/lists/users',
+  }
 ];
 
 function updateActiveRoute(newRoute) {
