@@ -5,7 +5,6 @@
                 :model="superRecordModel"
                 :id="+$route.params.rId"
                 :displayMapField="true"
-                :user="user"
             >
             </SuperRecord>
         </q-card>
@@ -22,14 +21,6 @@ export default {
     computed: {
         superRecordModel() {
             return Post
-        },
-        user() {
-          let result = {}
-          // if (this.$store.getters['entities/login-sessions/all']()?.[0]){
-          //   const id = this.$store.getters['entities/login-sessions/all']()?.[0]?.$id
-          //   result = this.$store.state.entities['login-sessions'].data[id]?.user
-          // }
-          return result
         },
     },
 }

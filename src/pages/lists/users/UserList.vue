@@ -2,7 +2,6 @@
     <div>
         <q-card class="q-pa-md q-mt-md">
             <SuperTable
-                :user="user"
                 :showMap="true"
                 :model="superTableModel"
                 @clickRow="openRecord"
@@ -26,14 +25,6 @@ export default {
     computed: {
         superTableModel() {
             return User
-        },
-        user() {
-          let result = {}
-          // if (this.$store.getters['entities/login-sessions/all']()?.[0]){
-          //   const id = this.$store.getters['entities/login-sessions/all']()?.[0]?.$id
-          //   result = this.$store.state.entities['login-sessions'].data[id]?.user
-          // }
-          return result
         },
     },
     methods: {
