@@ -2,7 +2,8 @@ import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import router from 'src/router';
 import User from 'src/models/User';
 import Event from 'src/models/orm-api/Event';
-import Membership from 'src/models/orm-api/Membership';
+import SchoolFamilyEnrollment from 'src/models/orm-api/SchoolFamilyEnrollment';
+import SchoolPartnership from 'src/models/orm-api/SchoolPartnership';
 
 export default class School extends MyBaseModel {
     static entity = 'school';
@@ -14,12 +15,12 @@ export default class School extends MyBaseModel {
         name: '/lists/schools/:rId/:rName',
         params: {
           rId: pKey,
+          rName: pKey,
         },
       })
     }
 
     static parentWithables = [
-        'user',
         'creator',
         'updater'
     ];
@@ -34,7 +35,6 @@ export default class School extends MyBaseModel {
     static fieldsMetadata = {
         'id': {},
             'name': {},
-            'user_id': { relationRules: { linkables: (user) => { return {} } } },
             'creator_id': { relationRules: { linkables: (user) => { return {} } } },
             'updater_id': { relationRules: { linkables: (user) => { return {} } } },
             'created_at': {},
@@ -45,16 +45,15 @@ export default class School extends MyBaseModel {
         return {
             'id': this.attr('').nullable(),
             'name': this.attr(''),
-            'user_id': this.attr(''),
             'creator_id': this.attr('').nullable(),
             'updater_id': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
             'creator': this.belongsTo(User, 'creator_id'),
             'updater': this.belongsTo(User, 'updater_id'),
-            'user': this.belongsTo(User, 'user_id'),
             'events': this.hasMany(Event, 'school_id'),
-            'memberships': this.hasMany(Membership, 'school_id')
+            'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'school_id'),
+            'schoolPartnerships': this.hasMany(SchoolPartnership, 'school_id')
         };
     }
 

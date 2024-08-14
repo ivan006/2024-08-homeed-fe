@@ -1,18 +1,16 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import router from 'src/router';
+import School from 'src/models/orm-api/School';
 import User from 'src/models/User';
-import Child from 'src/models/orm-api/Child';
-import FamilyMembership from 'src/models/orm-api/FamilyMembership';
-import SchoolFamilyEnrollment from 'src/models/orm-api/SchoolFamilyEnrollment';
 
-export default class Family extends MyBaseModel {
-    static entity = 'family';
-    static entityUrl = '/api/families';
+export default class SchoolPartnership extends MyBaseModel {
+    static entity = 'schoolpartnership';
+    static entityUrl = '/api/school-partnerships';
     static primaryKey = 'id';
-    static titleKey = 'name';
+    static titleKey = 'id';
     static openRecord(pKey){
       router.push({
-        name: '/lists/families/:rId/:rName',
+        name: '/lists/school-partnerships/:rId/:rName',
         params: {
           rId: pKey,
           rName: pKey,
@@ -21,8 +19,8 @@ export default class Family extends MyBaseModel {
     }
 
     static parentWithables = [
-        'creator',
-        'updater'
+        'user',
+        'school'
     ];
 
     static rules = {
@@ -34,9 +32,8 @@ export default class Family extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-            'name': {},
-            'creator_id': { relationRules: { linkables: (user) => { return {} } } },
-            'updater_id': { relationRules: { linkables: (user) => { return {} } } },
+            'user_id': { relationRules: { linkables: (user) => { return {} } } },
+            'school_id': { relationRules: { linkables: (user) => { return {} } } },
             'created_at': {},
             'updated_at': {}
     };
@@ -44,16 +41,12 @@ export default class Family extends MyBaseModel {
     static fields() {
         return {
             'id': this.attr('').nullable(),
-            'name': this.attr(''),
-            'creator_id': this.attr('').nullable(),
-            'updater_id': this.attr('').nullable(),
+            'user_id': this.attr('').nullable(),
+            'school_id': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
-            'creator': this.belongsTo(User, 'creator_id'),
-            'updater': this.belongsTo(User, 'updater_id'),
-            'childrens': this.hasMany(Child, 'family_id'),
-            'familyMemberships': this.hasMany(FamilyMembership, 'family_id'),
-            'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'family_id')
+            'school': this.belongsTo(School, 'school_id'),
+            'user': this.belongsTo(User, 'user_id')
         };
     }
 

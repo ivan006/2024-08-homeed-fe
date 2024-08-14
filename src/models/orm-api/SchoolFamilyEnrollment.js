@@ -4,16 +4,17 @@ import User from 'src/models/User';
 import Family from 'src/models/orm-api/Family';
 import School from 'src/models/orm-api/School';
 
-export default class Membership extends MyBaseModel {
-    static entity = 'membership';
-    static entityUrl = '/api/memberships';
+export default class SchoolFamilyEnrollment extends MyBaseModel {
+    static entity = 'schoolfamilyenrollment';
+    static entityUrl = '/api/school-family-enrollments';
     static primaryKey = 'id';
     static titleKey = 'id';
     static openRecord(pKey){
       router.push({
-        name: '/lists/memberships/:rId/:rName',
+        name: '/lists/school-family-enrollments/:rId/:rName',
         params: {
           rId: pKey,
+          rName: pKey,
         },
       })
     }
@@ -45,8 +46,8 @@ export default class Membership extends MyBaseModel {
     static fields() {
         return {
             'id': this.attr('').nullable(),
-            'family_id': this.attr(''),
-            'school_id': this.attr(''),
+            'family_id': this.attr('').nullable(),
+            'school_id': this.attr('').nullable(),
             'creator_id': this.attr('').nullable(),
             'updater_id': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
