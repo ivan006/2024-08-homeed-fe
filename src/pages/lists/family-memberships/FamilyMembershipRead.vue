@@ -13,14 +13,14 @@
 
 <script>
 import { SuperRecord } from 'quicklists-vue-orm-ui'
-import Membership from 'src/models/orm-api/Membership'
+import FamilyMembership from 'src/models/orm-api/FamilyMembership'
 
 export default {
-    name: 'Membership-read',
+    name: 'FamilyMembership-read',
     components: { SuperRecord },
     computed: {
         superRecordModel() {
-            return Membership
+            return FamilyMembership
         },
     },
 }

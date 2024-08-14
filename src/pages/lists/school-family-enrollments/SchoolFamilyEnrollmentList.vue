@@ -13,29 +13,27 @@
 
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
-import Membership from 'src/models/orm-api/Membership'
+import SchoolFamilyEnrollment from 'src/models/orm-api/SchoolFamilyEnrollment'
 import router from 'src/router'
 
 export default {
-    name: 'Membership-list',
+    name: 'SchoolFamilyEnrollment-list',
     components: {
         SuperTable,
     },
 
     computed: {
         superTableModel() {
-            return Membership
+            return SchoolFamilyEnrollment
         },
     },
     methods: {
         openRecord(item) {
-          console.log("item")
-          console.log(item)
-            this.$this.$router.push({
-                name: '/lists/memberships/:rId/:rName',
+            this.$router.push({
+                name: '/lists/school-family-enrollments/:rId/:rName',
                 params: {
                     rId: item.id,
-                    rName: `${item.family.name} ${item.school.name}`,
+                    rName: item.name,
                 },
             })
         },
