@@ -44,7 +44,7 @@ export default class PersonalAccessToken extends MyBaseModel {
             'id': this.attr('').nullable(),
             'tokenable_type': this.attr('').nullable(),
             'tokenable_id': this.attr('').nullable(),
-            'name': this.attr('').nullable(),
+            'name': this.attr(''),
             'token': this.attr('').nullable(),
             'abilities': this.attr('').nullable(),
             'last_used_at': this.attr('').nullable(),

@@ -38,7 +38,7 @@ export default class Tag extends MyBaseModel {
             'id': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
-            'name': this.attr('').nullable(),
+            'name': this.attr(''),
 
         };
     }

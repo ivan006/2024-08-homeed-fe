@@ -49,7 +49,7 @@ export default class User extends MyBaseModel {
     return {
       'id': this.attr('').nullable(),
       'old_id': this.attr('').nullable(),
-      'name': this.attr('').nullable(),
+      'name': this.attr(''),
       'email': this.attr('').nullable(),
       'email_verified_at': this.attr('').nullable(),
       'password': this.attr('').nullable(),
