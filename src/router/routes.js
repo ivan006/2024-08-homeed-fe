@@ -30,13 +30,21 @@ const routes = [
         component: () => import('layouts/MainLayout.vue'),
         children: [
           {
+            path: 'my-account',
+            name: 'my-account',
+            component: () => import('pages/my-account/MyAccountRead.vue'),
+            meta: {
+              breadcrumbName: 'My Account',
+              breadcrumbParentName: '',
+            },
+          },
+          {
             path: 'posts',
             name: 'posts',
             component: () => import('pages/posts/PostsListComp.vue'),
             meta: {
               breadcrumbName: 'Posts',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -46,7 +54,6 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: 'posts',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -56,7 +63,6 @@ const routes = [
             meta: {
               breadcrumbName: 'Attendances',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -66,7 +72,6 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/attendances',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -76,7 +81,6 @@ const routes = [
             meta: {
               breadcrumbName: 'Children',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -85,8 +89,7 @@ const routes = [
             component: () => import('src/pages/lists/children/ChildRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParentName: '/lists/posts',
-              meta: { requiresAuth: false }
+              breadcrumbParentName: '/lists/children',
             },
           },
           {
@@ -96,7 +99,6 @@ const routes = [
             meta: {
               breadcrumbName: 'Events',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -106,7 +108,6 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/events',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -116,7 +117,6 @@ const routes = [
             meta: {
               breadcrumbName: 'Failed-jobs',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -126,7 +126,6 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/failed-jobs',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -136,7 +135,6 @@ const routes = [
             meta: {
               breadcrumbName: 'Families',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -146,7 +144,6 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/families',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -156,7 +153,6 @@ const routes = [
             meta: {
               breadcrumbName: 'Memberships',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -166,7 +162,6 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/memberships',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -176,7 +171,6 @@ const routes = [
             meta: {
               breadcrumbName: 'Migrations',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -186,7 +180,6 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/migrations',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -196,7 +189,6 @@ const routes = [
             meta: {
               breadcrumbName: 'Password-reset-tokens',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -206,7 +198,6 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/password-reset-tokens',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -216,7 +207,6 @@ const routes = [
             meta: {
               breadcrumbName: 'Personal-access-tokens',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -226,7 +216,6 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/personal-access-tokens',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -236,7 +225,6 @@ const routes = [
             meta: {
               breadcrumbName: 'Post-tags',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -246,7 +234,6 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/post-tags',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -256,7 +243,6 @@ const routes = [
             meta: {
               breadcrumbName: 'Posts',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -266,7 +252,6 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/posts',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -276,7 +261,6 @@ const routes = [
             meta: {
               breadcrumbName: 'Schools',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -286,7 +270,6 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/schools',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -296,7 +279,6 @@ const routes = [
             meta: {
               breadcrumbName: 'Tags',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -306,7 +288,6 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/tags',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -316,7 +297,6 @@ const routes = [
             meta: {
               breadcrumbName: 'Users',
               breadcrumbParentName: '',
-              meta: { requiresAuth: false }
             },
           },
           {
@@ -326,7 +306,6 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/users',
-              meta: { requiresAuth: false }
             },
           }
         ],

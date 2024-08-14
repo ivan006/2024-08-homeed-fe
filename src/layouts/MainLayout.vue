@@ -73,6 +73,10 @@ const linksList = [
   // },
 
   {
+    title: 'My Account',
+    route: '/my-account',
+  },
+  {
     title: 'Attendances',
     route: '/lists/attendances',
   },
