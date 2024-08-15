@@ -8,11 +8,11 @@ export default class Attendance extends MyBaseModel {
     static entityUrl = '/api/attendances';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static openRecord(pKeyValue, item, router){
+    static openRecord(pVal, item, router){
       router.push({
         name: '/lists/attendances/:rId/:rName',
         params: {
-          rId: pKeyValue,
+          rId: pVal,
         },
       })
     }

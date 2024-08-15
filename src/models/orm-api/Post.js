@@ -5,11 +5,11 @@ export default class Post extends MyBaseModel {
     static entityUrl = '/api/posts';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static openRecord(pKeyValue, item, router){
+    static openRecord(pVal, item, router){
       router.push({
         name: '/lists/posts/:rId/:rName',
         params: {
-          rId: pKeyValue,
+          rId: pVal,
         },
       })
     }

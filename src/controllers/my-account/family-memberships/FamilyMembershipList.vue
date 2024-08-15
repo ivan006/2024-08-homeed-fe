@@ -42,12 +42,12 @@ export default {
       },
   },
   methods: {
-          openRecord(id, item, router) {
+          openRecord(pVal, item, router) {
               router.push({
                   name: '/lists/family-memberships/:rId/:rName',
                   params: {
-                      rId: item.id,
-                      rName: item.name,
+                      rId: pVal,
+                      rName: pVal,
                   },
               })
           },

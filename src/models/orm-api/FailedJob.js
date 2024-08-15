@@ -5,11 +5,11 @@ export default class FailedJob extends MyBaseModel {
     static entityUrl = '/api/failed-jobs';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static openRecord(pKeyValue, item, router){
+    static openRecord(pVal, item, router){
       router.push({
         name: '/lists/failed-jobs/:rId/:rName',
         params: {
-          rId: pKeyValue,
+          rId: pVal,
         },
       })
     }

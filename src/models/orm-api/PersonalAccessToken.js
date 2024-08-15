@@ -5,11 +5,11 @@ export default class PersonalAccessToken extends MyBaseModel {
     static entityUrl = '/api/personal-access-tokens';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static openRecord(pKeyValue, item, router){
+    static openRecord(pVal, item, router){
       router.push({
         name: '/lists/personal-access-tokens/:rId/:rName',
         params: {
-          rId: pKeyValue,
+          rId: pVal,
         },
       })
     }
