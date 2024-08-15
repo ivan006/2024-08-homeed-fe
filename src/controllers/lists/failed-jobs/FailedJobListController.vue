@@ -1,0 +1,26 @@
+<template>
+    <div>
+        <failedJobList
+            :parentKeyValuePair="parentKeyValuePair"
+            :fetchFlags="fetchFlags"
+        />
+    </div>
+</template>
+
+<script>
+import failedJobList from 'src/views/lists/failed-jobs/FailedJobList.vue'
+
+export default {
+    name: 'FailedJob-list-controller',
+    components: {
+        failedJobList,
+    },
+
+    data() {
+        return {
+            parentKeyValuePair: {},
+            fetchFlags: {}
+        }
+    },
+}
+</script>
