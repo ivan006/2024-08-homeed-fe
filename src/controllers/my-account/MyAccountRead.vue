@@ -33,31 +33,17 @@
               class="bordered-expansion-item"
               @show="renderSection1=true"
             >
-              <FamilyMembershipList
-                v-if="renderSection1"
-                :currentParentRel='{
-                  "currentParentRecord": {
-                    "item": {
-                      "id": +session.user.id,
-                    },
-                    model: FamilyMembership,
-                    "foreignKeyToParentRecord": "user_id"
-                  }
-                }'
-                :fetchFlags="{
-                  // whereHas: {
-                  //   bookings: {
-                  //     super_booking_id: +route.params.jId,
-                  //     status: 'active',
-                  //     roomFor: 'parents',
-                  //   }
-                  // }
-                  filter: {
+              <div class="q-pa-md">
 
-                  }
+                <familyMembershipList
+                  v-if="renderSection1"
+                  :parentKeyValuePair="{
+                  key: 'user_id',
+                  value: +session.user.id
                 }"
 
-              />
+                />
+              </div>
             </q-expansion-item>
           </q-card>
 
@@ -77,7 +63,7 @@ import {computed, ref} from 'vue';
 import User from 'src/models/User'
 import VueCookies from "vue-cookies";
 // import FamilyList from "pages/my-account/families/FamilyList.vue";
-import FamilyMembershipList from "src/controllers/my-account/family-memberships/FamilyMembershipList.vue";
+import familyMembershipList from 'src/views/lists/family-memberships/FamilyMembershipList.vue'
 import FamilyMembership from 'src/models/orm-api/FamilyMembership'
 
 const renderSection1 = ref(false);

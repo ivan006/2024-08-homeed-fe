@@ -10,7 +10,7 @@
                 />
         </q-card>
     </div>
-
+</template>
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
 import Family from 'src/models/orm-api/Family'
