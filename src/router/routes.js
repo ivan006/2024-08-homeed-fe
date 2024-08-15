@@ -41,7 +41,7 @@ const routes = [
           {
             path: '/lists/attendances',
             name: '/lists/attendances',
-            component: () => import('src/pages/lists/attendances/AttendanceList.vue'),
+            component: () => import('src/controllers/lists/attendances/AttendanceListController.vue'),
             meta: {
               breadcrumbName: 'Attendances',
               breadcrumbParentName: '',
@@ -50,7 +50,7 @@ const routes = [
           {
             path: '/lists/attendances/:rId/:rName',
             name: '/lists/attendances/:rId/:rName',
-            component: () => import('src/pages/lists/attendances/AttendanceRead.vue'),
+            component: () => import('src/controllers/lists/attendances/AttendanceReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/attendances',
@@ -59,7 +59,7 @@ const routes = [
           {
             path: '/lists/children',
             name: '/lists/children',
-            component: () => import('src/pages/lists/children/ChildList.vue'),
+            component: () => import('src/controllers/lists/children/ChildListController.vue'),
             meta: {
               breadcrumbName: 'Children',
               breadcrumbParentName: '',
@@ -68,7 +68,7 @@ const routes = [
           {
             path: '/lists/children/:rId/:rName',
             name: '/lists/children/:rId/:rName',
-            component: () => import('src/pages/lists/children/ChildRead.vue'),
+            component: () => import('src/controllers/lists/children/ChildReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/children',
@@ -77,7 +77,7 @@ const routes = [
           {
             path: '/lists/events',
             name: '/lists/events',
-            component: () => import('src/pages/lists/events/EventList.vue'),
+            component: () => import('src/controllers/lists/events/EventListController.vue'),
             meta: {
               breadcrumbName: 'Events',
               breadcrumbParentName: '',
@@ -86,7 +86,7 @@ const routes = [
           {
             path: '/lists/events/:rId/:rName',
             name: '/lists/events/:rId/:rName',
-            component: () => import('src/pages/lists/events/EventRead.vue'),
+            component: () => import('src/controllers/lists/events/EventReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/events',
@@ -95,7 +95,7 @@ const routes = [
           {
             path: '/lists/failed-jobs',
             name: '/lists/failed-jobs',
-            component: () => import('src/pages/lists/failed-jobs/FailedJobList.vue'),
+            component: () => import('src/controllers/lists/failed-jobs/FailedJobListController.vue'),
             meta: {
               breadcrumbName: 'FailedJobs',
               breadcrumbParentName: '',
@@ -104,7 +104,7 @@ const routes = [
           {
             path: '/lists/failed-jobs/:rId/:rName',
             name: '/lists/failed-jobs/:rId/:rName',
-            component: () => import('src/pages/lists/failed-jobs/FailedJobRead.vue'),
+            component: () => import('src/controllers/lists/failed-jobs/FailedJobReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/failed-jobs',
@@ -113,7 +113,7 @@ const routes = [
           {
             path: '/lists/families',
             name: '/lists/families',
-            component: () => import('src/pages/lists/families/FamilyList.vue'),
+            component: () => import('src/controllers/lists/families/FamilyListController.vue'),
             meta: {
               breadcrumbName: 'Families',
               breadcrumbParentName: '',
@@ -122,7 +122,7 @@ const routes = [
           {
             path: '/lists/families/:rId/:rName',
             name: '/lists/families/:rId/:rName',
-            component: () => import('src/pages/lists/families/FamilyRead.vue'),
+            component: () => import('src/controllers/lists/families/FamilyReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/families',
@@ -131,7 +131,7 @@ const routes = [
           {
             path: '/lists/family-memberships',
             name: '/lists/family-memberships',
-            component: () => import('src/pages/lists/family-memberships/FamilyMembershipList.vue'),
+            component: () => import('src/controllers/lists/family-memberships/FamilyMembershipListController.vue'),
             meta: {
               breadcrumbName: 'FamilyMemberships',
               breadcrumbParentName: '',
@@ -140,7 +140,7 @@ const routes = [
           {
             path: '/lists/family-memberships/:rId/:rName',
             name: '/lists/family-memberships/:rId/:rName',
-            component: () => import('src/pages/lists/family-memberships/FamilyMembershipRead.vue'),
+            component: () => import('src/controllers/lists/family-memberships/FamilyMembershipReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/family-memberships',
@@ -149,7 +149,7 @@ const routes = [
           {
             path: '/lists/migrations',
             name: '/lists/migrations',
-            component: () => import('src/pages/lists/migrations/MigrationList.vue'),
+            component: () => import('src/controllers/lists/migrations/MigrationListController.vue'),
             meta: {
               breadcrumbName: 'Migrations',
               breadcrumbParentName: '',
@@ -158,7 +158,7 @@ const routes = [
           {
             path: '/lists/migrations/:rId/:rName',
             name: '/lists/migrations/:rId/:rName',
-            component: () => import('src/pages/lists/migrations/MigrationRead.vue'),
+            component: () => import('src/controllers/lists/migrations/MigrationReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/migrations',
@@ -167,7 +167,7 @@ const routes = [
           {
             path: '/lists/password-reset-tokens',
             name: '/lists/password-reset-tokens',
-            component: () => import('src/pages/lists/password-reset-tokens/PasswordResetTokenList.vue'),
+            component: () => import('src/controllers/lists/password-reset-tokens/PasswordResetTokenListController.vue'),
             meta: {
               breadcrumbName: 'PasswordResetTokens',
               breadcrumbParentName: '',
@@ -176,7 +176,7 @@ const routes = [
           {
             path: '/lists/password-reset-tokens/:rId/:rName',
             name: '/lists/password-reset-tokens/:rId/:rName',
-            component: () => import('src/pages/lists/password-reset-tokens/PasswordResetTokenRead.vue'),
+            component: () => import('src/controllers/lists/password-reset-tokens/PasswordResetTokenReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/password-reset-tokens',
@@ -185,7 +185,7 @@ const routes = [
           {
             path: '/lists/personal-access-tokens',
             name: '/lists/personal-access-tokens',
-            component: () => import('src/pages/lists/personal-access-tokens/PersonalAccessTokenList.vue'),
+            component: () => import('src/controllers/lists/personal-access-tokens/PersonalAccessTokenListController.vue'),
             meta: {
               breadcrumbName: 'PersonalAccessTokens',
               breadcrumbParentName: '',
@@ -194,7 +194,7 @@ const routes = [
           {
             path: '/lists/personal-access-tokens/:rId/:rName',
             name: '/lists/personal-access-tokens/:rId/:rName',
-            component: () => import('src/pages/lists/personal-access-tokens/PersonalAccessTokenRead.vue'),
+            component: () => import('src/controllers/lists/personal-access-tokens/PersonalAccessTokenReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/personal-access-tokens',
@@ -203,7 +203,7 @@ const routes = [
           {
             path: '/lists/post-tags',
             name: '/lists/post-tags',
-            component: () => import('src/pages/lists/post-tags/PostTagList.vue'),
+            component: () => import('src/controllers/lists/post-tags/PostTagListController.vue'),
             meta: {
               breadcrumbName: 'PostTags',
               breadcrumbParentName: '',
@@ -212,7 +212,7 @@ const routes = [
           {
             path: '/lists/post-tags/:rId/:rName',
             name: '/lists/post-tags/:rId/:rName',
-            component: () => import('src/pages/lists/post-tags/PostTagRead.vue'),
+            component: () => import('src/controllers/lists/post-tags/PostTagReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/post-tags',
@@ -221,7 +221,7 @@ const routes = [
           {
             path: '/lists/posts',
             name: '/lists/posts',
-            component: () => import('src/pages/lists/posts/PostList.vue'),
+            component: () => import('src/controllers/lists/posts/PostListController.vue'),
             meta: {
               breadcrumbName: 'Posts',
               breadcrumbParentName: '',
@@ -230,7 +230,7 @@ const routes = [
           {
             path: '/lists/posts/:rId/:rName',
             name: '/lists/posts/:rId/:rName',
-            component: () => import('src/pages/lists/posts/PostRead.vue'),
+            component: () => import('src/controllers/lists/posts/PostReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/posts',
@@ -239,7 +239,7 @@ const routes = [
           {
             path: '/lists/school-family-enrollments',
             name: '/lists/school-family-enrollments',
-            component: () => import('src/pages/lists/school-family-enrollments/SchoolFamilyEnrollmentList.vue'),
+            component: () => import('src/controllers/lists/school-family-enrollments/SchoolFamilyEnrollmentListController.vue'),
             meta: {
               breadcrumbName: 'SchoolFamilyEnrollments',
               breadcrumbParentName: '',
@@ -248,7 +248,7 @@ const routes = [
           {
             path: '/lists/school-family-enrollments/:rId/:rName',
             name: '/lists/school-family-enrollments/:rId/:rName',
-            component: () => import('src/pages/lists/school-family-enrollments/SchoolFamilyEnrollmentRead.vue'),
+            component: () => import('src/controllers/lists/school-family-enrollments/SchoolFamilyEnrollmentReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/school-family-enrollments',
@@ -257,7 +257,7 @@ const routes = [
           {
             path: '/lists/school-partnerships',
             name: '/lists/school-partnerships',
-            component: () => import('src/pages/lists/school-partnerships/SchoolPartnershipList.vue'),
+            component: () => import('src/controllers/lists/school-partnerships/SchoolPartnershipListController.vue'),
             meta: {
               breadcrumbName: 'SchoolPartnerships',
               breadcrumbParentName: '',
@@ -266,7 +266,7 @@ const routes = [
           {
             path: '/lists/school-partnerships/:rId/:rName',
             name: '/lists/school-partnerships/:rId/:rName',
-            component: () => import('src/pages/lists/school-partnerships/SchoolPartnershipRead.vue'),
+            component: () => import('src/controllers/lists/school-partnerships/SchoolPartnershipReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/school-partnerships',
@@ -275,7 +275,7 @@ const routes = [
           {
             path: '/lists/schools',
             name: '/lists/schools',
-            component: () => import('src/pages/lists/schools/SchoolList.vue'),
+            component: () => import('src/controllers/lists/schools/SchoolListController.vue'),
             meta: {
               breadcrumbName: 'Schools',
               breadcrumbParentName: '',
@@ -284,7 +284,7 @@ const routes = [
           {
             path: '/lists/schools/:rId/:rName',
             name: '/lists/schools/:rId/:rName',
-            component: () => import('src/pages/lists/schools/SchoolRead.vue'),
+            component: () => import('src/controllers/lists/schools/SchoolReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/schools',
@@ -293,7 +293,7 @@ const routes = [
           {
             path: '/lists/tags',
             name: '/lists/tags',
-            component: () => import('src/pages/lists/tags/TagList.vue'),
+            component: () => import('src/controllers/lists/tags/TagListController.vue'),
             meta: {
               breadcrumbName: 'Tags',
               breadcrumbParentName: '',
@@ -302,7 +302,7 @@ const routes = [
           {
             path: '/lists/tags/:rId/:rName',
             name: '/lists/tags/:rId/:rName',
-            component: () => import('src/pages/lists/tags/TagRead.vue'),
+            component: () => import('src/controllers/lists/tags/TagReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/tags',
@@ -311,7 +311,7 @@ const routes = [
           {
             path: '/lists/users',
             name: '/lists/users',
-            component: () => import('src/pages/lists/users/UserList.vue'),
+            component: () => import('src/controllers/lists/users/UserListController.vue'),
             meta: {
               breadcrumbName: 'Users',
               breadcrumbParentName: '',
@@ -320,7 +320,7 @@ const routes = [
           {
             path: '/lists/users/:rId/:rName',
             name: '/lists/users/:rId/:rName',
-            component: () => import('src/pages/lists/users/UserRead.vue'),
+            component: () => import('src/controllers/lists/users/UserReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/users',
