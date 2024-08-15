@@ -1,16 +1,12 @@
 <template>
-    <div>
-        <q-card class="q-pa-md q-mt-md">
-            <SuperTable
-                :showMap="true"
-                :model="superTableModel"
-                @clickRow="openRecord"
-                :displayMapField="false"
-                :parentKeyValuePair="parentKeyValuePair"
-                :fetchFlags="fetchFlags"
-            />
-        </q-card>
-    </div>
+  <SuperTable
+    :showMap="true"
+    :model="superTableModel"
+    @clickRow="openRecord"
+    :displayMapField="false"
+    :parentKeyValuePair="parentKeyValuePair"
+    :fetchFlags="fetchFlags"
+  />
 </template>
 
 <script>
