@@ -32,19 +32,22 @@
               class="bordered-expansion-item"
               @show="renderSection1=true"
             >
-              <!--<AdultsListComp-->
-              <!--  v-if="renderSection1"-->
-              <!--  :fetchFlags="{-->
-              <!--    whereHas: {-->
-              <!--      bookings: {-->
-              <!--        super_booking_id: +route.params.jId,-->
-              <!--        status: 'active',-->
-              <!--        roomFor: 'parents',-->
-              <!--      }-->
-              <!--    }-->
-              <!--  }"-->
+              <FamilyMembershipList
+                v-if="renderSection1"
+                :fetchFlags="{
+                  // whereHas: {
+                  //   bookings: {
+                  //     super_booking_id: +route.params.jId,
+                  //     status: 'active',
+                  //     roomFor: 'parents',
+                  //   }
+                  // }
+                  filter: {
 
-              <!--/>-->
+                  }
+                }"
+
+              />
             </q-expansion-item>
           </q-card>
 
@@ -63,6 +66,8 @@ const route = useRoute();
 import {computed, ref} from 'vue';
 import User from 'src/models/User'
 import VueCookies from "vue-cookies";
+// import FamilyList from "pages/my-account/families/FamilyList.vue";
+import FamilyMembershipList from "pages/my-account/family-memberships/FamilyMembershipList.vue";
 
 const renderSection1 = ref(false);
 
