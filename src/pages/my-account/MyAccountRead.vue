@@ -6,14 +6,15 @@
         :model="User"
         :id="+session.user.id"
         :templateOverview="templateListGrid"
-        hideRelations
+
         @initialLoadHappened="initialLoadHappened = true"
         :relationships="[
           // 'bookings.clients',
         ]"
+        hideRelations
       >
       </SuperRecord>
-
+      <!--hideRelations-->
 
     </q-card>
 
@@ -27,13 +28,22 @@
 
           <q-card class="q-mb-md">
             <q-expansion-item
-              label="Adults"
+              label="Family Memberships"
               expand-separator
               class="bordered-expansion-item"
               @show="renderSection1=true"
             >
               <FamilyMembershipList
                 v-if="renderSection1"
+                :currentParentRel='{
+                  "currentParentRecord": {
+                    "item": {
+                      "id": +session.user.id,
+                    },
+                    model: FamilyMembership,
+                    "foreignKeyToParentRecord": "user_id"
+                  }
+                }'
                 :fetchFlags="{
                   // whereHas: {
                   //   bookings: {
@@ -68,6 +78,7 @@ import User from 'src/models/User'
 import VueCookies from "vue-cookies";
 // import FamilyList from "pages/my-account/families/FamilyList.vue";
 import FamilyMembershipList from "pages/my-account/family-memberships/FamilyMembershipList.vue";
+import FamilyMembership from 'src/models/orm-api/FamilyMembership'
 
 const renderSection1 = ref(false);
 

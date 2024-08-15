@@ -7,6 +7,7 @@
                 @clickRow="openRecord"
                 :displayMapField="false"
                 :fetchFlags="fetchFlags"
+                :currentParentRel="currentParentRel"
             />
         </q-card>
     </div>
@@ -27,6 +28,12 @@ export default {
       type: Object,
       default() {
         return {};
+      },
+    },
+    currentParentRel: {
+      type: Object,
+      default() {
+        return null;
       },
     },
   },
