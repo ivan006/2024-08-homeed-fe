@@ -7,22 +7,22 @@ const routes = [
     children: [
       {
         path: 'login-old',
-        component: () => import('pages/auth/LoginPageOld.vue'),
+        component: () => import('src/controllers/auth/LoginPageOld.vue'),
         meta: { requiresAuth: false }
       },
       {
         path: 'login',
-        component: () => import('pages/auth/SigninView.vue'),
+        component: () => import('src/controllers/auth/SigninView.vue'),
         meta: { requiresAuth: false }
       },
       {
         path: 'register',
-        component: () => import('pages/auth/JoinView.vue'),
+        component: () => import('src/controllers/auth/JoinView.vue'),
         meta: { requiresAuth: false }
       },
       {
         path: 'guest-registration',
-        component: () => import('pages/guest-registration/guestRegistration.vue'),
+        component: () => import('src/controllers/guest-registration/guestRegistration.vue'),
         meta: { requiresAuth: false }
       },
       {
@@ -32,7 +32,7 @@ const routes = [
           {
             path: 'my-account',
             name: 'my-account',
-            component: () => import('pages/my-account/MyAccountRead.vue'),
+            component: () => import('src/controllers/my-account/MyAccountRead.vue'),
             meta: {
               breadcrumbName: 'My Account',
               breadcrumbParentName: '',
@@ -332,7 +332,7 @@ const routes = [
   },
   {
     path: '/:catchAll(.*)*',
-    component: () => import('pages/ErrorNotFound.vue'),
+    component: () => import('src/controllers/ErrorNotFound.vue'),
     meta: { requiresAuth: false }
   }
 ];
