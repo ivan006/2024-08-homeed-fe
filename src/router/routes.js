@@ -97,7 +97,7 @@ const routes = [
             name: '/lists/failed-jobs',
             component: () => import('src/pages/lists/failed-jobs/FailedJobList.vue'),
             meta: {
-              breadcrumbName: 'Failed-jobs',
+              breadcrumbName: 'FailedJobs',
               breadcrumbParentName: '',
             },
           },
@@ -129,21 +129,21 @@ const routes = [
             },
           },
           {
-            path: '/lists/memberships',
-            name: '/lists/memberships',
-            component: () => import('src/pages/lists/memberships/MembershipList.vue'),
+            path: '/lists/family-memberships',
+            name: '/lists/family-memberships',
+            component: () => import('src/pages/lists/family-memberships/FamilyMembershipList.vue'),
             meta: {
-              breadcrumbName: 'Memberships',
+              breadcrumbName: 'FamilyMemberships',
               breadcrumbParentName: '',
             },
           },
           {
-            path: '/lists/memberships/:rId/:rName',
-            name: '/lists/memberships/:rId/:rName',
-            component: () => import('src/pages/lists/memberships/MembershipRead.vue'),
+            path: '/lists/family-memberships/:rId/:rName',
+            name: '/lists/family-memberships/:rId/:rName',
+            component: () => import('src/pages/lists/family-memberships/FamilyMembershipRead.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParentName: '/lists/memberships',
+              breadcrumbParentName: '/lists/family-memberships',
             },
           },
           {
@@ -169,7 +169,7 @@ const routes = [
             name: '/lists/password-reset-tokens',
             component: () => import('src/pages/lists/password-reset-tokens/PasswordResetTokenList.vue'),
             meta: {
-              breadcrumbName: 'Password-reset-tokens',
+              breadcrumbName: 'PasswordResetTokens',
               breadcrumbParentName: '',
             },
           },
@@ -187,7 +187,7 @@ const routes = [
             name: '/lists/personal-access-tokens',
             component: () => import('src/pages/lists/personal-access-tokens/PersonalAccessTokenList.vue'),
             meta: {
-              breadcrumbName: 'Personal-access-tokens',
+              breadcrumbName: 'PersonalAccessTokens',
               breadcrumbParentName: '',
             },
           },
@@ -205,7 +205,7 @@ const routes = [
             name: '/lists/post-tags',
             component: () => import('src/pages/lists/post-tags/PostTagList.vue'),
             meta: {
-              breadcrumbName: 'Post-tags',
+              breadcrumbName: 'PostTags',
               breadcrumbParentName: '',
             },
           },
@@ -234,6 +234,42 @@ const routes = [
             meta: {
               breadcrumbName: ':rName',
               breadcrumbParentName: '/lists/posts',
+            },
+          },
+          {
+            path: '/lists/school-family-enrollments',
+            name: '/lists/school-family-enrollments',
+            component: () => import('src/pages/lists/school-family-enrollments/SchoolFamilyEnrollmentList.vue'),
+            meta: {
+              breadcrumbName: 'SchoolFamilyEnrollments',
+              breadcrumbParentName: '',
+            },
+          },
+          {
+            path: '/lists/school-family-enrollments/:rId/:rName',
+            name: '/lists/school-family-enrollments/:rId/:rName',
+            component: () => import('src/pages/lists/school-family-enrollments/SchoolFamilyEnrollmentRead.vue'),
+            meta: {
+              breadcrumbName: ':rName',
+              breadcrumbParentName: '/lists/school-family-enrollments',
+            },
+          },
+          {
+            path: '/lists/school-partnerships',
+            name: '/lists/school-partnerships',
+            component: () => import('src/pages/lists/school-partnerships/SchoolPartnershipList.vue'),
+            meta: {
+              breadcrumbName: 'SchoolPartnerships',
+              breadcrumbParentName: '',
+            },
+          },
+          {
+            path: '/lists/school-partnerships/:rId/:rName',
+            name: '/lists/school-partnerships/:rId/:rName',
+            component: () => import('src/pages/lists/school-partnerships/SchoolPartnershipRead.vue'),
+            meta: {
+              breadcrumbName: ':rName',
+              breadcrumbParentName: '/lists/school-partnerships',
             },
           },
           {
