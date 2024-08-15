@@ -14,7 +14,7 @@ export default class Family extends MyBaseModel {
         name: '/lists/families/:rId/:rName',
         params: {
           rId: pKeyValue,
-          rName: pKeyValue,
+          rName: item.name,
         },
       })
     }

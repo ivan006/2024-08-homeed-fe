@@ -38,8 +38,8 @@ export default {
         },
     },
     methods: {
-        openRecord(item) {
-            this.$router.push({
+        openRecord(id, item, router) {
+            router.push({
                 name: '/lists/attendances/:rId/:rName',
                 params: {
                     rId: item.id,
