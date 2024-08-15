@@ -6,6 +6,8 @@
                 :model="superTableModel"
                 @clickRow="openRecord"
                 :displayMapField="false"
+                :parentKeyValuePair="parentKeyValuePair"
+                :fetchFlags="fetchFlags"
             />
         </q-card>
     </div>
@@ -14,12 +16,22 @@
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
 import Attendance from 'src/models/orm-api/Attendance'
-import router from 'src/router'
 
 export default {
     name: 'Attendance-list',
     components: {
         SuperTable,
+    },
+
+    props: {
+        parentKeyValuePair: {
+            type: Object,
+            default: () => ({})
+        },
+        fetchFlags: {
+            type: Object,
+            default: () => ({})
+        }
     },
 
     computed: {
@@ -30,10 +42,10 @@ export default {
     methods: {
         openRecord(item) {
             this.$router.push({
-                name: '/lists/attendances/:rId/:rName',
+                name: '/lists/attendance-s/:rId/:rName',
                 params: {
                     rId: item.id,
-                    rName: `${item.event.name} ${item.child.name}`,
+                    rName: item.name,
                 },
             })
         },

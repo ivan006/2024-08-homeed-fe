@@ -6,6 +6,8 @@
                 :model="superTableModel"
                 @clickRow="openRecord"
                 :displayMapField="false"
+                :parentKeyValuePair="parentKeyValuePair"
+                :fetchFlags="fetchFlags"
             />
         </q-card>
     </div>
@@ -13,13 +15,23 @@
 
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
-import User from 'src/models/User'
-import router from 'src/router'
+import User from 'src/models/orm-api/User'
 
 export default {
     name: 'User-list',
     components: {
         SuperTable,
+    },
+
+    props: {
+        parentKeyValuePair: {
+            type: Object,
+            default: () => ({})
+        },
+        fetchFlags: {
+            type: Object,
+            default: () => ({})
+        }
     },
 
     computed: {

@@ -6,6 +6,8 @@
                 :model="superTableModel"
                 @clickRow="openRecord"
                 :displayMapField="false"
+                :parentKeyValuePair="parentKeyValuePair"
+                :fetchFlags="fetchFlags"
             />
         </q-card>
     </div>
@@ -14,12 +16,22 @@
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
 import PostTag from 'src/models/orm-api/PostTag'
-import router from 'src/router'
 
 export default {
     name: 'PostTag-list',
     components: {
         SuperTable,
+    },
+
+    props: {
+        parentKeyValuePair: {
+            type: Object,
+            default: () => ({})
+        },
+        fetchFlags: {
+            type: Object,
+            default: () => ({})
+        }
     },
 
     computed: {
