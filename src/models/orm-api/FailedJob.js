@@ -1,12 +1,11 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import router from 'src/router';
 
 export default class FailedJob extends MyBaseModel {
     static entity = 'failedjob';
     static entityUrl = '/api/failed-jobs';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static openRecord(pKey){
+    static openRecord(pKey, router){
       router.push({
         name: '/lists/failed-jobs/:rId/:rName',
         params: {

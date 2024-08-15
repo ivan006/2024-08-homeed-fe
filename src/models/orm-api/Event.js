@@ -1,5 +1,4 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import router from 'src/router';
 import User from 'src/models/User';
 import School from 'src/models/orm-api/School';
 import Attendance from 'src/models/orm-api/Attendance';
@@ -9,7 +8,7 @@ export default class Event extends MyBaseModel {
     static entityUrl = '/api/events';
     static primaryKey = 'id';
     static titleKey = 'name';
-    static openRecord(pKey){
+    static openRecord(pKey, router){
       router.push({
         name: '/lists/events/:rId/:rName',
         params: {

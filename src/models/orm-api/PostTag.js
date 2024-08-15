@@ -1,12 +1,11 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import router from 'src/router';
 
 export default class PostTag extends MyBaseModel {
     static entity = 'posttag';
     static entityUrl = '/api/post-tags';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static openRecord(pKey){
+    static openRecord(pKey, router){
       router.push({
         name: '/lists/post-tags/:rId/:rName',
         params: {

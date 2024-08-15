@@ -1,12 +1,11 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import router from 'src/router';
 
 export default class Post extends MyBaseModel {
     static entity = 'post';
     static entityUrl = '/api/posts';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static openRecord(pKey){
+    static openRecord(pKey, router){
       router.push({
         name: '/lists/posts/:rId/:rName',
         params: {

@@ -1,12 +1,11 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import router from 'src/router';
 
 export default class Migration extends MyBaseModel {
     static entity = 'migration';
     static entityUrl = '/api/migrations';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static openRecord(pKey){
+    static openRecord(pKey, router){
       router.push({
         name: '/lists/migrations/:rId/:rName',
         params: {

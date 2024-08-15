@@ -1,12 +1,11 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import router from 'src/router';
 
 export default class PasswordResetToken extends MyBaseModel {
     static entity = 'passwordresettoken';
     static entityUrl = '/api/password-reset-tokens';
     static primaryKey = 'email';
     static titleKey = 'email';
-    static openRecord(pKey){
+    static openRecord(pKey, router){
       router.push({
         name: '/lists/password-reset-tokens/:rId/:rName',
         params: {

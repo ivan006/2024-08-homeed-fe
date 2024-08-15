@@ -1,12 +1,11 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import router from 'src/router';
 
 export default class PersonalAccessToken extends MyBaseModel {
     static entity = 'personalaccesstoken';
     static entityUrl = '/api/personal-access-tokens';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static openRecord(pKey){
+    static openRecord(pKey, router){
       router.push({
         name: '/lists/personal-access-tokens/:rId/:rName',
         params: {

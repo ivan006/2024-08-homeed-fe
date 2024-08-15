@@ -1,5 +1,4 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import router from 'src/router';
 import User from 'src/models/User';
 import Child from 'src/models/orm-api/Child';
 import FamilyMembership from 'src/models/orm-api/FamilyMembership';
@@ -10,7 +9,7 @@ export default class Family extends MyBaseModel {
     static entityUrl = '/api/families';
     static primaryKey = 'id';
     static titleKey = 'name';
-    static openRecord(pKey){
+    static openRecord(pKey, router){
       router.push({
         name: '/lists/families/:rId/:rName',
         params: {

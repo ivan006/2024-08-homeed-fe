@@ -1,5 +1,4 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import router from 'src/router';
 import School from 'src/models/orm-api/School';
 import User from 'src/models/User';
 
@@ -8,7 +7,7 @@ export default class SchoolPartnership extends MyBaseModel {
     static entityUrl = '/api/school-partnerships';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static openRecord(pKey){
+    static openRecord(pKey, router){
       router.push({
         name: '/lists/school-partnerships/:rId/:rName',
         params: {
