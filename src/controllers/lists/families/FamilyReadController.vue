@@ -1,9 +1,13 @@
 <template>
-    <div>
-        <q-card class="q-pa-md q-mt-md">
-        <familyRead :id="id" />
+  <div>
+    <q-card class="q-mt-md">
+      <familyRead
+        :id="id"
+        :templateOverview="templateListGrid"
+        hideRelations
+      />
     </q-card>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -17,7 +21,32 @@ export default {
 
     data() {
         return {
-            id: +this.$route.params.rId
+            id: +this.$route.params.rId,
+          templateListGrid: {
+              class: "q-pa-md q-col-gutter-md",
+              cols: [
+                {
+                  width: 12,
+                  dataPoint: {
+                    type: "function",
+                    function: (item) => `${item.name}`,
+                    label: "",
+                    tag: "div",
+                    class: "text-h6",
+                    hideLabel: true,
+                  },
+                },
+                {
+                  width: 3,
+                  dataPoint: {
+                    type: "function",
+                    function: (item) => `${item.email}`,
+                    label: "Email",
+                    // xOrientation: true,
+                  },
+                },
+              ],
+            }
         }
     },
 }
