@@ -10,6 +10,7 @@ export default class Tag extends MyBaseModel {
         name: '/lists/tags/:rId/:rName',
         params: {
           rId: pVal,
+          rName: pVal,
         },
       })
     }

@@ -10,6 +10,7 @@ export default class PasswordResetToken extends MyBaseModel {
         name: '/lists/password-reset-tokens/:rId/:rName',
         params: {
           rId: pVal,
+          rName: pVal,
         },
       })
     }

@@ -10,6 +10,7 @@ export default class PersonalAccessToken extends MyBaseModel {
         name: '/lists/personal-access-tokens/:rId/:rName',
         params: {
           rId: pVal,
+          rName: pVal,
         },
       })
     }

@@ -10,6 +10,7 @@ export default class PostTag extends MyBaseModel {
         name: '/lists/post-tags/:rId/:rName',
         params: {
           rId: pVal,
+          rName: pVal,
         },
       })
     }

@@ -10,6 +10,7 @@ export default class Migration extends MyBaseModel {
         name: '/lists/migrations/:rId/:rName',
         params: {
           rId: pVal,
+          rName: pVal,
         },
       })
     }

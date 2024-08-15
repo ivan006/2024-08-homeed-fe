@@ -13,6 +13,7 @@ export default class Attendance extends MyBaseModel {
         name: '/lists/attendances/:rId/:rName',
         params: {
           rId: pVal,
+          rName: pVal,
         },
       })
     }

@@ -10,6 +10,7 @@ export default class FailedJob extends MyBaseModel {
         name: '/lists/failed-jobs/:rId/:rName',
         params: {
           rId: pVal,
+          rName: pVal,
         },
       })
     }

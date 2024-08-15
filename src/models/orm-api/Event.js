@@ -13,6 +13,7 @@ export default class Event extends MyBaseModel {
         name: '/lists/events/:rId/:rName',
         params: {
           rId: pVal,
+          rName: pVal,
         },
       })
     }

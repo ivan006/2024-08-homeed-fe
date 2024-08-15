@@ -10,6 +10,7 @@ export default class Post extends MyBaseModel {
         name: '/lists/posts/:rId/:rName',
         params: {
           rId: pVal,
+          rName: pVal,
         },
       })
     }

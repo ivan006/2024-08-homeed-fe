@@ -13,6 +13,7 @@ export default class Child extends MyBaseModel {
         name: '/lists/children/:rId/:rName',
         params: {
           rId: pVal,
+          rName: pVal,
         },
       })
     }
