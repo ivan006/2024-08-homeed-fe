@@ -38,9 +38,9 @@
                 <familyMembershipList
                   v-if="renderSection1"
                   :parentKeyValuePair="{
-                  key: 'user_id',
-                  value: +session.user.id
-                }"
+                    key: 'user_id',
+                    value: +session.user.id
+                  }"
 
                 />
               </div>
