@@ -51,7 +51,7 @@ export default class Family extends MyBaseModel {
             'updated_at': this.attr('').nullable(),
             'creator': this.belongsTo(User, 'creator_id'),
             'updater': this.belongsTo(User, 'updater_id'),
-            'childrens': this.hasMany(Child, 'family_id'),
+            'children': this.hasMany(Child, 'family_id'),
             'familyMemberships': this.hasMany(FamilyMembership, 'family_id'),
             'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'family_id')
         };

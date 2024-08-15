@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import attendanceRead from 'src/views/lists/attendance-s/AttendanceRead.vue'
+import attendanceRead from 'src/views/lists/attendances/AttendanceRead.vue'
 
 export default {
     name: 'Attendance-read-controller',

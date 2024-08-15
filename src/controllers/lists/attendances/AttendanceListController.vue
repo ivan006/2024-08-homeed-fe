@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import attendanceList from 'src/views/lists/attendance-s/AttendanceList.vue'
+import attendanceList from 'src/views/lists/attendances/AttendanceList.vue'
 
 export default {
     name: 'Attendance-list-controller',

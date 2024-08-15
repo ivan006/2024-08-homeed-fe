@@ -42,7 +42,7 @@ export default {
     methods: {
         openRecord(item) {
             this.$router.push({
-                name: '/lists/childrens/:rId/:rName',
+                name: '/lists/children/:rId/:rName',
                 params: {
                     rId: item.id,
                     rName: item.name,

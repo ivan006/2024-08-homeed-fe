@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import childRead from 'src/views/lists/childrens/ChildRead.vue'
+import childRead from 'src/views/lists/children/ChildRead.vue'
 
 export default {
     name: 'Child-read-controller',

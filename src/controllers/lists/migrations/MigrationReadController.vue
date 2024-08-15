@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import migrationRead from 'src/views/lists/migration-s/MigrationRead.vue'
+import migrationRead from 'src/views/lists/migrations/MigrationRead.vue'
 
 export default {
     name: 'Migration-read-controller',

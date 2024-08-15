@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import migrationList from 'src/views/lists/migration-s/MigrationList.vue'
+import migrationList from 'src/views/lists/migrations/MigrationList.vue'
 
 export default {
     name: 'Migration-list-controller',

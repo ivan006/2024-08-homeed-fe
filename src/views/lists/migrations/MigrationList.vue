@@ -42,7 +42,7 @@ export default {
     methods: {
         openRecord(item) {
             this.$router.push({
-                name: '/lists/migration-s/:rId/:rName',
+                name: '/lists/migrations/:rId/:rName',
                 params: {
                     rId: item.id,
                     rName: item.name,
