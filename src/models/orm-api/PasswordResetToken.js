@@ -5,11 +5,11 @@ export default class PasswordResetToken extends MyBaseModel {
     static entityUrl = '/api/password-reset-tokens';
     static primaryKey = 'email';
     static titleKey = 'email';
-    static openRecord(pKey, router){
+    static openRecord(pKeyValue, item, router){
       router.push({
         name: '/lists/password-reset-tokens/:rId/:rName',
         params: {
-          rId: pKey,
+          rId: pKeyValue,
         },
       })
     }

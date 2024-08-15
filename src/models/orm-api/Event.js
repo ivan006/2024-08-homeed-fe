@@ -8,11 +8,11 @@ export default class Event extends MyBaseModel {
     static entityUrl = '/api/events';
     static primaryKey = 'id';
     static titleKey = 'name';
-    static openRecord(pKey, router){
+    static openRecord(pKeyValue, item, router){
       router.push({
         name: '/lists/events/:rId/:rName',
         params: {
-          rId: pKey,
+          rId: pKeyValue,
         },
       })
     }

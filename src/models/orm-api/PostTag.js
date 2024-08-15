@@ -5,11 +5,11 @@ export default class PostTag extends MyBaseModel {
     static entityUrl = '/api/post-tags';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static openRecord(pKey, router){
+    static openRecord(pKeyValue, item, router){
       router.push({
         name: '/lists/post-tags/:rId/:rName',
         params: {
-          rId: pKey,
+          rId: pKeyValue,
         },
       })
     }

@@ -7,12 +7,12 @@ export default class SchoolPartnership extends MyBaseModel {
     static entityUrl = '/api/school-partnerships';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static openRecord(pKey, router){
+    static openRecord(pKeyValue, item, router){
       router.push({
         name: '/lists/school-partnerships/:rId/:rName',
         params: {
-          rId: pKey,
-          rName: pKey,
+          rId: pKeyValue,
+          rName: pKeyValue,
         },
       })
     }
