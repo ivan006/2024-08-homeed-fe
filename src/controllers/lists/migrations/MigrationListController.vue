@@ -1,9 +1,11 @@
 <template>
     <div>
+        <q-card class="q-pa-md q-mt-md">
         <migrationList
             :parentKeyValuePair="parentKeyValuePair"
             :fetchFlags="fetchFlags"
         />
+    </q-card>
     </div>
 </template>
 

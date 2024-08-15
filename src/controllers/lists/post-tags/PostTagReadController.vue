@@ -1,6 +1,8 @@
 <template>
     <div>
+        <q-card class="q-pa-md q-mt-md">
         <postTagRead :id="id" />
+    </q-card>
     </div>
 </template>
 

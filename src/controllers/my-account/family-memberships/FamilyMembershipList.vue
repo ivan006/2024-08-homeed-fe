@@ -8,11 +8,9 @@
                 :displayMapField="false"
                 :fetchFlags="fetchFlags"
                 :currentParentRel="currentParentRel"
-            />
+                />
         </q-card>
     </div>
-</template>
-
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
 import FamilyMembership from 'src/models/orm-api/FamilyMembership'
@@ -54,4 +52,6 @@ export default {
           },
       },
 }
+</script>
+<script setup lang="ts">
 </script>

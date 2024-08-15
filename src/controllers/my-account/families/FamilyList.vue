@@ -7,10 +7,9 @@
                 @clickRow="openRecord"
                 :displayMapField="false"
                 :fetchFlags="fetchFlags"
-            />
+                />
         </q-card>
     </div>
-</template>
 
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
@@ -47,4 +46,6 @@ export default {
       },
   },
 }
+</script>
+<script setup lang="ts">
 </script>

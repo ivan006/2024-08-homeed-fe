@@ -1,6 +1,8 @@
 <template>
     <div>
+        <q-card class="q-pa-md q-mt-md">
         <migrationRead :id="id" />
+    </q-card>
     </div>
 </template>
 

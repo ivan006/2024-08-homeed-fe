@@ -1,6 +1,8 @@
 <template>
     <div>
+        <q-card class="q-pa-md q-mt-md">
         <schoolFamilyEnrollmentRead :id="id" />
+    </q-card>
     </div>
 </template>
 

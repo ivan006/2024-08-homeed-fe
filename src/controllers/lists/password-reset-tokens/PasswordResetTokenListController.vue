@@ -1,9 +1,11 @@
 <template>
     <div>
+        <q-card class="q-pa-md q-mt-md">
         <passwordResetTokenList
             :parentKeyValuePair="parentKeyValuePair"
             :fetchFlags="fetchFlags"
         />
+    </q-card>
     </div>
 </template>
 
