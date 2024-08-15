@@ -77,7 +77,7 @@ import {computed, ref} from 'vue';
 import User from 'src/models/User'
 import VueCookies from "vue-cookies";
 // import FamilyList from "pages/my-account/families/FamilyList.vue";
-import FamilyMembershipList from "pages/my-account/family-memberships/FamilyMembershipList.vue";
+import FamilyMembershipList from "src/controllers/my-account/family-memberships/FamilyMembershipList.vue";
 import FamilyMembership from 'src/models/orm-api/FamilyMembership'
 
 const renderSection1 = ref(false);

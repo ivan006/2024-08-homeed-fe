@@ -37,9 +37,9 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
-import EssentialLink from 'components/EssentialLink.vue';
-import MainLayoutHelper from "layouts/MainLayoutHelper.vue";
-import BreadcrumbsComp from "components/BreadcrumbsComp.vue";
+import EssentialLink from 'src/views/EssentialLink.vue';
+import MainLayoutHelper from "src/views/layouts/MainLayoutHelper.vue";
+import BreadcrumbsComp from "src/views/BreadcrumbsComp.vue";
 
 defineOptions({
   name: 'MainLayout'

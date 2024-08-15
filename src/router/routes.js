@@ -1,7 +1,7 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/EmptyLayout.vue'),
+    component: () => import('src/views/layouts/EmptyLayout.vue'),
     redirect: to => { return '/guest-registration' },
     meta: { requiresAuth: false },
     children: [
@@ -27,7 +27,7 @@ const routes = [
       },
       {
         path: '/',
-        component: () => import('layouts/MainLayout.vue'),
+        component: () => import('src/views/layouts/MainLayout.vue'),
         children: [
           {
             path: 'my-account',
