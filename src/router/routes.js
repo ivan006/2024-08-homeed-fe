@@ -26,36 +26,18 @@ const routes = [
         meta: { requiresAuth: false }
       },
       {
+        path: 'my-account',
+        name: 'my-account',
+        component: () => import('pages/my-account/MyAccountRead.vue'),
+        meta: {
+          breadcrumbName: 'My Account',
+          breadcrumbParentName: '',
+        },
+      },
+      {
         path: '/',
         component: () => import('layouts/MainLayout.vue'),
         children: [
-          {
-            path: 'my-account',
-            name: 'my-account',
-            component: () => import('pages/my-account/MyAccountRead.vue'),
-            meta: {
-              breadcrumbName: 'My Account',
-              breadcrumbParentName: '',
-            },
-          },
-          {
-            path: 'posts',
-            name: 'posts',
-            component: () => import('pages/posts/PostsListComp.vue'),
-            meta: {
-              breadcrumbName: 'Posts',
-              breadcrumbParentName: '',
-            },
-          },
-          {
-            path: 'posts/:aId/:rName',
-            name: 'posts/:aId/:rName',
-            component: () => import('pages/posts/PostsReadComp.vue'),
-            meta: {
-              breadcrumbName: ':rName',
-              breadcrumbParentName: 'posts',
-            },
-          },
           {
             path: '/lists/attendances',
             name: '/lists/attendances',
