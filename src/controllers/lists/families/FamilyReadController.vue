@@ -17,7 +17,7 @@
 
           <q-card class="q-mb-md">
             <q-expansion-item
-              label="Family Memberships"
+              label="School Family Enrollments"
               expand-separator
               class="bordered-expansion-item"
               @show="renderSection1=true"
@@ -27,8 +27,8 @@
                 <schoolFamilyEnrollmentList
                   v-if="renderSection1"
                   :parentKeyValuePair="{
-                    key: 'user_id',
-                    value: +session.user.id
+                    key: 'family_id',
+                    value: +this.$route.params.rId
                   }"
 
                 />
