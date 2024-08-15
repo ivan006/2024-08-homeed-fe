@@ -4,7 +4,9 @@ import Attendance from 'src/models/orm-api/Attendance';
 import Child from 'src/models/orm-api/Child';
 import Event from 'src/models/orm-api/Event';
 import Family from 'src/models/orm-api/Family';
-import Membership from 'src/models/orm-api/Membership';
+import FamilyMembership from 'src/models/orm-api/FamilyMembership';
+import SchoolFamilyEnrollment from 'src/models/orm-api/SchoolFamilyEnrollment';
+import SchoolPartnership from 'src/models/orm-api/SchoolPartnership';
 import School from 'src/models/orm-api/School';
 
 export default class User extends MyBaseModel {
@@ -17,6 +19,7 @@ export default class User extends MyBaseModel {
       name: '/lists/users/:rId/:rName',
       params: {
         rId: pKey,
+        rName: pKey,
       },
     })
   }
@@ -65,12 +68,12 @@ export default class User extends MyBaseModel {
       'eventsUpdaterId': this.hasMany(Event, 'updater_id'),
       'families': this.hasMany(Family, 'creator_id'),
       'familiesUpdaterId': this.hasMany(Family, 'updater_id'),
-      'familiesUserId': this.hasMany(Family, 'user_id'),
-      'memberships': this.hasMany(Membership, 'creator_id'),
-      'membershipsUpdaterId': this.hasMany(Membership, 'updater_id'),
+      'familyMemberships': this.hasMany(FamilyMembership, 'user_id'),
+      'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'creator_id'),
+      'schoolFamilyEnrollmentsUpdaterId': this.hasMany(SchoolFamilyEnrollment, 'updater_id'),
+      'schoolPartnerships': this.hasMany(SchoolPartnership, 'user_id'),
       'schools': this.hasMany(School, 'creator_id'),
-      'schoolsUpdaterId': this.hasMany(School, 'updater_id'),
-      'schoolsUserId': this.hasMany(School, 'user_id')
+      'schoolsUpdaterId': this.hasMany(School, 'updater_id')
     };
   }
 
