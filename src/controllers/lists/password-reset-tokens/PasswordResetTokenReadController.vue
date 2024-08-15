@@ -1,6 +1,6 @@
 <template>
     <div>
-      <q-card class="q-mt-md">
+      <q-card class="q-mb-md">
         <passwordResetTokenRead :id="id" />
     </q-card>
     </div>

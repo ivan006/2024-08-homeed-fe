@@ -1,11 +1,11 @@
 <template>
   <div>
-    <q-card class="q-mt-md">
+    <q-card class="q-mb-md">
       <familyRead
         :id="id"
         :templateOverview="templateListGrid"
         hideRelations
-        @initialLoadHappened="$emit('initialLoadHappened')"
+        @initialLoadHappened="initialLoadHappened = true"
       />
     </q-card>
     <div
@@ -24,7 +24,7 @@
             >
               <div class="q-pa-md">
 
-                <familyMembershipList
+                <schoolFamilyEnrollmentList
                   v-if="renderSection1"
                   :parentKeyValuePair="{
                     key: 'user_id',
@@ -44,12 +44,12 @@
 
 <script>
 import familyRead from 'src/views/lists/families/FamilyRead.vue'
-import FamilyMembershipList from "src/views/lists/family-memberships/FamilyMembershipList.vue";
+import SchoolFamilyEnrollmentList from "src/views/lists/school-family-enrollments/SchoolFamilyEnrollmentList.vue";
 
 export default {
     name: 'Family-read-controller',
     components: {
-      FamilyMembershipList,
+      SchoolFamilyEnrollmentList,
         familyRead,
     },
 
