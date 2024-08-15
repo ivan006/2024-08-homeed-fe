@@ -53,25 +53,6 @@ watch(route, (newRoute) => {
 });
 
 const linksList = [
-  // {
-  //   groupTitle: 'Journeys',
-  //   links: [
-  //     {
-  //       title: 'Past',
-  //       route: '/journeys/past'
-  //     },
-  //   ]
-  // },
-  // {
-  //   title: 'Posts',
-  //   route: '/posts'
-  // },
-  // {
-  //   groupTitle: 'Lists',
-  //   links: [
-  //   ],
-  // },
-
   {
     title: 'My Account',
     route: '/my-account',
@@ -97,11 +78,11 @@ const linksList = [
     route: '/lists/families',
   },
   {
-    title: 'Memberships',
-    route: '/lists/memberships',
+    title: 'Family Memberships',
+    route: '/lists/family-memberships',
   },
   // {
-  //   title: 'Migration S',
+  //   title: 'Migrations',
   //   route: '/lists/migrations',
   // },
   // {
@@ -120,6 +101,14 @@ const linksList = [
   //   title: 'Posts',
   //   route: '/lists/posts',
   // },
+  {
+    title: 'School Family Enrollments',
+    route: '/lists/school-family-enrollments',
+  },
+  {
+    title: 'School Partnerships',
+    route: '/lists/school-partnerships',
+  },
   {
     title: 'Schools',
     route: '/lists/schools',
