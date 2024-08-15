@@ -15,7 +15,7 @@ export default {
 
     data() {
         return {
-            id: +$route.params.rId
+            id: +this.$route.params.rId
         }
     },
 }
