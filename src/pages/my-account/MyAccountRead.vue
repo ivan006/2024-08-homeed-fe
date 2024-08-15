@@ -11,7 +11,7 @@
         :relationships="[
           // 'bookings.clients',
         ]"
-        hideRelations
+
       >
       </SuperRecord>
       <!--hideRelations-->
