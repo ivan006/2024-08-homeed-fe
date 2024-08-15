@@ -4,6 +4,7 @@
                 :model="superRecordModel"
                 :id="+$route.params.rId"
                 :displayMapField="true"
+                @initialLoadHappened="$emit('initialLoadHappened')"
             >
             </SuperRecord>
 </template>
