@@ -13,7 +13,7 @@
 
 <script>
 import { SuperRecord } from 'quicklists-vue-orm-ui'
-import User from 'src/models/User'
+import User from 'src/models/orm-api/User'
 
 export default {
     name: 'User-read',
