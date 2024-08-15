@@ -33,7 +33,7 @@ export default {
                 name: '/lists/attendances/:rId/:rName',
                 params: {
                     rId: item.id,
-                    rName: item.name,
+                    rName: `${item.event.name} ${item.child.name}`,
                 },
             })
         },
