@@ -1,67 +1,112 @@
 <template>
-    <div>
-        <q-card class="q-pa-md q-mt-md">
-          <!--<pre>{{session}}</pre>-->
-            <SuperRecord
-                :model="superRecordModel"
-                :id="+session.user.id"
-                :displayMapField="true"
-                :templateOverview="templateListGrid"
+  <div>
+    <q-card class=" q-mb-md" style="overflow: hidden;">
+      <SuperRecord
+        ref="SuperRecordRef"
+        :model="User"
+        :id="+session.user.id"
+        :templateOverview="templateListGrid"
+        hideRelations
+        @initialLoadHappened="initialLoadHappened = true"
+        :relationships="[
+          // 'bookings.clients',
+        ]"
+      >
+      </SuperRecord>
+
+
+    </q-card>
+
+
+    <div
+      v-show="initialLoadHappened"
+    >
+
+      <div class="row  q-col-gutter-md">
+        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+
+          <q-card class="q-mb-md">
+            <q-expansion-item
+              label="Adults"
+              expand-separator
+              class="bordered-expansion-item"
+              @show="renderSection1=true"
             >
-            </SuperRecord>
-        </q-card>
+              <!--<AdultsListComp-->
+              <!--  v-if="renderSection1"-->
+              <!--  :fetchFlags="{-->
+              <!--    whereHas: {-->
+              <!--      bookings: {-->
+              <!--        super_booking_id: +route.params.jId,-->
+              <!--        status: 'active',-->
+              <!--        roomFor: 'parents',-->
+              <!--      }-->
+              <!--    }-->
+              <!--  }"-->
+
+              <!--/>-->
+            </q-expansion-item>
+          </q-card>
+
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
-<script>
-import { SuperRecord } from 'quicklists-vue-orm-ui'
+<script setup>
+import {SuperRecord} from "quicklists-vue-orm-ui";
+import { useRouter, useRoute } from 'vue-router';
+const router = useRouter();
+const route = useRoute();
+
+import {computed, ref} from 'vue';
 import User from 'src/models/User'
-import {computed} from "vue";
 import VueCookies from "vue-cookies";
 
-export default {
-    name: 'MyAccountRead',
-    components: {
-      SuperRecord
+const renderSection1 = ref(false);
+
+const initialLoadHappened = ref(false);
+
+const SuperRecordRef = ref(null);
+
+const session = computed(() => {
+  return VueCookies.get('VITE_AUTH');
+});
+
+
+
+
+const templateListGrid = ref({
+  class: "q-pa-md q-col-gutter-md",
+  cols: [
+    {
+      width: 12,
+      dataPoint: {
+        type: "function",
+        function: (item) => `${item.name}`,
+        label: "",
+        tag: "div",
+        class: "text-h6",
+        hideLabel: true,
+      },
     },
-    data() {
-        return {
-          templateListGrid: {
-            class: "q-pa-md q-col-gutter-md",
-            cols: [
-              {
-                width: 12,
-                dataPoint: {
-                  type: "function",
-                  function: (item) => `${item.name}`,
-                  label: "",
-                  tag: "div",
-                  class: "text-h6",
-                  hideLabel: true,
-                },
-              },
-              {
-                width: 3,
-                dataPoint: {
-                  type: "function",
-                  function: (item) => `${item.email}`,
-                  label: "Email",
-                  // xOrientation: true,
-                },
-              },
-            ],
-          }
-        }
+    {
+      width: 3,
+      dataPoint: {
+        type: "function",
+        function: (item) => `${item.email}`,
+        label: "Email",
+        // xOrientation: true,
+      },
     },
-    computed: {
-        session() {
-          return VueCookies.get('VITE_AUTH');
-        },
-        superRecordModel() {
-            return User
-        },
-    },
-}
+  ],
+});
+
+
 </script>
 
-<style scoped></style>
+
+
+
+

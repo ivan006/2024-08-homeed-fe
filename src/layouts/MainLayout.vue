@@ -57,14 +57,14 @@ const linksList = [
     title: 'My Account',
     route: '/my-account',
   },
-  {
-    title: 'Attendances',
-    route: '/lists/attendances',
-  },
-  {
-    title: 'Children',
-    route: '/lists/children',
-  },
+  // {
+  //   title: 'Attendances',
+  //   route: '/lists/attendances',
+  // },
+  // {
+  //   title: 'Children',
+  //   route: '/lists/children',
+  // },
   {
     title: 'Events',
     route: '/lists/events',
@@ -73,14 +73,14 @@ const linksList = [
   //   title: 'Failed Jobs',
   //   route: '/lists/failed-jobs',
   // },
-  {
-    title: 'Families',
-    route: '/lists/families',
-  },
-  {
-    title: 'Family Memberships',
-    route: '/lists/family-memberships',
-  },
+  // {
+  //   title: 'Families',
+  //   route: '/lists/families',
+  // },
+  // {
+  //   title: 'Family Memberships',
+  //   route: '/lists/family-memberships',
+  // },
   // {
   //   title: 'Migrations',
   //   route: '/lists/migrations',
@@ -101,14 +101,14 @@ const linksList = [
   //   title: 'Posts',
   //   route: '/lists/posts',
   // },
-  {
-    title: 'School Family Enrollments',
-    route: '/lists/school-family-enrollments',
-  },
-  {
-    title: 'School Partnerships',
-    route: '/lists/school-partnerships',
-  },
+  // {
+  //   title: 'School Family Enrollments',
+  //   route: '/lists/school-family-enrollments',
+  // },
+  // {
+  //   title: 'School Partnerships',
+  //   route: '/lists/school-partnerships',
+  // },
   {
     title: 'Schools',
     route: '/lists/schools',
@@ -117,10 +117,10 @@ const linksList = [
   //   title: 'Tags',
   //   route: '/lists/tags',
   // },
-  {
-    title: 'Users',
-    route: '/lists/users',
-  }
+  // {
+  //   title: 'Users',
+  //   route: '/lists/users',
+  // }
 ];
 
 function updateActiveRoute(newRoute) {
