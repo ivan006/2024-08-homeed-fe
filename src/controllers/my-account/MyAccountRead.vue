@@ -6,7 +6,7 @@
         :model="User"
         :id="+session.user.id"
         :templateOverview="templateListGrid"
-
+        hideRelations
         @initialLoadHappened="initialLoadHappened = true"
         :relationships="[
           // 'bookings.clients',
