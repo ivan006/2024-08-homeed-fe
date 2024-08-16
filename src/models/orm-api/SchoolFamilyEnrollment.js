@@ -35,12 +35,20 @@ export default class SchoolFamilyEnrollment extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-            'family_id': { relationRules: { linkables: (user) => { return {} } } },
-            'school_id': { relationRules: { linkables: (user) => { return {} } } },
-            'creator_id': { relationRules: { linkables: (user) => { return {} } } },
-            'updater_id': { relationRules: { linkables: (user) => { return {} } } },
-            'created_at': {},
-            'updated_at': {}
+        'family_id': { relationRules: { linkables: () => { return {} } } },
+        'school_id': { relationRules: { linkables: () => { return {} } } },
+        'creator_id': {
+          relationRules: {
+            linkables: () => {
+              return {
+                id: "ddddddddddddd"
+              }
+            }
+          }
+        },
+        'updater_id': { relationRules: { linkables: () => { return {} } } },
+        'created_at': {},
+        'updated_at': {}
     };
 
     static fields() {

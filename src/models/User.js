@@ -12,6 +12,7 @@ export default class User extends MyBaseModel {
   static entity = 'user';
   static entityUrl = '/api/users';
   static primaryKey = 'id';
+  static entityName = 'User';
   static titleKey = 'name';
   static openRecord(pVal, item, router){
     router.push({
@@ -31,7 +32,7 @@ export default class User extends MyBaseModel {
     readables: () => true,
     readable: (item) => true,
     editable: (item) => true,
-    creatable: () => true,
+    creatable: () => false,
   };
 
   static fieldsMetadata = {
