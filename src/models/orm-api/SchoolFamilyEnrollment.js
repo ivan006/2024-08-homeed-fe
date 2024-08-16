@@ -45,7 +45,7 @@ export default class SchoolFamilyEnrollment extends MyBaseModel {
           relationRules: {
             linkables: () => {
               return {
-                id: +session.user.id
+                id: +this.session.user.id
               }
             }
           }
