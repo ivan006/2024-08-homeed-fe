@@ -4,6 +4,7 @@ export default class FailedJob extends MyBaseModel {
     static entity = 'failedjob';
     static entityUrl = '/api/failed-jobs';
     static primaryKey = 'id';
+    static session = VueCookies.get('VITE_AUTH');
     static entityName = 'Item';
     static titleKey = 'id';
     static openRecord(pVal, item, router){

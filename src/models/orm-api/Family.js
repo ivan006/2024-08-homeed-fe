@@ -8,6 +8,7 @@ export default class Family extends MyBaseModel {
     static entity = 'family';
     static entityUrl = '/api/families';
     static primaryKey = 'id';
+    static session = VueCookies.get('VITE_AUTH');
     static entityName = 'Family';
     static titleKey = 'name';
     static openRecord(pVal, item, router){

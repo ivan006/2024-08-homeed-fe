@@ -6,6 +6,7 @@ export default class SchoolPartnership extends MyBaseModel {
     static entity = 'schoolpartnership';
     static entityUrl = '/api/school-partnerships';
     static primaryKey = 'id';
+    static session = VueCookies.get('VITE_AUTH');
     static entityName = 'Item';
     static titleKey = 'id';
     static openRecord(pVal, item, router){

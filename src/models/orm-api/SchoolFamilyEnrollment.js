@@ -2,11 +2,14 @@ import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import User from 'src/models/User';
 import Family from 'src/models/orm-api/Family';
 import School from 'src/models/orm-api/School';
+import {computed} from "vue";
+import VueCookies from "vue-cookies";
 
 export default class SchoolFamilyEnrollment extends MyBaseModel {
     static entity = 'schoolfamilyenrollment';
     static entityUrl = '/api/school-family-enrollments';
     static primaryKey = 'id';
+    static session = VueCookies.get('VITE_AUTH');
     static entityName = 'Item';
     static titleKey = 'id';
     static openRecord(pVal, item, router){
@@ -18,6 +21,7 @@ export default class SchoolFamilyEnrollment extends MyBaseModel {
         },
       })
     }
+
 
     static parentWithables = [
         'family',
@@ -41,7 +45,7 @@ export default class SchoolFamilyEnrollment extends MyBaseModel {
           relationRules: {
             linkables: () => {
               return {
-                id: "ddddddddddddd"
+                id: +session.user.id
               }
             }
           }

@@ -7,6 +7,7 @@ export default class Attendance extends MyBaseModel {
     static entity = 'attendance';
     static entityUrl = '/api/attendances';
     static primaryKey = 'id';
+    static session = VueCookies.get('VITE_AUTH');
     static entityName = 'Item';
     static titleKey = 'id';
     static openRecord(pVal, item, router){

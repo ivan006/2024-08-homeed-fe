@@ -4,6 +4,7 @@ export default class Migration extends MyBaseModel {
     static entity = 'migration';
     static entityUrl = '/api/migrations';
     static primaryKey = 'id';
+    static session = VueCookies.get('VITE_AUTH');
     static entityName = 'Item';
     static titleKey = 'id';
     static openRecord(pVal, item, router){
