@@ -35,8 +35,8 @@ export default class School extends MyBaseModel {
     static fieldsMetadata = {
         'id': {},
             'name': {},
-            'creator_id': { relationRules: { linkables: (user) => { return {} } } },
-            'updater_id': { relationRules: { linkables: (user) => { return {} } } },
+            'creator_id': { relationRules: { linkables: () => { return {} } } },
+            'updater_id': { relationRules: { linkables: () => { return {} } } },
             'created_at': {},
             'updated_at': {}
     };

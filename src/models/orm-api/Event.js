@@ -41,9 +41,9 @@ export default class Event extends MyBaseModel {
         'end_datetime': {
           usageType: "dateType"
         },
-        'school_id': { relationRules: { linkables: (user) => { return {} } } },
-        'creator_id': { relationRules: { linkables: (user) => { return {} } } },
-        'updater_id': { relationRules: { linkables: (user) => { return {} } } },
+        'school_id': { relationRules: { linkables: () => { return {} } } },
+        'creator_id': { relationRules: { linkables: () => { return {} } } },
+        'updater_id': { relationRules: { linkables: () => { return {} } } },
         'created_at': {},
         'updated_at': {}
     };

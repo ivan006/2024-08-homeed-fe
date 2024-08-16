@@ -32,8 +32,8 @@ export default class SchoolPartnership extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-            'user_id': { relationRules: { linkables: (user) => { return {} } } },
-            'school_id': { relationRules: { linkables: (user) => { return {} } } },
+            'user_id': { relationRules: { linkables: () => { return {} } } },
+            'school_id': { relationRules: { linkables: () => { return {} } } },
             'created_at': {},
             'updated_at': {}
     };

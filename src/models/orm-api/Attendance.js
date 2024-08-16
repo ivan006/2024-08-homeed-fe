@@ -35,10 +35,10 @@ export default class Attendance extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-        'event_id': { relationRules: { linkables: (user) => { return {} } } },
-        'child_id': { relationRules: { linkables: (user) => { return {} } } },
-        'creator_id': { relationRules: { linkables: (user) => { return {} } } },
-        'updater_id': { relationRules: { linkables: (user) => { return {} } } },
+        'event_id': { relationRules: { linkables: () => { return {} } } },
+        'child_id': { relationRules: { linkables: () => { return {} } } },
+        'creator_id': { relationRules: { linkables: () => { return {} } } },
+        'updater_id': { relationRules: { linkables: () => { return {} } } },
         'created_at': {},
         'updated_at': {}
     };

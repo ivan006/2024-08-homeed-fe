@@ -35,9 +35,9 @@ export default class Child extends MyBaseModel {
     static fieldsMetadata = {
         'id': {},
         'name': {},
-        'family_id': { relationRules: { linkables: (user) => { return {} } } },
-        'creator_id': { relationRules: { linkables: (user) => { return {} } } },
-        'updater_id': { relationRules: { linkables: (user) => { return {} } } },
+        'family_id': { relationRules: { linkables: () => { return {} } } },
+        'creator_id': { relationRules: { linkables: () => { return {} } } },
+        'updater_id': { relationRules: { linkables: () => { return {} } } },
         'created_at': {},
         'updated_at': {}
     };

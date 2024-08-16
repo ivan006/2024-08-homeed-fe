@@ -32,8 +32,8 @@ export default class FamilyMembership extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-            'user_id': { relationRules: { linkables: (user) => { return {} } } },
-            'family_id': { relationRules: { linkables: (user) => { return {} } } },
+            'user_id': { relationRules: { linkables: () => { return {} } } },
+            'family_id': { relationRules: { linkables: () => { return {} } } },
             'created_at': {},
             'updated_at': {}
     };
