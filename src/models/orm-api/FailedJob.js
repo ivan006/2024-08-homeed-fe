@@ -1,4 +1,5 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
+import VueCookies from 'vue-cookies';
 
 export default class FailedJob extends MyBaseModel {
     static entity = 'failedjob';

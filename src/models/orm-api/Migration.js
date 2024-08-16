@@ -1,4 +1,5 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
+import VueCookies from 'vue-cookies';
 
 export default class Migration extends MyBaseModel {
     static entity = 'migration';

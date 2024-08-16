@@ -1,4 +1,5 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
+import VueCookies from 'vue-cookies';
 
 export default class PasswordResetToken extends MyBaseModel {
     static entity = 'passwordresettoken';

@@ -1,4 +1,5 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
+import VueCookies from 'vue-cookies';
 import User from 'src/models/User';
 import Event from 'src/models/orm-api/Event';
 import SchoolFamilyEnrollment from 'src/models/orm-api/SchoolFamilyEnrollment';
