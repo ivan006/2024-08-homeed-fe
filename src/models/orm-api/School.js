@@ -8,6 +8,7 @@ export default class School extends MyBaseModel {
     static entity = 'school';
     static entityUrl = '/api/schools';
     static primaryKey = 'id';
+    static entityName = 'Item';
     static titleKey = 'name';
     static openRecord(pVal, item, router){
       router.push({

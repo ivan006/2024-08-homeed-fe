@@ -7,6 +7,7 @@ export default class Attendance extends MyBaseModel {
     static entity = 'attendance';
     static entityUrl = '/api/attendances';
     static primaryKey = 'id';
+    static entityName = 'Item';
     static titleKey = 'id';
     static openRecord(pVal, item, router){
       router.push({
