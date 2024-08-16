@@ -6,6 +6,7 @@ export default class FamilyMembership extends MyBaseModel {
     static entity = 'familymembership';
     static entityUrl = '/api/family-memberships';
     static primaryKey = 'id';
+    static entityName = 'Item';
     static titleKey = 'id';
     static openRecord(pVal, item, router){
       router.push({
@@ -24,7 +25,7 @@ export default class FamilyMembership extends MyBaseModel {
 
     static rules = {
         readables: () => true,
-        readable: (item) => true,
+        readable: (item) => false,
         editable: (item) => true,
         creatable: () => true,
     };

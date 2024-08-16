@@ -7,6 +7,7 @@ export default class SchoolFamilyEnrollment extends MyBaseModel {
     static entity = 'schoolfamilyenrollment';
     static entityUrl = '/api/school-family-enrollments';
     static primaryKey = 'id';
+    static entityName = 'Item';
     static titleKey = 'id';
     static openRecord(pVal, item, router){
       router.push({
@@ -27,7 +28,7 @@ export default class SchoolFamilyEnrollment extends MyBaseModel {
 
     static rules = {
         readables: () => true,
-        readable: (item) => true,
+        readable: (item) => false,
         editable: (item) => true,
         creatable: () => true,
     };
