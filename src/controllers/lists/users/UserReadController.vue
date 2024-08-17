@@ -41,14 +41,14 @@
 
             <q-card class="q-mb-md">
               <q-expansion-item
-                label="School Partnerships"
+                label="Jobs"
                 expand-separator
                 class="bordered-expansion-item"
                 @show="renderSection1=true"
               >
                 <div class="q-pa-md">
 
-                  <school-partnership-list
+                  <job-list
                     v-if="renderSection1"
                     :parentKeyValuePair="{
                       parentFKey: 'user_id',
@@ -72,12 +72,12 @@ import userRead from 'src/views/lists/users/UserRead.vue'
 import User from "src/models/User";
 import VueCookies from "vue-cookies";
 import FamilyMembershipList from "src/views/lists/family-memberships/FamilyMembershipList.vue";
-import SchoolPartnershipList from "src/views/lists/school-partnerships/SchoolPartnershipList.vue";
+import JobList from "src/views/lists/jobs/JobList.vue";
 
 export default {
     name: 'User-read-controller',
     components: {
-      SchoolPartnershipList,
+      JobList,
       FamilyMembershipList,
         userRead,
     },
