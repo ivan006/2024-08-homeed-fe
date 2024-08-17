@@ -1,16 +1,16 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import VueCookies from 'vue-cookies';
 import User from 'src/models/User';
+import Attendance from 'src/models/orm-api/Attendance';
 import Event from 'src/models/orm-api/Event';
+import Job from 'src/models/orm-api/Job';
 import SchoolFamilyEnrollment from 'src/models/orm-api/SchoolFamilyEnrollment';
-import SchoolPartnership from 'src/models/orm-api/SchoolPartnership';
 
 export default class School extends MyBaseModel {
     static entity = 'school';
     static entityUrl = '/api/schools';
     static primaryKey = 'id';
-    static entityName = 'Item';
     static titleKey = 'name';
+    static entityName = 'School';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/schools/:rId/:rName',
@@ -52,9 +52,10 @@ export default class School extends MyBaseModel {
             'updated_at': this.attr('').nullable(),
             'creator': this.belongsTo(User, 'creator_id'),
             'updater': this.belongsTo(User, 'updater_id'),
+            'attendances': this.hasMany(Attendance, 'school_id'),
             'events': this.hasMany(Event, 'school_id'),
-            'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'school_id'),
-            'schoolPartnerships': this.hasMany(SchoolPartnership, 'school_id')
+            'jobs': this.hasMany(Job, 'school_id'),
+            'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'school_id')
         };
     }
 

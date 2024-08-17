@@ -1,11 +1,11 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import VueCookies from 'vue-cookies';
 
 export default class PasswordResetToken extends MyBaseModel {
     static entity = 'passwordresettoken';
     static entityUrl = '/api/password-reset-tokens';
     static primaryKey = 'email';
     static titleKey = 'email';
+    static entityName = 'PasswordResetToken';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/password-reset-tokens/:rId/:rName',
@@ -17,7 +17,7 @@ export default class PasswordResetToken extends MyBaseModel {
     }
 
     static parentWithables = [
-
+        
     ];
 
     static rules = {
@@ -38,7 +38,7 @@ export default class PasswordResetToken extends MyBaseModel {
             'email': this.attr('').nullable(),
             'token': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
-
+            
         };
     }
 

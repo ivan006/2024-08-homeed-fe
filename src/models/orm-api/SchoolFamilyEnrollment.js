@@ -1,16 +1,14 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import VueCookies from 'vue-cookies';
 import User from 'src/models/User';
 import Family from 'src/models/orm-api/Family';
 import School from 'src/models/orm-api/School';
-import {computed} from "vue";
 
 export default class SchoolFamilyEnrollment extends MyBaseModel {
     static entity = 'schoolfamilyenrollment';
     static entityUrl = '/api/school-family-enrollments';
     static primaryKey = 'id';
-    static entityName = 'Item';
     static titleKey = 'id';
+    static entityName = 'SchoolFamilyEnrollment';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/school-family-enrollments/:rId/:rName',
@@ -20,7 +18,6 @@ export default class SchoolFamilyEnrollment extends MyBaseModel {
         },
       })
     }
-
 
     static parentWithables = [
         'family',
@@ -38,12 +35,12 @@ export default class SchoolFamilyEnrollment extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-        'family_id': { linkablesRule: () => { return {} } },
-        'school_id': { linkablesRule: () => { return {} } },
-        'creator_id': { linkablesRule: () => { return {} } },
-        'updater_id': { linkablesRule: () => { return {} } },
-        'created_at': {},
-        'updated_at': {}
+            'family_id': { linkablesRule: () => { return {} } },
+            'school_id': { linkablesRule: () => { return {} } },
+            'creator_id': { linkablesRule: () => { return {} } },
+            'updater_id': { linkablesRule: () => { return {} } },
+            'created_at': {},
+            'updated_at': {}
     };
 
     static fields() {

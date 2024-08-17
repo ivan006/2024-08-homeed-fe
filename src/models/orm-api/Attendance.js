@@ -1,15 +1,17 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import VueCookies from 'vue-cookies';
 import Child from 'src/models/orm-api/Child';
 import User from 'src/models/User';
 import Event from 'src/models/orm-api/Event';
+import Family from 'src/models/orm-api/Family';
+import School from 'src/models/orm-api/School';
+import VueCookies from 'vue-cookies';
 
 export default class Attendance extends MyBaseModel {
     static entity = 'attendance';
     static entityUrl = '/api/attendances';
     static primaryKey = 'id';
-    static entityName = 'Item';
     static titleKey = 'id';
+    static entityName = 'Attendance';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/attendances/:rId/:rName',
@@ -21,6 +23,8 @@ export default class Attendance extends MyBaseModel {
     }
 
     static parentWithables = [
+        'school',
+        'family',
         'event',
         'child',
         'creator',
@@ -36,6 +40,8 @@ export default class Attendance extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
+        'school_id': { linkablesRule: () => { return {} } },
+        'family_id': { linkablesRule: () => { return {} } },
         'event_id': { linkablesRule: () => { return {} } },
         'child_id': {
           linkablesRule(item){
@@ -59,14 +65,15 @@ export default class Attendance extends MyBaseModel {
           }
         },
         'updater_id': { linkablesRule: () => { return {} } },
-        'created_at': { linkablesRule: () => { return {} } },
-        'updated_at': { linkablesRule: () => { return {} } },
-        'school_id': { linkablesRule: () => { return {} } },
+        'created_at': {},
+        'updated_at': {}
     };
 
     static fields() {
         return {
             'id': this.attr('').nullable(),
+            'school_id': this.attr('').nullable(),
+            'family_id': this.attr('').nullable(),
             'event_id': this.attr(''),
             'child_id': this.attr(''),
             'creator_id': this.attr('').nullable(),
@@ -76,6 +83,8 @@ export default class Attendance extends MyBaseModel {
             'child': this.belongsTo(Child, 'child_id'),
             'creator': this.belongsTo(User, 'creator_id'),
             'event': this.belongsTo(Event, 'event_id'),
+            'family': this.belongsTo(Family, 'family_id'),
+            'school': this.belongsTo(School, 'school_id'),
             'updater': this.belongsTo(User, 'updater_id')
         };
     }

@@ -1,15 +1,15 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import VueCookies from 'vue-cookies';
 import User from 'src/models/User';
 import School from 'src/models/orm-api/School';
 import Attendance from 'src/models/orm-api/Attendance';
+import VueCookies from 'vue-cookies';
 
 export default class Event extends MyBaseModel {
     static entity = 'event';
     static entityUrl = '/api/events';
     static primaryKey = 'id';
-    static entityName = 'Item';
     static titleKey = 'name';
+    static entityName = 'Event';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/events/:rId/:rName',

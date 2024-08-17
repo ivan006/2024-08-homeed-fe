@@ -1,15 +1,14 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import VueCookies from 'vue-cookies';
 
 export default class Migration extends MyBaseModel {
     static entity = 'migration';
-    static entityUrl = '/api/migrations';
+    static entityUrl = '/api/migration-s';
     static primaryKey = 'id';
-    static entityName = 'Item';
     static titleKey = 'id';
+    static entityName = 'Migration';
     static openRecord(pVal, item, router){
       router.push({
-        name: '/lists/migrations/:rId/:rName',
+        name: '/lists/migration-s/:rId/:rName',
         params: {
           rId: pVal,
           rName: pVal,
@@ -18,7 +17,7 @@ export default class Migration extends MyBaseModel {
     }
 
     static parentWithables = [
-
+        
     ];
 
     static rules = {
@@ -39,7 +38,7 @@ export default class Migration extends MyBaseModel {
             'id': this.attr('').nullable(),
             'migration': this.attr('').nullable(),
             'batch': this.attr('').nullable(),
-
+            
         };
     }
 

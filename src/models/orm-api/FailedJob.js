@@ -1,12 +1,11 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import VueCookies from 'vue-cookies';
 
 export default class FailedJob extends MyBaseModel {
     static entity = 'failedjob';
     static entityUrl = '/api/failed-jobs';
     static primaryKey = 'id';
-    static entityName = 'Item';
     static titleKey = 'id';
+    static entityName = 'FailedJob';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/failed-jobs/:rId/:rName',
@@ -18,7 +17,7 @@ export default class FailedJob extends MyBaseModel {
     }
 
     static parentWithables = [
-
+        
     ];
 
     static rules = {
@@ -47,7 +46,7 @@ export default class FailedJob extends MyBaseModel {
             'payload': this.attr('').nullable(),
             'exception': this.attr('').nullable(),
             'failed_at': this.attr('').nullable(),
-
+            
         };
     }
 

@@ -1,6 +1,6 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import VueCookies from 'vue-cookies';
 import User from 'src/models/User';
+import Attendance from 'src/models/orm-api/Attendance';
 import Child from 'src/models/orm-api/Child';
 import FamilyMembership from 'src/models/orm-api/FamilyMembership';
 import SchoolFamilyEnrollment from 'src/models/orm-api/SchoolFamilyEnrollment';
@@ -9,8 +9,8 @@ export default class Family extends MyBaseModel {
     static entity = 'family';
     static entityUrl = '/api/families';
     static primaryKey = 'id';
-    static entityName = 'Family';
     static titleKey = 'name';
+    static entityName = 'Family';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/families/:rId/:rName',
@@ -52,6 +52,7 @@ export default class Family extends MyBaseModel {
             'updated_at': this.attr('').nullable(),
             'creator': this.belongsTo(User, 'creator_id'),
             'updater': this.belongsTo(User, 'updater_id'),
+            'attendances': this.hasMany(Attendance, 'family_id'),
             'children': this.hasMany(Child, 'family_id'),
             'familyMemberships': this.hasMany(FamilyMembership, 'family_id'),
             'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'family_id')

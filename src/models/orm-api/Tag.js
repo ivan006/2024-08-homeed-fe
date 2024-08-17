@@ -1,12 +1,11 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import VueCookies from 'vue-cookies';
 
 export default class Tag extends MyBaseModel {
     static entity = 'tag';
     static entityUrl = '/api/tags';
     static primaryKey = 'id';
-    static entityName = 'Item';
     static titleKey = 'id';
+    static entityName = 'Tag';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/tags/:rId/:rName',
@@ -18,7 +17,7 @@ export default class Tag extends MyBaseModel {
     }
 
     static parentWithables = [
-
+        
     ];
 
     static rules = {
@@ -40,8 +39,8 @@ export default class Tag extends MyBaseModel {
             'id': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
-            'name': this.attr(''),
-
+            'name': this.attr('').nullable(),
+            
         };
     }
 

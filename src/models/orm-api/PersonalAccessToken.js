@@ -1,12 +1,11 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import VueCookies from 'vue-cookies';
 
 export default class PersonalAccessToken extends MyBaseModel {
     static entity = 'personalaccesstoken';
     static entityUrl = '/api/personal-access-tokens';
     static primaryKey = 'id';
-    static entityName = 'Item';
     static titleKey = 'id';
+    static entityName = 'PersonalAccessToken';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/personal-access-tokens/:rId/:rName',
@@ -18,7 +17,7 @@ export default class PersonalAccessToken extends MyBaseModel {
     }
 
     static parentWithables = [
-
+        
     ];
 
     static rules = {
@@ -46,14 +45,14 @@ export default class PersonalAccessToken extends MyBaseModel {
             'id': this.attr('').nullable(),
             'tokenable_type': this.attr('').nullable(),
             'tokenable_id': this.attr('').nullable(),
-            'name': this.attr(''),
+            'name': this.attr('').nullable(),
             'token': this.attr('').nullable(),
             'abilities': this.attr('').nullable(),
             'last_used_at': this.attr('').nullable(),
             'expires_at': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
-
+            
         };
     }
 

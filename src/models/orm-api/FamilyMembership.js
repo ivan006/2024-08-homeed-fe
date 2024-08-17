@@ -1,14 +1,14 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import VueCookies from 'vue-cookies';
 import Family from 'src/models/orm-api/Family';
 import User from 'src/models/User';
+import VueCookies from 'vue-cookies';
 
 export default class FamilyMembership extends MyBaseModel {
     static entity = 'familymembership';
     static entityUrl = '/api/family-memberships';
     static primaryKey = 'id';
-    static entityName = 'Item';
     static titleKey = 'id';
+    static entityName = 'FamilyMembership';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/family-memberships/:rId/:rName',
