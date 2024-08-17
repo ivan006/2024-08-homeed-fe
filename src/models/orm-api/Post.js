@@ -5,7 +5,6 @@ export default class Post extends MyBaseModel {
     static entity = 'post';
     static entityUrl = '/api/posts';
     static primaryKey = 'id';
-    static session = VueCookies.get('VITE_AUTH');
     static entityName = 'Item';
     static titleKey = 'id';
     static openRecord(pVal, item, router){

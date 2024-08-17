@@ -8,7 +8,6 @@ export default class Event extends MyBaseModel {
     static entity = 'event';
     static entityUrl = '/api/events';
     static primaryKey = 'id';
-    static session = VueCookies.get('VITE_AUTH');
     static entityName = 'Item';
     static titleKey = 'name';
     static openRecord(pVal, item, router){
@@ -43,9 +42,9 @@ export default class Event extends MyBaseModel {
         'end_datetime': {
           usageType: "dateType"
         },
-        'school_id': { relationRules: { linkables: () => { return {} } } },
-        'creator_id': { relationRules: { linkables: () => { return {} } } },
-        'updater_id': { relationRules: { linkables: () => { return {} } } },
+        'school_id': { linkablesRule: () => { return {} } },
+        'creator_id': { linkablesRule: () => { return {} } },
+        'updater_id': { linkablesRule: () => { return {} } },
         'created_at': {},
         'updated_at': {}
     };

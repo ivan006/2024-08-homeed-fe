@@ -9,7 +9,6 @@ export default class SchoolFamilyEnrollment extends MyBaseModel {
     static entity = 'schoolfamilyenrollment';
     static entityUrl = '/api/school-family-enrollments';
     static primaryKey = 'id';
-    static session = VueCookies.get('VITE_AUTH');
     static entityName = 'Item';
     static titleKey = 'id';
     static openRecord(pVal, item, router){
@@ -39,18 +38,17 @@ export default class SchoolFamilyEnrollment extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-        'family_id': { relationRules: { linkables: () => { return {} } } },
-        'school_id': { relationRules: { linkables: () => { return {} } } },
+        'family_id': { linkablesRule: () => { return {} } },
+        'school_id': { linkablesRule: () => { return {} } },
         'creator_id': {
-          relationRules: {
-            linkables: () => {
-              return {
-                id: +this.session.user.id
-              }
+          linkablesRule(item){
+            const session = VueCookies.get('VITE_AUTH');
+            return {
+              id: +session.user.id
             }
-          }
+          },
         },
-        'updater_id': { relationRules: { linkables: () => { return {} } } },
+        'updater_id': { linkablesRule: () => { return {} } },
         'created_at': {},
         'updated_at': {}
     };

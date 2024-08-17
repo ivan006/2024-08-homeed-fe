@@ -7,7 +7,6 @@ export default class FamilyMembership extends MyBaseModel {
     static entity = 'familymembership';
     static entityUrl = '/api/family-memberships';
     static primaryKey = 'id';
-    static session = VueCookies.get('VITE_AUTH');
     static entityName = 'Item';
     static titleKey = 'id';
     static openRecord(pVal, item, router){
@@ -34,8 +33,8 @@ export default class FamilyMembership extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-        'user_id': { relationRules: { linkables: () => { return {} } } },
-        'family_id': { relationRules: { linkables: () => { return {} } } },
+        'user_id': { linkablesRule: () => { return {} } },
+        'family_id': { linkablesRule: () => { return {} } },
         'created_at': {},
         'updated_at': {}
     };

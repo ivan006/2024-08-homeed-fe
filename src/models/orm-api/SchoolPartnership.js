@@ -7,7 +7,6 @@ export default class SchoolPartnership extends MyBaseModel {
     static entity = 'schoolpartnership';
     static entityUrl = '/api/school-partnerships';
     static primaryKey = 'id';
-    static session = VueCookies.get('VITE_AUTH');
     static entityName = 'Item';
     static titleKey = 'id';
     static openRecord(pVal, item, router){
@@ -34,8 +33,8 @@ export default class SchoolPartnership extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-            'user_id': { relationRules: { linkables: () => { return {} } } },
-            'school_id': { relationRules: { linkables: () => { return {} } } },
+            'user_id': { linkablesRule: () => { return {} } },
+            'school_id': { linkablesRule: () => { return {} } },
             'created_at': {},
             'updated_at': {}
     };

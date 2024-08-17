@@ -8,7 +8,6 @@ export default class Child extends MyBaseModel {
     static entity = 'child';
     static entityUrl = '/api/children';
     static primaryKey = 'id';
-    static session = VueCookies.get('VITE_AUTH');
     static entityName = 'Item';
     static titleKey = 'name';
     static openRecord(pVal, item, router){
@@ -37,9 +36,9 @@ export default class Child extends MyBaseModel {
     static fieldsMetadata = {
         'id': {},
         'name': {},
-        'family_id': { relationRules: { linkables: () => { return {} } } },
-        'creator_id': { relationRules: { linkables: () => { return {} } } },
-        'updater_id': { relationRules: { linkables: () => { return {} } } },
+        'family_id': { linkablesRule: () => { return {} } },
+        'creator_id': { linkablesRule: () => { return {} } },
+        'updater_id': { linkablesRule: () => { return {} } },
         'created_at': {},
         'updated_at': {}
     };
