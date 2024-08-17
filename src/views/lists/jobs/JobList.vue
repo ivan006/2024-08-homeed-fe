@@ -1,22 +1,20 @@
 <template>
-
-            <SuperTable
-                :showMap="true"
-                :model="superTableModel"
-                @clickRow="openRecord"
-                :displayMapField="false"
-                :parentKeyValuePair="parentKeyValuePair"
-                :fetchFlags="fetchFlags"
-            />
-
+    <SuperTable
+        :showMap="true"
+        :model="superTableModel"
+        @clickRow="openRecord"
+        :displayMapField="false"
+        :parentKeyValuePair="parentKeyValuePair"
+        :fetchFlags="fetchFlags"
+    />
 </template>
 
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
-import SchoolPartnership from 'src/models/orm-api/SchoolPartnership'
+import Job from 'src/models/orm-api/Job'
 
 export default {
-    name: 'SchoolPartnership-list',
+    name: 'Job-list',
     components: {
         SuperTable,
     },
@@ -34,13 +32,13 @@ export default {
 
     computed: {
         superTableModel() {
-            return SchoolPartnership
+            return Job
         },
     },
     methods: {
         openRecord(pVal, item, router) {
             router.push({
-                name: '/lists/school-partnerships/:rId/:rName',
+                name: '/lists/jobs/:rId/:rName',
                 params: {
                     rId: pVal,
                     rName: pVal,

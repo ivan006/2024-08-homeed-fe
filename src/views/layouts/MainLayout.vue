@@ -114,8 +114,8 @@ const linksList = [
   //   route: '/lists/school-family-enrollments',
   // },
   // {
-  //   title: 'School Partnerships',
-  //   route: '/lists/school-partnerships',
+  //   title: 'Jobs',
+  //   route: '/lists/jobs',
   // },
   {
     title: 'Schools',

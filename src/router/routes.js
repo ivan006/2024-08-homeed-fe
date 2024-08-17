@@ -246,21 +246,21 @@ const routes = [
             },
           },
           {
-            path: '/lists/school-partnerships',
-            name: '/lists/school-partnerships',
-            component: () => import('src/controllers/lists/school-partnerships/SchoolPartnershipListController.vue'),
+            path: '/lists/jobs',
+            name: '/lists/jobs',
+            component: () => import('src/controllers/lists/jobs/JobListController.vue'),
             meta: {
-              breadcrumbName: 'SchoolPartnerships',
+              breadcrumbName: 'Jobs',
               breadcrumbParentName: '',
             },
           },
           {
-            path: '/lists/school-partnerships/:rId/:rName',
-            name: '/lists/school-partnerships/:rId/:rName',
-            component: () => import('src/controllers/lists/school-partnerships/SchoolPartnershipReadController.vue'),
+            path: '/lists/jobs/:rId/:rName',
+            name: '/lists/jobs/:rId/:rName',
+            component: () => import('src/controllers/lists/jobs/JobReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParentName: '/lists/school-partnerships',
+              breadcrumbParentName: '/lists/jobs',
             },
           },
           {
