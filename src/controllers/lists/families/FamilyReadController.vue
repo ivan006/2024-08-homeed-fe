@@ -66,7 +66,7 @@
 
           <q-card class="">
             <q-expansion-item
-              label="Family Ties"
+              label="Adults"
               expand-separator
               class="bordered-expansion-item"
               @show="renderSection1=true"
