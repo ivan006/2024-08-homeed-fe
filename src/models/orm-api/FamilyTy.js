@@ -1,17 +1,16 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import Family from 'src/models/orm-api/Family';
-import User from 'src/models/User';
-import VueCookies from 'vue-cookies';
+import User from 'src/models/orm-api/User';
 
-export default class FamilyMembership extends MyBaseModel {
-    static entity = 'familymembership';
-    static entityUrl = '/api/family-memberships';
+export default class FamilyTy extends MyBaseModel {
+    static entity = 'familyty';
+    static entityUrl = '/api/family-ties';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static entityName = 'FamilyMembership';
+    static entityName = 'FamilyTy';
     static openRecord(pVal, item, router){
       router.push({
-        name: '/lists/family-memberships/:rId/:rName',
+        name: '/lists/family-ties/:rId/:rName',
         params: {
           rId: pVal,
           rName: pVal,
@@ -26,27 +25,17 @@ export default class FamilyMembership extends MyBaseModel {
 
     static rules = {
         readables: () => true,
-        readable: (item) => false,
+        readable: (item) => true,
         editable: (item) => true,
         creatable: () => true,
     };
 
     static fieldsMetadata = {
         'id': {},
-        'user_id': { linkablesRule: () => { return {} } },
-        'family_id': {
-          linkablesRule(item){
-            const session = VueCookies.get('VITE_AUTH');
-
-            const familyIds = session.user.family_memberships.map(membership => membership.family_id);
-            const familyIdsString = familyIds.join(',');
-            return {
-              id: familyIdsString
-            }
-          },
-        },
-        'created_at': {},
-        'updated_at': {}
+            'user_id': { linkablesRule: () => { return {} } },
+            'family_id': { linkablesRule: () => { return {} } },
+            'created_at': {},
+            'updated_at': {}
     };
 
     static fields() {

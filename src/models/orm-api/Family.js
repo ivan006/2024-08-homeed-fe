@@ -2,7 +2,7 @@ import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import User from 'src/models/User';
 import Attendance from 'src/models/orm-api/Attendance';
 import Child from 'src/models/orm-api/Child';
-import FamilyMembership from 'src/models/orm-api/FamilyMembership';
+import FamilyTy from 'src/models/orm-api/FamilyTy';
 import SchoolFamilyEnrollment from 'src/models/orm-api/SchoolFamilyEnrollment';
 
 export default class Family extends MyBaseModel {
@@ -54,7 +54,7 @@ export default class Family extends MyBaseModel {
             'updater': this.belongsTo(User, 'updater_id'),
             'attendances': this.hasMany(Attendance, 'family_id'),
             'children': this.hasMany(Child, 'family_id'),
-            'familyMemberships': this.hasMany(FamilyMembership, 'family_id'),
+            'FamilyTies': this.hasMany(FamilyTy, 'family_id'),
             'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'family_id')
         };
     }

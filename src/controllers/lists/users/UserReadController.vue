@@ -16,7 +16,7 @@
 
             <q-card class="q-mb-md">
               <q-expansion-item
-                label="Family Memberships"
+                label="Family Ties"
                 expand-separator
                 class="bordered-expansion-item"
                 @show="renderSection1=true"
@@ -71,7 +71,7 @@
 import userRead from 'src/views/lists/users/UserRead.vue'
 import User from "src/models/User";
 import VueCookies from "vue-cookies";
-import FamilyMembershipList from "src/views/lists/family-memberships/FamilyMembershipList.vue";
+import FamilyMembershipList from "src/views/lists/family-ties/FamilyMembershipList.vue";
 import JobList from "src/views/lists/jobs/JobList.vue";
 
 export default {

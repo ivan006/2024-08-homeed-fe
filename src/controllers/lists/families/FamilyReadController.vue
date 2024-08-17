@@ -95,7 +95,7 @@
 import familyRead from 'src/views/lists/families/FamilyRead.vue'
 import SchoolFamilyEnrollmentList from "src/views/lists/school-family-enrollments/SchoolFamilyEnrollmentList.vue";
 import ChildList from "src/views/lists/children/ChildList.vue";
-import FamilyMembershipList from "src/views/lists/family-memberships/FamilyMembershipList.vue";
+import FamilyMembershipList from "src/views/lists/family-ties/FamilyMembershipList.vue";
 
 export default {
     name: 'Family-read-controller',

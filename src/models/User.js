@@ -69,7 +69,7 @@ export default class User extends MyBaseModel {
       'eventsUpdaterId': this.hasMany(Event, 'updater_id'),
       'families': this.hasMany(Family, 'creator_id'),
       'familiesUpdaterId': this.hasMany(Family, 'updater_id'),
-      'familyMemberships': this.hasMany(FamilyMembership, 'user_id'),
+      'FamilyTies': this.hasMany(FamilyMembership, 'user_id'),
       'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'creator_id'),
       'schoolFamilyEnrollmentsUpdaterId': this.hasMany(SchoolFamilyEnrollment, 'updater_id'),
       'jobs': this.hasMany(Job, 'user_id'),

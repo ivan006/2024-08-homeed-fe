@@ -120,21 +120,21 @@ const routes = [
             },
           },
           {
-            path: '/lists/family-memberships',
-            name: '/lists/family-memberships',
-            component: () => import('src/controllers/lists/family-memberships/FamilyMembershipListController.vue'),
+            path: '/lists/family-ties',
+            name: '/lists/family-ties',
+            component: () => import('src/controllers/lists/family-ties/FamilyMembershipListController.vue'),
             meta: {
-              breadcrumbName: 'FamilyMemberships',
+              breadcrumbName: 'FamilyTies',
               breadcrumbParentName: '',
             },
           },
           {
-            path: '/lists/family-memberships/:rId/:rName',
-            name: '/lists/family-memberships/:rId/:rName',
-            component: () => import('src/controllers/lists/family-memberships/FamilyMembershipReadController.vue'),
+            path: '/lists/family-ties/:rId/:rName',
+            name: '/lists/family-ties/:rId/:rName',
+            component: () => import('src/controllers/lists/family-ties/FamilyMembershipReadController.vue'),
             meta: {
               breadcrumbName: ':rName',
-              breadcrumbParentName: '/lists/family-memberships',
+              breadcrumbParentName: '/lists/family-ties',
             },
           },
           {

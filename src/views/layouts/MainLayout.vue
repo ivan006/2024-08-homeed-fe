@@ -86,8 +86,8 @@ const linksList = [
   //   route: '/lists/families',
   // },
   // {
-  //   title: 'Family Memberships',
-  //   route: '/lists/family-memberships',
+  //   title: 'Family Ties',
+  //   route: '/lists/family-ties',
   // },
   // {
   //   title: 'Migrations',

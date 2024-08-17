@@ -1,20 +1,20 @@
 <template>
-  <SuperTable
-    :showMap="true"
-    :model="superTableModel"
-    @clickRow="openRecord"
-    :displayMapField="false"
-    :parentKeyValuePair="parentKeyValuePair"
-    :fetchFlags="fetchFlags"
-  />
+    <SuperTable
+        :showMap="true"
+        :model="superTableModel"
+        @clickRow="openRecord"
+        :displayMapField="false"
+        :parentKeyValuePair="parentKeyValuePair"
+        :fetchFlags="fetchFlags"
+    />
 </template>
 
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
-import FamilyMembership from 'src/models/orm-api/FamilyMembership'
+import FamilyTy from 'src/models/orm-api/FamilyTy'
 
 export default {
-    name: 'FamilyMembership-list',
+    name: 'FamilyTy-list',
     components: {
         SuperTable,
     },
@@ -32,13 +32,13 @@ export default {
 
     computed: {
         superTableModel() {
-            return FamilyMembership
+            return FamilyTy
         },
     },
     methods: {
         openRecord(pVal, item, router) {
             router.push({
-                name: '/lists/family-memberships/:rId/:rName',
+                name: '/lists/family-ties/:rId/:rName',
                 params: {
                     rId: pVal,
                     rName: pVal,
