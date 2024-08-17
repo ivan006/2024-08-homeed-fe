@@ -23,7 +23,7 @@
               >
                 <div class="q-pa-md">
 
-                  <familyMembershipList
+                  <FamilyTyList
                     v-if="renderSection1"
                     :parentKeyValuePair="{
                     parentFKey: 'user_id',
@@ -71,14 +71,14 @@
 import userRead from 'src/views/lists/users/UserRead.vue'
 import User from "src/models/User";
 import VueCookies from "vue-cookies";
-import FamilyMembershipList from "src/views/lists/family-ties/FamilyMembershipList.vue";
+import FamilyTyList from "src/views/lists/family-ties/FamilyTyList.vue";
 import JobList from "src/views/lists/jobs/JobList.vue";
 
 export default {
     name: 'User-read-controller',
     components: {
       JobList,
-      FamilyMembershipList,
+      FamilyTyList,
         userRead,
     },
   data() {

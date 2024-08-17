@@ -4,7 +4,7 @@ import Attendance from 'src/models/orm-api/Attendance';
 import Child from 'src/models/orm-api/Child';
 import Event from 'src/models/orm-api/Event';
 import Family from 'src/models/orm-api/Family';
-import FamilyMembership from 'src/models/orm-api/FamilyMembership';
+import FamilyTy from 'src/models/orm-api/FamilyTy';
 import SchoolFamilyEnrollment from 'src/models/orm-api/SchoolFamilyEnrollment';
 import Job from 'src/models/orm-api/Job';
 import School from 'src/models/orm-api/School';
@@ -69,7 +69,7 @@ export default class User extends MyBaseModel {
       'eventsUpdaterId': this.hasMany(Event, 'updater_id'),
       'families': this.hasMany(Family, 'creator_id'),
       'familiesUpdaterId': this.hasMany(Family, 'updater_id'),
-      'FamilyTies': this.hasMany(FamilyMembership, 'user_id'),
+      'FamilyTies': this.hasMany(FamilyTy, 'user_id'),
       'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'creator_id'),
       'schoolFamilyEnrollmentsUpdaterId': this.hasMany(SchoolFamilyEnrollment, 'updater_id'),
       'jobs': this.hasMany(Job, 'user_id'),

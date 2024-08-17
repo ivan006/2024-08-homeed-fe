@@ -1,6 +1,6 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import Family from 'src/models/orm-api/Family';
-import User from 'src/models/orm-api/User';
+import User from 'src/models/User';
 
 export default class FamilyTy extends MyBaseModel {
     static entity = 'familyty';
