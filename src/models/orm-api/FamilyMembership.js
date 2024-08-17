@@ -34,10 +34,10 @@ export default class FamilyMembership extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-            'user_id': { relationRules: { linkables: () => { return {} } } },
-            'family_id': { relationRules: { linkables: () => { return {} } } },
-            'created_at': {},
-            'updated_at': {}
+        'user_id': { relationRules: { linkables: () => { return {} } } },
+        'family_id': { relationRules: { linkables: () => { return {} } } },
+        'created_at': {},
+        'updated_at': {}
     };
 
     static fields() {

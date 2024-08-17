@@ -27,8 +27,9 @@
                 <schoolFamilyEnrollmentList
                   v-if="renderSection1"
                   :parentKeyValuePair="{
-                    key: 'family_id',
-                    value: +this.$route.params.rId
+                    parentFKey: 'family_id',
+                    parentFVal: +this.$route.params.rId,
+                    parentItem: {},
                   }"
 
                 />
