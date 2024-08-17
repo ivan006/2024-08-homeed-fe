@@ -89,21 +89,21 @@ export default class Attendance extends MyBaseModel {
 
     static fields() {
         return {
-            'id': this.attr('').nullable(),
-            'event_id': this.attr(''),
-            'child_id': this.attr(''),
-            'family_id': this.attr('').nullable(),
-            'school_id': this.attr('').nullable(),
-            'creator_id': this.attr('').nullable(),
-            'updater_id': this.attr('').nullable(),
-            'created_at': this.attr('').nullable(),
-            'updated_at': this.attr('').nullable(),
-            'child': this.belongsTo(Child, 'child_id'),
-            'creator': this.belongsTo(User, 'creator_id'),
-            'event': this.belongsTo(Event, 'event_id'),
-            'family': this.belongsTo(Family, 'family_id'),
-            'school': this.belongsTo(School, 'school_id'),
-            'updater': this.belongsTo(User, 'updater_id')
+          'id': this.attr('').nullable(),
+          'event_id': this.attr(''),
+          'child_id': this.attr(''),
+          'family_id': this.attr('').nullable(),
+          'school_id': this.attr('').nullable(),
+          'creator_id': this.attr('').nullable(),
+          'updater_id': this.attr('').nullable(),
+          'created_at': this.attr('').nullable(),
+          'updated_at': this.attr('').nullable(),
+          'child': this.belongsTo(Child, 'child_id'),
+          'creator': this.belongsTo(User, 'creator_id'),
+          'event': this.belongsTo(Event, 'event_id'),
+          'family': this.belongsTo(Family, 'family_id'),
+          'school': this.belongsTo(School, 'school_id'),
+          'updater': this.belongsTo(User, 'updater_id')
         };
     }
 
