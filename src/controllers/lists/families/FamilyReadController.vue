@@ -15,7 +15,7 @@
       <div class="row  q-col-gutter-md">
         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
-          <q-card class="q-mb-md">
+          <q-card class="">
             <q-expansion-item
               label="School Enrollments"
               expand-separator
@@ -40,7 +40,7 @@
         </div>
         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
-          <q-card class="q-mb-md">
+          <q-card class="">
             <q-expansion-item
               label="Children"
               expand-separator
@@ -64,7 +64,7 @@
         </div>
         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
-          <q-card class="q-mb-md">
+          <q-card class="">
             <q-expansion-item
               label="Memberships"
               expand-separator
