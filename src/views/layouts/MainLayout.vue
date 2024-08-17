@@ -35,11 +35,12 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import {computed, ref, watch} from 'vue';
 import { useRoute } from 'vue-router';
 import EssentialLink from 'src/views/EssentialLink.vue';
 import MainLayoutHelper from "src/views/layouts/MainLayoutHelper.vue";
 import BreadcrumbsComp from "src/views/BreadcrumbsComp.vue";
+import VueCookies from "vue-cookies";
 
 defineOptions({
   name: 'MainLayout'
@@ -52,10 +53,17 @@ watch(route, (newRoute) => {
   activeRoute.value = newRoute.path;
 });
 
+const session = computed(() => {
+  return VueCookies.get('VITE_AUTH');
+});
+
+
+const myAccount = `/lists/users/${session.value.user.id}/${session.value.user.name}`
+
 const linksList = [
   {
     title: 'My Account',
-    route: '/my-account',
+    route: myAccount,
   },
   // {
   //   title: 'Attendances',

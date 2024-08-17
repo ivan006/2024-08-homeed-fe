@@ -38,6 +38,54 @@
           </q-card>
 
         </div>
+        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+
+          <q-card class="q-mb-md">
+            <q-expansion-item
+              label="Children"
+              expand-separator
+              class="bordered-expansion-item"
+              @show="renderSection1=true"
+            >
+              <div class="q-pa-md">
+                <child-list
+                  v-if="renderSection1"
+                  :parentKeyValuePair="{
+                    parentFKey: 'family_id',
+                    parentFVal: +this.$route.params.rId,
+                    parentItem: {},
+                  }"
+
+                />
+              </div>
+            </q-expansion-item>
+          </q-card>
+
+        </div>
+        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+
+          <q-card class="q-mb-md">
+            <q-expansion-item
+              label="Family Memberships"
+              expand-separator
+              class="bordered-expansion-item"
+              @show="renderSection1=true"
+            >
+              <div class="q-pa-md">
+                <familyMembershipList
+                  v-if="renderSection1"
+                  :parentKeyValuePair="{
+                    parentFKey: 'family_id',
+                    parentFVal: +this.$route.params.rId,
+                    parentItem: {},
+                  }"
+
+                />
+              </div>
+            </q-expansion-item>
+          </q-card>
+
+        </div>
       </div>
     </div>
   </div>
@@ -46,10 +94,14 @@
 <script>
 import familyRead from 'src/views/lists/families/FamilyRead.vue'
 import SchoolFamilyEnrollmentList from "src/views/lists/school-family-enrollments/SchoolFamilyEnrollmentList.vue";
+import ChildList from "src/views/lists/children/ChildList.vue";
+import FamilyMembershipList from "src/views/lists/family-memberships/FamilyMembershipList.vue";
 
 export default {
     name: 'Family-read-controller',
     components: {
+      FamilyMembershipList,
+      ChildList,
       SchoolFamilyEnrollmentList,
         familyRead,
     },
