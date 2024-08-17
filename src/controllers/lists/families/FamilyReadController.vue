@@ -17,7 +17,7 @@
 
           <q-card class="q-mb-md">
             <q-expansion-item
-              label="School Family Enrollments"
+              label="School Enrollments"
               expand-separator
               class="bordered-expansion-item"
               @show="renderSection1=true"
@@ -66,7 +66,7 @@
 
           <q-card class="q-mb-md">
             <q-expansion-item
-              label="Family Memberships"
+              label="Memberships"
               expand-separator
               class="bordered-expansion-item"
               @show="renderSection1=true"

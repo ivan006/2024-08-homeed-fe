@@ -48,7 +48,16 @@ export default class Attendance extends MyBaseModel {
             }
           },
         },
-        'creator_id': { linkablesRule: () => { return {} } },
+        'creator_id': {
+          autoFill(item){
+            const session = VueCookies.get('VITE_AUTH');
+            if (item.creator_id){
+              return item.creator_id
+            } else {
+              return session.user.id
+            }
+          }
+        },
         'updater_id': { linkablesRule: () => { return {} } },
         'created_at': { linkablesRule: () => { return {} } },
         'updated_at': { linkablesRule: () => { return {} } },
