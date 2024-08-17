@@ -36,7 +36,17 @@ export default class Child extends MyBaseModel {
     static fieldsMetadata = {
         'id': {},
         'name': {},
-        'family_id': { linkablesRule: () => { return {} } },
+        'family_id': {
+          linkablesRule(item){
+            const session = VueCookies.get('VITE_AUTH');
+
+            const familyIds = session.user.family_memberships.map(membership => membership.family_id);
+            const familyIdsString = familyIds.join(',');
+            return {
+              id: familyIdsString
+            }
+          },
+        },
         'creator_id': { linkablesRule: () => { return {} } },
         'updater_id': { linkablesRule: () => { return {} } },
         'created_at': {},

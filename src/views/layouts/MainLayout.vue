@@ -125,10 +125,10 @@ const linksList = [
   //   title: 'Tags',
   //   route: '/lists/tags',
   // },
-  // {
-  //   title: 'Users',
-  //   route: '/lists/users',
-  // }
+  {
+    title: 'Users',
+    route: '/lists/users',
+  }
 ];
 
 function updateActiveRoute(newRoute) {

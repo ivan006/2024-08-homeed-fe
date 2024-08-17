@@ -37,6 +37,31 @@
             </q-card>
 
           </div>
+          <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+
+            <q-card class="q-mb-md">
+              <q-expansion-item
+                label="School Partnerships"
+                expand-separator
+                class="bordered-expansion-item"
+                @show="renderSection1=true"
+              >
+                <div class="q-pa-md">
+
+                  <school-partnership-list
+                    v-if="renderSection1"
+                    :parentKeyValuePair="{
+                      parentFKey: 'user_id',
+                      parentFVal: +session.user.id,
+                      parentItem: session.user,
+                    }"
+
+                  />
+                </div>
+              </q-expansion-item>
+            </q-card>
+
+          </div>
         </div>
       </div>
     </div>
@@ -47,10 +72,12 @@ import userRead from 'src/views/lists/users/UserRead.vue'
 import User from "src/models/User";
 import VueCookies from "vue-cookies";
 import FamilyMembershipList from "src/views/lists/family-memberships/FamilyMembershipList.vue";
+import SchoolPartnershipList from "src/views/lists/school-partnerships/SchoolPartnershipList.vue";
 
 export default {
     name: 'User-read-controller',
     components: {
+      SchoolPartnershipList,
       FamilyMembershipList,
         userRead,
     },
