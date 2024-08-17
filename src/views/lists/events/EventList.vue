@@ -1,13 +1,18 @@
 <template>
 
-            <SuperTable
-                :showMap="true"
-                :model="superTableModel"
-                @clickRow="openRecord"
-                :displayMapField="false"
-                :parentKeyValuePair="parentKeyValuePair"
-                :fetchFlags="fetchFlags"
-            />
+    <SuperTable
+        :showMap="true"
+        :model="superTableModel"
+        @clickRow="openRecord"
+        :displayMapField="false"
+        :parentKeyValuePair="parentKeyValuePair"
+        :templateListGrid="templateListGrid"
+        :fetchFlags="fetchFlags"
+        :viewAs="{
+          hide: true,
+          default: 'grid'
+        }"
+    />
 
 </template>
 
@@ -48,5 +53,45 @@ export default {
             })
         },
     },
+
+  data() {
+    return {
+      templateListGrid: {
+        class: "q-pa-md q-col-gutter-md",
+        cols: [
+          {
+            width: 12,
+            dataPoint: {
+              type: "function",
+              function: (item) => `${item.name}`,
+              label: "",
+              tag: "div",
+              class: "text-h6",
+              hideLabel: true,
+            },
+          },
+          {
+            width: 12,
+            dataPoint: {
+              type: "component",
+              componentPath: () => import('./EventButtonAttend.vue'),
+              label: "",
+              class: "text-right ",
+              hideLabel: true,
+            },
+          },
+          // {
+          //   width: 3,
+          //   dataPoint: {
+          //     type: "function",
+          //     function: (item) => `${item.email}`,
+          //     label: "Email",
+          //     // xOrientation: true,
+          //   },
+          // },
+        ],
+      }
+    }
+  },
 }
 </script>

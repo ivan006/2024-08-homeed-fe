@@ -17,31 +17,6 @@
 
           <q-card class="">
             <q-expansion-item
-              label="School Enrollments"
-              expand-separator
-              class="bordered-expansion-item"
-              @show="renderSection1=true"
-            >
-              <div class="q-pa-md">
-
-                <schoolFamilyEnrollmentList
-                  v-if="renderSection1"
-                  :parentKeyValuePair="{
-                    parentFKey: 'family_id',
-                    parentFVal: +this.$route.params.rId,
-                    parentItem: {},
-                  }"
-
-                />
-              </div>
-            </q-expansion-item>
-          </q-card>
-
-        </div>
-        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-
-          <q-card class="">
-            <q-expansion-item
               label="Children"
               expand-separator
               class="bordered-expansion-item"
@@ -73,6 +48,32 @@
             >
               <div class="q-pa-md">
                 <FamilyTyList
+                  v-if="renderSection1"
+                  :parentKeyValuePair="{
+                    parentFKey: 'family_id',
+                    parentFVal: +this.$route.params.rId,
+                    parentItem: {},
+                  }"
+
+                />
+              </div>
+            </q-expansion-item>
+          </q-card>
+
+        </div>
+
+        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+
+          <q-card class="">
+            <q-expansion-item
+              label="School Enrollments"
+              expand-separator
+              class="bordered-expansion-item"
+              @show="renderSection1=true"
+            >
+              <div class="q-pa-md">
+
+                <schoolFamilyEnrollmentList
                   v-if="renderSection1"
                   :parentKeyValuePair="{
                     parentFKey: 'family_id',
