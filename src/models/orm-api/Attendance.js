@@ -40,8 +40,26 @@ export default class Attendance extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-        'school_id': { linkablesRule: () => { return {} } },
-        'family_id': { linkablesRule: () => { return {} } },
+        'school_id': {
+          autoFill(item){
+            const rel = Event.query().where('id', item.event_id).first();
+            if (rel){
+              return rel.school_id ? rel.school_id : null
+            } else {
+              return null
+            }
+          }
+        },
+        'family_id': {
+          autoFill(item){
+            const rel = Child.query().where('id', item.child_id).first();
+            if (rel){
+              return rel.family_id ? rel.family_id : null
+            } else {
+              return null
+            }
+          }
+        },
         'event_id': { linkablesRule: () => { return {} } },
         'child_id': {
           linkablesRule(item){
@@ -72,10 +90,10 @@ export default class Attendance extends MyBaseModel {
     static fields() {
         return {
             'id': this.attr('').nullable(),
-            'school_id': this.attr('').nullable(),
-            'family_id': this.attr('').nullable(),
             'event_id': this.attr(''),
             'child_id': this.attr(''),
+            'family_id': this.attr('').nullable(),
+            'school_id': this.attr('').nullable(),
             'creator_id': this.attr('').nullable(),
             'updater_id': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
