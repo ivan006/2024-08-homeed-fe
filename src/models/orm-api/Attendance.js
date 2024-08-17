@@ -8,7 +8,6 @@ export default class Attendance extends MyBaseModel {
     static entity = 'attendance';
     static entityUrl = '/api/attendances';
     static primaryKey = 'id';
-    static session = VueCookies.get('VITE_AUTH');
     static entityName = 'Item';
     static titleKey = 'id';
     static openRecord(pVal, item, router){
@@ -37,12 +36,23 @@ export default class Attendance extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-        'event_id': { relationRules: { linkables: () => { return {} } } },
-        'child_id': { relationRules: { linkables: () => { return {} } } },
-        'creator_id': { relationRules: { linkables: () => { return {} } } },
-        'updater_id': { relationRules: { linkables: () => { return {} } } },
-        'created_at': {},
-        'updated_at': {}
+        'event_id': { linkablesRule: () => { return {} } },
+        'child_id': {
+          linkablesRule(item){
+            const session = VueCookies.get('VITE_AUTH');
+
+            const familyIds = session.user.family_memberships.map(membership => membership.family_id);
+            const familyIdsString = familyIds.join(',');
+            return {
+              family_id: familyIdsString
+            }
+          },
+        },
+        'creator_id': { linkablesRule: () => { return {} } },
+        'updater_id': { linkablesRule: () => { return {} } },
+        'created_at': { linkablesRule: () => { return {} } },
+        'updated_at': { linkablesRule: () => { return {} } },
+        'school_id': { linkablesRule: () => { return {} } },
     };
 
     static fields() {
