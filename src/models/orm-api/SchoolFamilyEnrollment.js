@@ -40,14 +40,7 @@ export default class SchoolFamilyEnrollment extends MyBaseModel {
         'id': {},
         'family_id': { linkablesRule: () => { return {} } },
         'school_id': { linkablesRule: () => { return {} } },
-        'creator_id': {
-          linkablesRule(item){
-            const session = VueCookies.get('VITE_AUTH');
-            return {
-              id: +session.user.id
-            }
-          },
-        },
+        'creator_id': { linkablesRule: () => { return {} } },
         'updater_id': { linkablesRule: () => { return {} } },
         'created_at': {},
         'updated_at': {}
