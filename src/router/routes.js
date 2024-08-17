@@ -30,15 +30,6 @@ const routes = [
         component: () => import('src/views/layouts/MainLayout.vue'),
         children: [
           {
-            path: 'my-account',
-            name: 'my-account',
-            component: () => import('src/controllers/my-account/MyAccountRead.vue'),
-            meta: {
-              breadcrumbName: 'My Account',
-              breadcrumbParentName: '',
-            },
-          },
-          {
             path: '/lists/attendances',
             name: '/lists/attendances',
             component: () => import('src/controllers/lists/attendances/AttendanceListController.vue'),
