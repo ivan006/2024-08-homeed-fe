@@ -17,7 +17,7 @@ export default class Post extends MyBaseModel {
     }
 
     static parentWithables = [
-        
+
     ];
 
     static rules = {
@@ -29,9 +29,24 @@ export default class Post extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-            'created_at': {},
-            'updated_at': {},
-            'name': {}
+
+        'created_at': {
+          autoFill(item){
+            if (item.created_at){
+              return item.created_at
+            } else {
+              const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+              return currentTimestamp
+            }
+          }
+        },
+        'updated_at': {
+          autoFill(item){
+            const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+            return currentTimestamp
+          }
+        },
+      'name': {}
     };
 
     static fields() {
@@ -40,7 +55,7 @@ export default class Post extends MyBaseModel {
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
             'name': this.attr('').nullable(),
-            
+
         };
     }
 

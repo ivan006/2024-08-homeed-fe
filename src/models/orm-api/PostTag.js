@@ -17,7 +17,7 @@ export default class PostTag extends MyBaseModel {
     }
 
     static parentWithables = [
-        
+
     ];
 
     static rules = {
@@ -29,8 +29,23 @@ export default class PostTag extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-            'created_at': {},
-            'updated_at': {},
+
+        'created_at': {
+          autoFill(item){
+            if (item.created_at){
+              return item.created_at
+            } else {
+              const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+              return currentTimestamp
+            }
+          }
+        },
+        'updated_at': {
+          autoFill(item){
+            const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+            return currentTimestamp
+          }
+        },
             'post_id': {},
             'tag_id': {}
     };
@@ -42,7 +57,7 @@ export default class PostTag extends MyBaseModel {
             'updated_at': this.attr('').nullable(),
             'post_id': this.attr('').nullable(),
             'tag_id': this.attr('').nullable(),
-            
+
         };
     }
 

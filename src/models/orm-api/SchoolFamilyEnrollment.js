@@ -37,10 +37,41 @@ export default class SchoolFamilyEnrollment extends MyBaseModel {
         'id': {},
             'family_id': { linkablesRule: () => { return {} } },
             'school_id': { linkablesRule: () => { return {} } },
-            'creator_id': { linkablesRule: () => { return {} } },
-            'updater_id': { linkablesRule: () => { return {} } },
-            'created_at': {},
-            'updated_at': {}
+
+        'creator_id': {
+          autoFill(item){
+            const session = VueCookies.get('VITE_AUTH');
+            if (item.creator_id){
+              return item.creator_id
+            } else {
+              return session.user.id
+            }
+          }
+        },
+
+        'updater_id': {
+          autoFill(item){
+            const session = VueCookies.get('VITE_AUTH');
+            return session.user.id
+          }
+        },
+
+        'created_at': {
+          autoFill(item){
+            if (item.created_at){
+              return item.created_at
+            } else {
+              const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+              return currentTimestamp
+            }
+          }
+        },
+        'updated_at': {
+          autoFill(item){
+            const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+            return currentTimestamp
+          }
+        },
     };
 
     static fields() {

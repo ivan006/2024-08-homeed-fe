@@ -34,8 +34,23 @@ export default class FamilyTy extends MyBaseModel {
         'id': {},
             'user_id': { linkablesRule: () => { return {} } },
             'family_id': { linkablesRule: () => { return {} } },
-            'created_at': {},
-            'updated_at': {}
+
+        'created_at': {
+          autoFill(item){
+            if (item.created_at){
+              return item.created_at
+            } else {
+              const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+              return currentTimestamp
+            }
+          }
+        },
+        'updated_at': {
+          autoFill(item){
+            const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+            return currentTimestamp
+          }
+        },
     };
 
     static fields() {

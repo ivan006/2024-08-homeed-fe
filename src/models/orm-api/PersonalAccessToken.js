@@ -17,7 +17,7 @@ export default class PersonalAccessToken extends MyBaseModel {
     }
 
     static parentWithables = [
-        
+
     ];
 
     static rules = {
@@ -36,8 +36,23 @@ export default class PersonalAccessToken extends MyBaseModel {
             'abilities': {},
             'last_used_at': {},
             'expires_at': {},
-            'created_at': {},
-            'updated_at': {}
+
+        'created_at': {
+          autoFill(item){
+            if (item.created_at){
+              return item.created_at
+            } else {
+              const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+              return currentTimestamp
+            }
+          }
+        },
+        'updated_at': {
+          autoFill(item){
+            const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+            return currentTimestamp
+          }
+        },
     };
 
     static fields() {
@@ -52,7 +67,7 @@ export default class PersonalAccessToken extends MyBaseModel {
             'expires_at': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
             'updated_at': this.attr('').nullable(),
-            
+
         };
     }
 
