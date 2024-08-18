@@ -12,7 +12,10 @@
           hide: true,
           default: 'grid'
         }"
+        :allowedFilters="[]"
     />
+
+
 
 </template>
 

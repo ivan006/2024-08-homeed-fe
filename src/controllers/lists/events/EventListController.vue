@@ -1,11 +1,11 @@
 <template>
     <div>
-        <q-card class="q-pa-md q-mt-md">
-        <eventList
-            :parentKeyValuePair="parentKeyValuePair"
-            :fetchFlags="fetchFlags"
-        />
-    </q-card>
+      <eventList
+        :parentKeyValuePair="parentKeyValuePair"
+        :fetchFlags="fetchFlags"
+      />
+      <!--<q-card class="q-pa-md q-mt-md">-->
+      <!--</q-card>-->
     </div>
 </template>
 
