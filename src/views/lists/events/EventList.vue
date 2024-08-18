@@ -113,9 +113,35 @@ export default {
         formattedRange = `${startDayWithMonth}, ${dayNameStart}, ${yearStart}, ${startTime} - ${endDayWithMonth}, ${dayNameEnd}, ${yearEnd}, ${endTime}`;
       }
 
+      // Calculate "coming up" hint or event status
+      const timeUntilStart = startDate.diff(now, 'minutes');
+      const timeUntilEnd = endDate.diff(now, 'minutes');
+      let comingUpHint = '';
+      if (timeUntilEnd < 0) {
+        comingUpHint = "Event has finished";
+      } else if (timeUntilStart <= 0 && timeUntilEnd >= 0) {
+        comingUpHint = "Event is happening now";
+      } else if (timeUntilStart < 60) {
+        const roundedMinutes = Math.round(timeUntilStart / 30) * 0.5;
+        comingUpHint = `~${roundedMinutes} minute${roundedMinutes !== 1 ? 's' : ''} from now`;
+      } else if (timeUntilStart < 1440) { // Less than a day
+        const roundedHours = Math.round((timeUntilStart / 60) * 2) / 2;
+        comingUpHint = `~${roundedHours} hour${roundedHours !== 1 ? 's' : ''} from now`;
+      } else if (timeUntilStart < 10080) { // Less than a week
+        const roundedDays = Math.round((timeUntilStart / 1440) * 2) / 2;
+        comingUpHint = `~${roundedDays} day${roundedDays !== 1 ? 's' : ''} from now`;
+      } else if (timeUntilStart < 43800) { // Less than a month
+        const roundedWeeks = Math.round((timeUntilStart / 10080) * 2) / 2;
+        comingUpHint = `~${roundedWeeks} week${roundedWeeks !== 1 ? 's' : ''} from now`;
+      } else {
+        const roundedMonths = Math.round((timeUntilStart / 43800) * 2) / 2;
+        comingUpHint = `~${roundedMonths} month${roundedMonths !== 1 ? 's' : ''} from now`;
+      }
+
       return {
         range: formattedRange,
-        duration: durationText
+        duration: durationText,
+        comingUpHint: comingUpHint
       };
     }
   },
@@ -147,6 +173,15 @@ export default {
                   tag: "div",
                   class: "text-h6",
                   hideLabel: true,
+                },
+              },
+              {
+                width: 12,
+                dataPoint: {
+                  type: "function",
+                  function: (item) => `${this.formatCasualTime(item.start_datetime, item.end_datetime).comingUpHint}`,
+                  label: "Count Down",
+                  xOrientation: true,
                 },
               },
               {

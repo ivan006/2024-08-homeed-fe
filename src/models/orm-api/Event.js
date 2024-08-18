@@ -10,6 +10,9 @@ export default class Event extends MyBaseModel {
     static primaryKey = 'id';
     static titleKey = 'name';
     static entityName = 'Event';
+
+    static fileUrlPrefix = `${import.meta.env.VITE_API_AIVTEAMS_DOMAIN}/storage`;
+    
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/events/:rId/:rName',
@@ -36,6 +39,9 @@ export default class Event extends MyBaseModel {
     static fieldsMetadata = {
         'id': {},
         'name': {},
+        'image': {
+          usageType: 'fileImageType'
+        },
         'start_datetime': {
           usageType: "timestampType"
         },
@@ -43,16 +49,45 @@ export default class Event extends MyBaseModel {
           usageType: "timestampType"
         },
         'school_id': { linkablesRule: () => { return {} } },
-        'creator_id': { linkablesRule: () => { return {} } },
-        'updater_id': { linkablesRule: () => { return {} } },
-        'created_at': {},
-        'updated_at': {}
+        'creator_id': {
+          autoFill(item){
+            const session = VueCookies.get('VITE_AUTH');
+            if (item.creator_id){
+              return item.creator_id
+            } else {
+              return session.user.id
+            }
+          }
+        },
+        'updater_id': {
+          autoFill(item){
+            const session = VueCookies.get('VITE_AUTH');
+            return session.user.id
+          }
+        },
+        'created_at': {
+          autoFill(item){
+            if (item.created_at){
+              return item.created_at
+            } else {
+              const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+              return currentTimestamp
+            }
+          }
+        },
+        'updated_at': {
+          autoFill(item){
+            const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+            return currentTimestamp
+          }
+        },
     };
 
     static fields() {
         return {
             'id': this.attr('').nullable(),
             'name': this.attr(''),
+            'image': this.attr(''),
             'start_datetime': this.attr(''),
             'end_datetime': this.attr(''),
             'school_id': this.attr(''),

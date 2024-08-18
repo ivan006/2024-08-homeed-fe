@@ -1,10 +1,10 @@
 <template>
   <div class="">
     <q-img
-      :src="item.heroImage ? item.heroImage : ''"
+      :src="item.image ? baseUrl+'/storage/'+item.image : ''"
       :ratio="16/5"
     >
-      <div v-if="!item.heroImage" class="absolute-full text-subtitle2 flex flex-center">
+      <div v-if="!item.image" class="absolute-full text-subtitle2 flex flex-center">
         Oops, no image found!
       </div>
     </q-img>
@@ -21,6 +21,7 @@ const props = defineProps({
   }
 });
 
+const baseUrl = import.meta.env.VITE_API_AIVTEAMS_DOMAIN
 </script>
 
 <style scoped>
