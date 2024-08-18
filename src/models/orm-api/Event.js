@@ -37,10 +37,10 @@ export default class Event extends MyBaseModel {
         'id': {},
         'name': {},
         'start_datetime': {
-          usageType: "dateType"
+          usageType: "timestampType"
         },
         'end_datetime': {
-          usageType: "dateType"
+          usageType: "timestampType"
         },
         'school_id': { linkablesRule: () => { return {} } },
         'creator_id': { linkablesRule: () => { return {} } },
