@@ -21,7 +21,7 @@
     "axios": "^1.7.2",
     "object-to-formdata": "^4.5.1",
     "quasar": "^2.16.0",
-    "quicklists-vue-orm-ui": "^1.0.11",
+    "quicklists-vue-orm-ui": "^1.0.14",
     "vue": "^3.4.18",
     "vue-cookies": "^1.8.4",
     "vue-router": "^4.0.12",
