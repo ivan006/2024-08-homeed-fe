@@ -9,8 +9,8 @@
     "lint": "eslint --ext .js,.vue ./",
     "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0",
-    "dev": "quasar dev",
-    "build": "quasar build",
+    "dev": "cross-env NODE_ENV=development quasar dev",
+    "build": "cross-env NODE_ENV=production quasar build",
     "build:alert": "node build-and-alert.js",
     "watch:build": "chokidar \"src/**/*\" -c \"npm run build:alert\""
   },
@@ -34,6 +34,7 @@
     "@quasar/app-vite": "^1.9.0",
     "autoprefixer": "^10.4.2",
     "chokidar-cli": "^3.0.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-vue": "^9.26.0",
