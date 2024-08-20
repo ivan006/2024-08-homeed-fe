@@ -1,6 +1,6 @@
 <template>
     <div>
-      <q-card class="q-mb-md">
+      <q-card class="q-mb-md" style="overflow: hidden;">
         <failedJobRead :id="id" />
     </q-card>
     </div>

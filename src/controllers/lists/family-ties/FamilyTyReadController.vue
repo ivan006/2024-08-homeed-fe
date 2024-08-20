@@ -1,7 +1,7 @@
 <template>
 
     <div>
-        <q-card class="q-mb-md">
+        <q-card class="q-mb-md" style="overflow: hidden;">
             <familyTyRead :id="id" />
         </q-card>
     </div>

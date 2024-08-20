@@ -1,6 +1,6 @@
 <template>
   <div>
-    <q-card class="q-mb-md">
+    <q-card class="q-mb-md" style="overflow: hidden;">
       <familyRead
         :id="id"
         :templateOverview="templateListGrid"
@@ -41,7 +41,7 @@
 
           <q-card class="">
             <q-expansion-item
-              label="Adults"
+              label="Family Ties"
               expand-separator
               class="bordered-expansion-item"
               @show="renderSection1=true"

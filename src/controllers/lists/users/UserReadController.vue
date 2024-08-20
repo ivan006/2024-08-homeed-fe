@@ -1,6 +1,6 @@
 <template>
     <div>
-      <q-card class="q-mb-md">
+      <q-card class="q-mb-md" style="overflow: hidden;">
           <userRead
             :id="+session.user.id"
             @initialLoadHappened="initialLoadHappened = true"
@@ -14,7 +14,7 @@
         <div class="row  q-col-gutter-md">
           <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
-            <q-card class="q-mb-md">
+            <q-card class="q-mb-md" style="overflow: hidden;">
               <q-expansion-item
                 label="Family Ties"
                 expand-separator
@@ -39,7 +39,7 @@
           </div>
           <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
-            <q-card class="q-mb-md">
+            <q-card class="q-mb-md" style="overflow: hidden;">
               <q-expansion-item
                 label="Jobs"
                 expand-separator
