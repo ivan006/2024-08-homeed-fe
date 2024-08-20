@@ -66,6 +66,13 @@ export default {
                   hideLabel: true,
                 },
               },
+              {
+                width: 12,
+                dataPoint: {
+                  hideLabel: true,
+                  field: "actions",
+                },
+              },
               // {
               //   width: 3,
               //   dataPoint: {

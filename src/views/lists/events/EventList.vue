@@ -145,7 +145,6 @@ export default {
       };
     }
   },
-
   data() {
     return {
       templateListGrid: {
@@ -220,15 +219,13 @@ export default {
                   hideLabel: true,
                 },
               },
-              // {
-              //   width: 3,
-              //   dataPoint: {
-              //     type: "function",
-              //     function: (item) => `${item.email}`,
-              //     label: "Email",
-              //     // xOrientation: true,
-              //   },
-              // },
+              {
+                width: 12,
+                dataPoint: {
+                  hideLabel: true,
+                  field: "actions",
+                },
+              },
             ]
           },
         ],

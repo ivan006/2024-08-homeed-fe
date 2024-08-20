@@ -24,7 +24,7 @@
     <div
       v-show="initialLoadHappened"
     >
-      <q-card class="q-mb-md">
+      <q-card class="q-mb-md" style="overflow: hidden;">
         <!--default-opened-->
         <q-expansion-item
           label="Passports"
