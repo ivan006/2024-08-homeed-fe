@@ -61,10 +61,6 @@ const session = computed(() => {
 const myAccount = `/lists/users/${session.value.user.id}/${session.value.user.name}`
 
 const linksList = [
-  {
-    title: 'My Account',
-    route: myAccount,
-  },
   // {
   //   title: 'Attendances',
   //   route: '/lists/attendances',
@@ -128,7 +124,11 @@ const linksList = [
   {
     title: 'Users',
     route: '/lists/users',
-  }
+  },
+  {
+    title: 'My Account',
+    route: myAccount,
+  },
 ];
 
 function updateActiveRoute(newRoute) {

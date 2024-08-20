@@ -28,6 +28,7 @@ const routes = [
       {
         path: '/',
         component: () => import('src/views/layouts/MainLayout.vue'),
+        redirect: to => { return '/lists/events' },
         children: [
           {
             path: '/lists/attendances',
