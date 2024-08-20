@@ -6,8 +6,8 @@
         @clickRow="openRecord"
         :displayMapField="false"
         :parentKeyValuePair="parentKeyValuePair"
-        :templateListGrid="templateListGrid"
         :fetchFlags="fetchFlags"
+        :templateListGrid="templateListGrid"
         :viewAs="{
           hide: true,
           default: 'grid'

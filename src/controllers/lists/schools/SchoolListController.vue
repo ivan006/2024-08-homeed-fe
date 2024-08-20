@@ -1,11 +1,11 @@
 <template>
     <div>
-        <q-card class="q-pa-md q-mt-md">
-        <schoolList
-            :parentKeyValuePair="parentKeyValuePair"
-            :fetchFlags="fetchFlags"
-        />
-    </q-card>
+      <!--<q-card class="q-pa-md q-mt-md">-->
+      <!--</q-card>-->
+      <schoolList
+        :parentKeyValuePair="parentKeyValuePair"
+        :fetchFlags="fetchFlags"
+      />
     </div>
 </template>
 

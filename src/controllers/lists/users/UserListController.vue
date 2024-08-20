@@ -1,11 +1,12 @@
 <template>
     <div>
-        <q-card class="q-pa-md q-mt-md">
-        <userList
-            :parentKeyValuePair="parentKeyValuePair"
-            :fetchFlags="fetchFlags"
-        />
-    </q-card>
+      <!--<q-card class="q-pa-md q-mt-md">-->
+      <!--</q-card>-->
+
+      <userList
+        :parentKeyValuePair="parentKeyValuePair"
+        :fetchFlags="fetchFlags"
+      />
     </div>
 </template>
 
