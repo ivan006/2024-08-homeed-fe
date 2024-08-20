@@ -1,4 +1,5 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
+import VueCookies from 'vue-cookies';
 import School from 'src/models/orm-api/School';
 import User from 'src/models/User';
 

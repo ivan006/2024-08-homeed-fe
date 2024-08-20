@@ -1,4 +1,5 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
+import VueCookies from 'vue-cookies';
 
 export default class Migration extends MyBaseModel {
     static entity = 'migration';
@@ -17,7 +18,7 @@ export default class Migration extends MyBaseModel {
     }
 
     static parentWithables = [
-        
+
     ];
 
     static rules = {
@@ -38,7 +39,7 @@ export default class Migration extends MyBaseModel {
             'id': this.attr('').nullable(),
             'migration': this.attr('').nullable(),
             'batch': this.attr('').nullable(),
-            
+
         };
     }
 

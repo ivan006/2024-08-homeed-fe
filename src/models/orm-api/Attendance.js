@@ -1,10 +1,10 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
+import VueCookies from 'vue-cookies';
 import Child from 'src/models/orm-api/Child';
 import User from 'src/models/User';
 import Event from 'src/models/orm-api/Event';
 import Family from 'src/models/orm-api/Family';
 import School from 'src/models/orm-api/School';
-import VueCookies from 'vue-cookies';
 
 export default class Attendance extends MyBaseModel {
     static entity = 'attendance';

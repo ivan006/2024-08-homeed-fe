@@ -1,8 +1,8 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
+import VueCookies from 'vue-cookies';
 import User from 'src/models/User';
 import Family from 'src/models/orm-api/Family';
 import Attendance from 'src/models/orm-api/Attendance';
-import VueCookies from 'vue-cookies';
 
 export default class Child extends MyBaseModel {
     static entity = 'child';

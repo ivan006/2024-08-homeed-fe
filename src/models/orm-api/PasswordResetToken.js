@@ -1,4 +1,5 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
+import VueCookies from 'vue-cookies';
 
 export default class PasswordResetToken extends MyBaseModel {
     static entity = 'passwordresettoken';
@@ -17,7 +18,7 @@ export default class PasswordResetToken extends MyBaseModel {
     }
 
     static parentWithables = [
-        
+
     ];
 
     static rules = {
@@ -38,7 +39,7 @@ export default class PasswordResetToken extends MyBaseModel {
             'email': this.attr('').nullable(),
             'token': this.attr('').nullable(),
             'created_at': this.attr('').nullable(),
-            
+
         };
     }
 
