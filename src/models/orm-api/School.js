@@ -36,8 +36,10 @@ export default class School extends MyBaseModel {
 
     static fieldsMetadata = {
         'id': {},
-            'name': {},
-
+        'name': {},
+        'image': {
+          usageType: 'fileImageType'
+        },
         'creator_id': {
           autoFill(item){
             const session = VueCookies.get('VITE_AUTH');
@@ -76,18 +78,19 @@ export default class School extends MyBaseModel {
 
     static fields() {
         return {
-            'id': this.attr('').nullable(),
-            'name': this.attr(''),
-            'creator_id': this.attr('').nullable(),
-            'updater_id': this.attr('').nullable(),
-            'created_at': this.attr('').nullable(),
-            'updated_at': this.attr('').nullable(),
-            'creator': this.belongsTo(User, 'creator_id'),
-            'updater': this.belongsTo(User, 'updater_id'),
-            'attendances': this.hasMany(Attendance, 'school_id'),
-            'events': this.hasMany(Event, 'school_id'),
-            'jobs': this.hasMany(Job, 'school_id'),
-            'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'school_id')
+          'id': this.attr('').nullable(),
+          'name': this.attr(''),
+          'image': this.attr(''),
+          'creator_id': this.attr('').nullable(),
+          'updater_id': this.attr('').nullable(),
+          'created_at': this.attr('').nullable(),
+          'updated_at': this.attr('').nullable(),
+          'creator': this.belongsTo(User, 'creator_id'),
+          'updater': this.belongsTo(User, 'updater_id'),
+          'attendances': this.hasMany(Attendance, 'school_id'),
+          'events': this.hasMany(Event, 'school_id'),
+          'jobs': this.hasMany(Job, 'school_id'),
+          'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'school_id')
         };
     }
 
