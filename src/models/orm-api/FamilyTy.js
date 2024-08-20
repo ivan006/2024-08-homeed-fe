@@ -25,7 +25,7 @@ export default class FamilyTy extends MyBaseModel {
 
     static rules = {
         readables: () => true,
-        readable: (item) => true,
+        readable: (item) => false,
         editable: (item) => true,
         creatable: () => true,
     };

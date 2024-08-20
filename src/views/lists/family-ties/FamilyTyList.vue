@@ -41,26 +41,10 @@ export default {
       templateListGrid: {
         width: 4,
         cols: [
-          // {
-          //   width: 12,
-          //   dataPoint: {
-          //     type: "component",
-          //     componentPath: () => import('../events/EventImage.vue'),
-          //     label: "",
-          //     hideLabel: true,
-          //   },
-          // },
           {
             width: 12,
             class: "q-pa-md q-col-gutter-sm",
             cols: [
-              // {
-              //   width: 12,
-              //   dataPoint: {
-              //     field: "id",
-              //     xOrientation: true,
-              //   },
-              // },
               {
                 width: 12,
                 dataPoint: {

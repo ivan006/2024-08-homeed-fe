@@ -6,6 +6,12 @@
         :displayMapField="false"
         :parentKeyValuePair="parentKeyValuePair"
         :fetchFlags="fetchFlags"
+        :templateListGrid="templateListGrid"
+        :viewAs="{
+          hide: true,
+          default: 'grid'
+        }"
+        :allowedFilters="[]"
     />
 </template>
 
@@ -14,37 +20,65 @@ import { SuperTable } from 'quicklists-vue-orm-ui'
 import Job from 'src/models/orm-api/Job'
 
 export default {
-    name: 'Job-list',
-    components: {
-        SuperTable,
-    },
+  name: 'Job-list',
+  components: {
+      SuperTable,
+  },
 
-    props: {
-        parentKeyValuePair: {
-            type: Object,
-            default: () => ({})
-        },
-        fetchFlags: {
-            type: Object,
-            default: () => ({})
-        }
-    },
 
-    computed: {
-        superTableModel() {
-            return Job
-        },
-    },
-    methods: {
-        openRecord(pVal, item, router) {
-            router.push({
-                name: '/lists/jobs/:rId/:rName',
-                params: {
-                    rId: pVal,
-                    rName: pVal,
+  data() {
+    return {
+      templateListGrid: {
+        width: 4,
+        cols: [
+          {
+            width: 12,
+            class: "q-pa-md q-col-gutter-sm",
+            cols: [
+              {
+                width: 12,
+                dataPoint: {
+                  field: "school",
                 },
-            })
-        },
-    },
+              },
+              {
+                width: 12,
+                dataPoint: {
+                  field: "user",
+                },
+              },
+            ]
+          },
+        ],
+      }
+    }
+  },
+  props: {
+      parentKeyValuePair: {
+          type: Object,
+          default: () => ({})
+      },
+      fetchFlags: {
+          type: Object,
+          default: () => ({})
+      }
+  },
+
+  computed: {
+      superTableModel() {
+          return Job
+      },
+  },
+  methods: {
+      openRecord(pVal, item, router) {
+          router.push({
+              name: '/lists/jobs/:rId/:rName',
+              params: {
+                  rId: pVal,
+                  rName: pVal,
+              },
+          })
+      },
+  },
 }
 </script>
