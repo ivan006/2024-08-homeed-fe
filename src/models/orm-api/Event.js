@@ -3,6 +3,7 @@ import VueCookies from 'vue-cookies';
 import User from 'src/models/User';
 import School from 'src/models/orm-api/School';
 import Attendance from 'src/models/orm-api/Attendance';
+import {FieldUsageTypes} from 'quicklists-vue-orm-ui'
 
 export default class Event extends MyBaseModel {
     static entity = 'event';
@@ -43,10 +44,10 @@ export default class Event extends MyBaseModel {
           usageType: 'fileImageType'
         },
         'start_datetime': {
-          usageType: "timestampType"
+          usageType: FieldUsageTypes.timeRangeStart(),
         },
         'end_datetime': {
-          usageType: "timestampType"
+          usageType: FieldUsageTypes.timeRangeEnd(),
         },
         'school_id': { linkablesRule: () => { return {} } },
         'creator_id': {

@@ -12,7 +12,9 @@
           hide: true,
           default: 'grid'
         }"
-        :allowedFilters="[]"
+        :allowedFilters="[
+          'start_datetime'
+        ]"
     />
 
 
