@@ -9,7 +9,10 @@
         :fetchFlags="fetchFlags"
         :templateListGrid="templateListGrid"
         :viewAs="{
-          hide: true,
+          show: [
+            'grid',
+            'calendar',
+          ],
           default: 'grid'
         }"
         :allowedFilters="[

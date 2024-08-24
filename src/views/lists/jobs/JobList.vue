@@ -8,7 +8,7 @@
         :fetchFlags="fetchFlags"
         :templateListGrid="templateListGrid"
         :viewAs="{
-          hide: true,
+          show: [],
           default: 'grid'
         }"
         :allowedFilters="[]"

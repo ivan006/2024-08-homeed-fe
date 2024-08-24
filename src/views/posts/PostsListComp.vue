@@ -5,7 +5,7 @@
       :templateListGrid="templateListGrid"
       :templateForm="templateForm"
       :viewAs="{
-          hide: true,
+          show: [],
           default: 'grid'
         }"
       :forcedFilters="{
