@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       templateListGrid: {
-        width: 4,
+        colWidth: this.colWidth,
         cols: [
           {
             width: 12,

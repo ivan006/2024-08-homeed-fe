@@ -28,6 +28,12 @@ export default {
   },
 
   props: {
+    colWidth: {
+      type: Number,
+      default: () => {
+        return 3
+      }
+    },
       parentKeyValuePair: {
           type: Object,
           default: () => ({})
@@ -41,7 +47,7 @@ export default {
   data() {
     return {
       templateListGrid: {
-        width: 4,
+        colWidth: this.colWidth,
         cols: [
           {
             width: 12,

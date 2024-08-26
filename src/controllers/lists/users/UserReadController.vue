@@ -26,10 +26,11 @@
                   <FamilyTyList
                     v-if="renderSection1"
                     :parentKeyValuePair="{
-                    parentFKey: 'user_id',
-                    parentFVal: +session.user.id,
-                    parentItem: session.user,
-                  }"
+                      parentFKey: 'user_id',
+                      parentFVal: +session.user.id,
+                      parentItem: session.user,
+                    }"
+                    :colWidth="6"
 
                   />
                 </div>
@@ -55,6 +56,7 @@
                       parentFVal: +session.user.id,
                       parentItem: session.user,
                     }"
+                    :colWidth="6"
 
                   />
                 </div>

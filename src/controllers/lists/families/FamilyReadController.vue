@@ -30,6 +30,7 @@
                     parentFVal: +this.$route.params.rId,
                     parentItem: {},
                   }"
+                  :colWidth="6"
 
                 />
               </div>
@@ -54,6 +55,7 @@
                     parentFVal: +this.$route.params.rId,
                     parentItem: {},
                   }"
+                  :colWidth="6"
 
                 />
               </div>
@@ -80,6 +82,7 @@
                     parentFVal: +this.$route.params.rId,
                     parentItem: {},
                   }"
+                  :colWidth="6"
 
                 />
               </div>
