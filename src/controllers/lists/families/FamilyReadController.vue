@@ -87,7 +87,7 @@
           </q-card>
 
         </div>
-        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
 
           <q-card class="">
             <q-expansion-item
@@ -105,8 +105,8 @@
                     parentFVal: +this.$route.params.rId,
                     parentItem: {},
                   }"
-                  :colWidth="6"
                 />
+                <!--:colWidth="6"-->
               </div>
             </q-expansion-item>
           </q-card>

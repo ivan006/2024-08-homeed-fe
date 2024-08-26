@@ -13,7 +13,7 @@
             'grid',
             'calendar',
           ],
-          default: 'grid'
+          default: 'calendar'
         }"
       :allowedFilters="[
           'child_id',
@@ -104,6 +104,20 @@ export default {
                   type: "function",
                   function: (item) => `${this.formatCasualTime(item.event.start_datetime, item.event.end_datetime).duration}`,
                   label: "Duration",
+                  xOrientation: true,
+                },
+              },
+              {
+                width: 12,
+                dataPoint: {
+                  field: "event",
+                  xOrientation: true,
+                },
+              },
+              {
+                width: 12,
+                dataPoint: {
+                  field: "child",
                   xOrientation: true,
                 },
               },
