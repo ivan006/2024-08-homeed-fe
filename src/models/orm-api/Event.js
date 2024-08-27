@@ -82,6 +82,12 @@ export default class Event extends MyBaseModel {
             return currentTimestamp
           }
         },
+        'latitude': {
+          usageType: FieldUsageTypes.mapExtraGeoLocLat(),
+        },
+        'longitude': {
+          usageType: FieldUsageTypes.mapExtraGeoLocLong(),
+        },
     };
 
     static fields() {
@@ -99,7 +105,9 @@ export default class Event extends MyBaseModel {
             'creator': this.belongsTo(User, 'creator_id'),
             'school': this.belongsTo(School, 'school_id'),
             'updater': this.belongsTo(User, 'updater_id'),
-            'attendances': this.hasMany(Attendance, 'event_id')
+            'attendances': this.hasMany(Attendance, 'event_id'),
+            'latitude': this.attr('').nullable(),
+            'longitude': this.attr('').nullable(),
         };
     }
 
