@@ -13,6 +13,32 @@
     >
 
       <div class="row  q-col-gutter-md">
+
+        <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
+
+          <q-card class="">
+            <q-expansion-item
+              label="Attendances"
+              expand-separator
+              class="bordered-expansion-item"
+              @show="renderSection1=true"
+            >
+              <div class="q-pa-md">
+
+                <attendanceList
+                  v-if="renderSection1"
+                  :parentKeyValuePair="{
+                    parentFKey: 'family_id',
+                    parentFVal: +this.$route.params.rId,
+                    parentItem: {},
+                  }"
+                />
+                <!--:colWidth="6"-->
+              </div>
+            </q-expansion-item>
+          </q-card>
+
+        </div>
         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
           <q-card class="">
@@ -85,31 +111,6 @@
                   :colWidth="6"
 
                 />
-              </div>
-            </q-expansion-item>
-          </q-card>
-
-        </div>
-        <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
-
-          <q-card class="">
-            <q-expansion-item
-              label="Attendances"
-              expand-separator
-              class="bordered-expansion-item"
-              @show="renderSection1=true"
-            >
-              <div class="q-pa-md">
-
-                <attendanceList
-                  v-if="renderSection1"
-                  :parentKeyValuePair="{
-                    parentFKey: 'family_id',
-                    parentFVal: +this.$route.params.rId,
-                    parentItem: {},
-                  }"
-                />
-                <!--:colWidth="6"-->
               </div>
             </q-expansion-item>
           </q-card>
