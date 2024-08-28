@@ -12,7 +12,7 @@ export default class Event extends MyBaseModel {
     static titleKey = 'name';
     static entityName = 'Event';
 
-    static fileUrlPrefix = `${import.meta.env.VITE_API_AIVTEAMS_DOMAIN}/storage`;
+    static fileUrlPrefix = `${import.meta.env.VITE_API_BACKEND_URL}/storage`;
 
     static openRecord(pVal, item, router){
       router.push({

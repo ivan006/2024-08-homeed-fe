@@ -2,7 +2,7 @@ import { DBBaseModel } from 'quicklists-vue-orm-ui'
 import VueCookies from "vue-cookies";
 
 export default class DBEvent extends DBBaseModel {
-    static baseUrl = import.meta.env.VITE_API_AIVTEAMS_DOMAIN
+    static baseUrl = import.meta.env.VITE_API_BACKEND_URL
 
     static adapator = 'laravel'
 

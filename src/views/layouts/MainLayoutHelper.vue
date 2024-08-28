@@ -1,10 +1,11 @@
 <template>
   <div>
     <template v-if="isSmallScreen">
-    <!--<template v-if="true">-->
+      <!--<template v-if="true">-->
       <q-layout
         view="lHh Lpr lFf"
-        style="background-color: 	#F8F8F8;"
+        style="background-color: #F8F8F8; padding-bottom: 50px;"
+
       >
         <q-header elevated style="background-color: rgb(0, 31, 63);">
           <q-toolbar>
@@ -32,8 +33,9 @@
           </q-list>
         </q-drawer>
         <div class="q-px-md">
-
-          <slot name="default"></slot>
+          <div class="q-pb-md">
+            <slot name="default"></slot>
+          </div>
         </div>
       </q-layout>
     </template>
@@ -47,7 +49,10 @@
         <div  class="" style="flex: 1; overflow: auto; background-color: 	#F8F8F8; min-height: 100vh;">
 
           <div class="q-pa-md container-md">
-            <slot name="default"></slot>
+
+            <div class="q-pb-md">
+              <slot name="default"></slot>
+            </div>
           </div>
         </div>
       </div>
