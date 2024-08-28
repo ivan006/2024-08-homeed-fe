@@ -14,7 +14,7 @@
             'calendar',
             'map',
           ],
-          default: 'map'
+          default: 'grid'
         }"
         :allowedFilters="[
           'start_datetime'

@@ -50,9 +50,7 @@
 
           <div class="q-pa-md container-md">
 
-            <div class="q-pb-md">
-              <slot name="default"></slot>
-            </div>
+            <slot name="default"></slot>
           </div>
         </div>
       </div>
