@@ -35,7 +35,7 @@ export default class LocationCountry extends MyBaseModel {
   static fieldsMetadata = {
     'id': {},
     'name': {},
-    'states': this.hasMany(LocationState, 'country_id'),
+    'states': {},
     'created_at': {
       autoFill(item) {
         if (item.created_at) {
@@ -58,6 +58,7 @@ export default class LocationCountry extends MyBaseModel {
     return {
       'id': this.attr('').nullable(),
       'name': this.attr(''),
+      'states': this.hasMany(LocationState, 'country_id'),
       'created_at': this.attr('').nullable(),
       'updated_at': this.attr('').nullable(),
     };

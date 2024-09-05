@@ -36,14 +36,14 @@ export default class LocationState extends MyBaseModel {
   static fieldsMetadata = {
     'id': {},
     'name': {},
-    'country': this.belongsTo(LocationCountry, 'country_id'),
+    'country': {},
     'country_id': {
       linkablesRule: () => {
         return {}
       },
       usageType: FieldUsageTypes.mapExtraRelCountry(),
     },
-    'substates': this.hasMany(LocationSubstate, 'state_id'),
+    'substates': {},
     'created_at': {
       autoFill(item) {
         if (item.created_at) {
@@ -66,6 +66,9 @@ export default class LocationState extends MyBaseModel {
     return {
       'id': this.attr('').nullable(),
       'name': this.attr(''),
+      'country': this.belongsTo(LocationCountry, 'country_id'),
+      'country_id': this.attr('').nullable(),
+      'substates': this.hasMany(LocationSubstate, 'state_id'),
       'created_at': this.attr('').nullable(),
       'updated_at': this.attr('').nullable(),
     };

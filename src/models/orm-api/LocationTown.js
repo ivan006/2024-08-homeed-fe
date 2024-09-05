@@ -37,14 +37,14 @@ export default class LocationTown extends MyBaseModel {
   static fieldsMetadata = {
     'id': {},
     'name': {},
-    'substate': this.belongsTo(LocationSubstate, 'substate_id'),
+    'substate': {},
     'substate_id': {
       linkablesRule: () => {
         return {}
       },
       usageType: FieldUsageTypes.mapExtraRelAdminArea2(),
     },
-    'suburbs': this.hasMany(LocationTown, 'town_id'),
+    'suburbs': {},
     'created_at': {
       autoFill(item) {
         if (item.created_at) {
@@ -67,6 +67,9 @@ export default class LocationTown extends MyBaseModel {
     return {
       'id': this.attr('').nullable(),
       'name': this.attr(''),
+      'substate': this.belongsTo(LocationSubstate, 'substate_id'),
+      'substate_id': this.attr('').nullable(),
+      'suburbs': this.hasMany(LocationTown, 'town_id'),
       'created_at': this.attr('').nullable(),
       'updated_at': this.attr('').nullable(),
     };

@@ -38,7 +38,7 @@ export default class LocationSuburb extends MyBaseModel {
   static fieldsMetadata = {
     'id': {},
     'name': {},
-    'town': this.belongsTo(LocationTown, 'town_id'),
+    'town': {},
     'town_id': {
       linkablesRule: () => {
         return {}
@@ -67,6 +67,8 @@ export default class LocationSuburb extends MyBaseModel {
     return {
       'id': this.attr('').nullable(),
       'name': this.attr(''),
+      'town': this.belongsTo(LocationTown, 'town_id'),
+      'town_id': this.attr('').nullable(),
       'created_at': this.attr('').nullable(),
       'updated_at': this.attr('').nullable(),
     };
