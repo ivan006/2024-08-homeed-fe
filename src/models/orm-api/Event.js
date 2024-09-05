@@ -4,6 +4,11 @@ import User from 'src/models/User';
 import School from 'src/models/orm-api/School';
 import Attendance from 'src/models/orm-api/Attendance';
 import {FieldUsageTypes} from 'quicklists-vue-orm-ui'
+import LocationSuburb from "src/models/orm-api/LocationSuburb";
+import LocationCountry from "src/models/orm-api/LocationCountry";
+import LocationState from "src/models/orm-api/LocationState";
+import LocationSubstate from "src/models/orm-api/LocationSubstate";
+import LocationTown from "src/models/orm-api/LocationTown";
 
 export default class Event extends MyBaseModel {
   static entity = 'event';
@@ -39,7 +44,9 @@ export default class Event extends MyBaseModel {
 
   static fieldsMetadata = {
     'id': {},
-    'name': {},
+    'name': {
+      usageType: 'location_address_place_name'
+    },
     'image': {
       usageType: 'fileImageType'
     },
@@ -86,12 +93,67 @@ export default class Event extends MyBaseModel {
         return currentTimestamp
       }
     },
-    'latitude': {
-      usageType: FieldUsageTypes.mapExtraGeoLocLat(),
+    'latitude': {},
+    'longitude': {},
+
+
+    'location_google_id': {
+      usageType: FieldUsageTypes.mapExtraPlaceID(),
     },
-    'longitude': {
+    'location_address_street_address': {
+      usageType: FieldUsageTypes.mapExtraFormattedAddress(),
+    },
+    'location_address_building_address': {
       usageType: FieldUsageTypes.mapExtraGeoLocLong(),
     },
+    'location_address_place_name': {
+      usageType: FieldUsageTypes.location_address_place_name(),
+    },
+    'location_coordinates_longitude': {
+      usageType: FieldUsageTypes.mapExtraGeoLocLong(),
+    },
+    'location_coordinates_latitude': {
+      usageType: FieldUsageTypes.mapExtraGeoLocLong(),
+    },
+
+
+    'country': {},
+    'country_id': {
+      linkablesRule: () => {
+        return {}
+      },
+      usageType: FieldUsageTypes.mapExtraRelCountry(),
+    },
+    'state': {},
+    'state_id': {
+      linkablesRule: () => {
+        return {}
+      },
+      usageType: FieldUsageTypes.mapExtraRelAdminArea1(),
+    },
+    'substate': {},
+    'substate_id': {
+      linkablesRule: () => {
+        return {}
+      },
+      usageType: FieldUsageTypes.mapExtraRelAdminArea2(),
+    },
+    'town': {},
+    'town_id': {
+      linkablesRule: () => {
+        return {}
+      },
+      usageType: FieldUsageTypes.mapExtraRelLocality(),
+    },
+    'suburb': {},
+    'suburb_id': {
+      linkablesRule: () => {
+        return {}
+      },
+      usageType: FieldUsageTypes.mapExtraRelSublocality(),
+    },
+
+
   };
 
   static fields() {
@@ -112,16 +174,26 @@ export default class Event extends MyBaseModel {
       'attendances': this.hasMany(Attendance, 'event_id'),
       'latitude': this.attr('').nullable(),
       'longitude': this.attr('').nullable(),
+
+      'location_google_id': this.attr('').nullable(),
+      'location_address_street_address': this.attr('').nullable(),
+      'location_address_building_address': this.attr('').nullable(),
+      'location_address_place_name': this.attr('').nullable(),
+      'location_coordinates_longitude': this.attr('').nullable(),
+      'location_coordinates_latitude': this.attr('').nullable(),
+      'country': this.belongsTo(LocationCountry, 'location_admin_division_country_id'),
+      'location_admin_division_country_id': this.attr('').nullable(),
+      'state': this.belongsTo(LocationState, 'location_admin_division_state_id'),
+      'location_admin_division_state_id': this.attr('').nullable(),
+      'substate': this.belongsTo(LocationSubstate, 'location_admin_division_substate_id'),
+      'location_admin_division_substate_id': this.attr('').nullable(),
+      'town': this.belongsTo(LocationTown, 'location_admin_division_town_id'),
+      'location_admin_division_town_id': this.attr('').nullable(),
+      'suburb': this.belongsTo(LocationSuburb, 'location_admin_division_suburb_id'),
+      'location_admin_division_suburb_id': this.attr('').nullable(),
     };
   }
 
-  static templateListGrid = {
-    // Define templateListGrid
-  };
-
-  static templateOverview = {
-    // Define templateOverview
-  };
 
   static FetchAll(relationships = [], flags = {}, moreHeaders = {}, options = {
     page: 1,
