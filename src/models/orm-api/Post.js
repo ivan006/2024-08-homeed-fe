@@ -60,13 +60,7 @@ export default class Post extends MyBaseModel {
         };
     }
 
-    static templateListGrid = {
-        // Define templateListGrid
-    };
 
-    static templateOverview = {
-        // Define templateOverview
-    };
 
     static FetchAll(relationships = [], flags = {}, moreHeaders = {}, options = { page: 1, limit: 15, filters: {}, clearPrimaryModelOnly: false }) {
         return this.customSupabaseApiFetchAll(

@@ -1,30 +1,31 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import VueCookies from 'vue-cookies';
 import User from 'src/models/User';
+import School from 'src/models/orm-api/School';
 import Attendance from 'src/models/orm-api/Attendance';
-import Event from 'src/models/orm-api/Event';
-import Job from 'src/models/orm-api/Job';
-import SchoolFamilyEnrollment from 'src/models/orm-api/SchoolFamilyEnrollment';
+import {FieldUsageTypes} from 'quicklists-vue-orm-ui'
 
-export default class School extends MyBaseModel {
-    static entity = 'school';
-    static entityUrl = '/api/schools';
+export default class LocationCountry extends MyBaseModel {
+    static entity = 'event';
+    static entityUrl = '/api/location-country';
     static primaryKey = 'id';
     static titleKey = 'name';
-    static entityName = 'School';
+    static entityName = 'LocationCountry';
+
+    static fileUrlPrefix = `${import.meta.env.VITE_API_BACKEND_URL}/storage`;
+
     static openRecord(pVal, item, router){
-      router.push({
-        name: '/lists/schools/:rId/:rName',
-        params: {
-          rId: pVal,
-          rName: pVal,
-        },
-      })
+      // router.push({
+      //   name: '/lists/location-country/:rId/:rName',
+      //   params: {
+      //     rId: pVal,
+      //     rName: pVal,
+      //   },
+      // })
     }
 
     static parentWithables = [
-        'creator',
-        'updater'
+        // 'school',
     ];
 
     static rules = {
@@ -37,27 +38,7 @@ export default class School extends MyBaseModel {
     static fieldsMetadata = {
         'id': {},
         'name': {},
-        'image': {
-          usageType: 'fileImageType'
-        },
-        'creator_id': {
-          autoFill(item){
-            const session = VueCookies.get('VITE_AUTH');
-            if (item.creator_id){
-              return item.creator_id
-            } else {
-              return session.user.id
-            }
-          }
-        },
-
-        'updater_id': {
-          autoFill(item){
-            const session = VueCookies.get('VITE_AUTH');
-            return session.user.id
-          }
-        },
-
+        'school_id': { linkablesRule: () => { return {} } },
         'created_at': {
           autoFill(item){
             if (item.created_at){
@@ -78,19 +59,10 @@ export default class School extends MyBaseModel {
 
     static fields() {
         return {
-          'id': this.attr('').nullable(),
-          'name': this.attr(''),
-          'image': this.attr(''),
-          'creator_id': this.attr('').nullable(),
-          'updater_id': this.attr('').nullable(),
-          'created_at': this.attr('').nullable(),
-          'updated_at': this.attr('').nullable(),
-          'creator': this.belongsTo(User, 'creator_id'),
-          'updater': this.belongsTo(User, 'updater_id'),
-          'attendances': this.hasMany(Attendance, 'school_id'),
-          'events': this.hasMany(Event, 'school_id'),
-          'jobs': this.hasMany(Job, 'school_id'),
-          'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'school_id')
+            'id': this.attr('').nullable(),
+            'name': this.attr(''),
+            'created_at': this.attr('').nullable(),
+            'updated_at': this.attr('').nullable(),
         };
     }
 
