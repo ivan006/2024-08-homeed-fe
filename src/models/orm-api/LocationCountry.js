@@ -1,31 +1,28 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import VueCookies from 'vue-cookies';
-import User from 'src/models/User';
-import Attendance from 'src/models/orm-api/Attendance';
-import Child from 'src/models/orm-api/Child';
-import FamilyTy from 'src/models/orm-api/FamilyTy';
-import SchoolFamilyEnrollment from 'src/models/orm-api/SchoolFamilyEnrollment';
+import {FieldUsageTypes} from 'quicklists-vue-orm-ui'
+import LocationState from "src/models/orm-api/LocationState";
 
-export default class Family extends MyBaseModel {
-  static entity = 'family';
-  static entityUrl = '/api/families';
+export default class LocationCountry extends MyBaseModel {
+  static entity = 'event';
+  static entityUrl = '/api/location-countries';
   static primaryKey = 'id';
   static titleKey = 'name';
-  static entityName = 'Family';
+  static entityName = 'LocationCountry';
+
+  static fileUrlPrefix = `${import.meta.env.VITE_API_BACKEND_URL}/storage`;
 
   static openRecord(pVal, item, router) {
-    router.push({
-      name: '/lists/families/:rId/:rName',
-      params: {
-        rId: pVal,
-        rName: item.name,
-      },
-    })
+    // router.push({
+    //   name: '/lists/location-countries/:rId/:rName',
+    //   params: {
+    //     rId: pVal,
+    //     rName: pVal,
+    //   },
+    // })
   }
 
   static parentWithables = [
-    'creator',
-    'updater'
+    // 'school',
   ];
 
   static rules = {
@@ -38,25 +35,7 @@ export default class Family extends MyBaseModel {
   static fieldsMetadata = {
     'id': {},
     'name': {},
-
-    'creator_id': {
-      autoFill(item) {
-        const session = VueCookies.get('VITE_AUTH');
-        if (item.creator_id) {
-          return item.creator_id
-        } else {
-          return session.user.id
-        }
-      }
-    },
-
-    'updater_id': {
-      autoFill(item) {
-        const session = VueCookies.get('VITE_AUTH');
-        return session.user.id
-      }
-    },
-
+    'states': this.hasMany(LocationState, 'country_id'),
     'created_at': {
       autoFill(item) {
         if (item.created_at) {
@@ -79,16 +58,8 @@ export default class Family extends MyBaseModel {
     return {
       'id': this.attr('').nullable(),
       'name': this.attr(''),
-      'creator_id': this.attr('').nullable(),
-      'updater_id': this.attr('').nullable(),
       'created_at': this.attr('').nullable(),
       'updated_at': this.attr('').nullable(),
-      'creator': this.belongsTo(User, 'creator_id'),
-      'updater': this.belongsTo(User, 'updater_id'),
-      'attendances': this.hasMany(Attendance, 'family_id'),
-      'children': this.hasMany(Child, 'family_id'),
-      'FamilyTies': this.hasMany(FamilyTy, 'family_id'),
-      'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'family_id')
     };
   }
 
