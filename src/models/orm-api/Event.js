@@ -44,9 +44,7 @@ export default class Event extends MyBaseModel {
 
   static fieldsMetadata = {
     'id': {},
-    'name': {
-      usageType: 'location_address_place_name'
-    },
+    'name': {},
     'image': {
       usageType: 'fileImageType'
     },
@@ -104,7 +102,7 @@ export default class Event extends MyBaseModel {
       usageType: FieldUsageTypes.mapExtraFormattedAddress(),
     },
     'location_address_building_address': {
-      usageType: FieldUsageTypes.mapExtraGeoLocLong(),
+      // usageType: FieldUsageTypes.mapExtraGeoLocLong(),
     },
     'location_address_place_name': {
       usageType: FieldUsageTypes.location_address_place_name(),
@@ -113,46 +111,45 @@ export default class Event extends MyBaseModel {
       usageType: FieldUsageTypes.mapExtraGeoLocLong(),
     },
     'location_coordinates_latitude': {
-      usageType: FieldUsageTypes.mapExtraGeoLocLong(),
+      usageType: FieldUsageTypes.mapExtraGeoLocLat(),
     },
 
 
     'country': {},
-    'country_id': {
+    'location_admin_division_country_id': {
       linkablesRule: () => {
         return {}
       },
       usageType: FieldUsageTypes.mapExtraRelCountry(),
     },
     'state': {},
-    'state_id': {
+    'location_admin_division_state_id': {
       linkablesRule: () => {
         return {}
       },
       usageType: FieldUsageTypes.mapExtraRelAdminArea1(),
     },
     'substate': {},
-    'substate_id': {
+    'location_admin_division_substate_id': {
       linkablesRule: () => {
         return {}
       },
       usageType: FieldUsageTypes.mapExtraRelAdminArea2(),
     },
     'town': {},
-    'town_id': {
+    'location_admin_division_town_id': {
       linkablesRule: () => {
         return {}
       },
       usageType: FieldUsageTypes.mapExtraRelLocality(),
     },
     'suburb': {},
-    'suburb_id': {
+    'location_admin_division_suburb_id': {
       linkablesRule: () => {
         return {}
       },
       usageType: FieldUsageTypes.mapExtraRelSublocality(),
     },
-
 
   };
 
