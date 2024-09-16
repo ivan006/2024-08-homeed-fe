@@ -3,7 +3,7 @@ import {FieldUsageTypes} from 'quicklists-vue-orm-ui'
 import LocationState from "src/models/orm-api/LocationState";
 
 export default class LocationCountry extends MyBaseModel {
-  static entity = 'event';
+  static entity = 'LocationCountry';
   static entityUrl = '/api/location-countries';
   static primaryKey = 'id';
   static titleKey = 'name';

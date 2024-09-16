@@ -123,7 +123,7 @@ export default configure(function (/* ctx */) {
     framework: {
       config: {
         brand: {
-          primary: '#0d3555',
+          // primary: '#0d3555',
         }
       },
 

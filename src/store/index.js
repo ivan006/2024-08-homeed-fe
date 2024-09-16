@@ -23,6 +23,11 @@ import SchoolFamilyEnrollment from 'src/models/orm-api/SchoolFamilyEnrollment';
 import Job from 'src/models/orm-api/Job';
 import School from 'src/models/orm-api/School';
 import Tag from 'src/models/orm-api/Tag';
+import LocationCountry from 'src/models/orm-api/LocationCountry';
+import LocationState from 'src/models/orm-api/LocationState';
+import LocationSubstate from 'src/models/orm-api/LocationSubstate';
+import LocationTown from 'src/models/orm-api/LocationTown';
+import LocationSuburb from 'src/models/orm-api/LocationSuburb';
 // import User from 'src/models/User';
 
 
@@ -54,9 +59,12 @@ database.register(SchoolFamilyEnrollment);
 database.register(Job);
 database.register(School);
 database.register(Tag);
+database.register(LocationCountry);
+database.register(LocationState);
+database.register(LocationSubstate);
+database.register(LocationTown);
+database.register(LocationSuburb);
 // database.register(User);
-
-
 
 
 // Create Vuex store

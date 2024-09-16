@@ -4,7 +4,7 @@ import LocationCountry from "src/models/orm-api/LocationCountry";
 import LocationSubstate from "src/models/orm-api/LocationSubstate";
 
 export default class LocationState extends MyBaseModel {
-  static entity = 'event';
+  static entity = 'LocationState';
   static entityUrl = '/api/location-states';
   static primaryKey = 'id';
   static titleKey = 'name';
