@@ -241,22 +241,22 @@ export default {
         cols: [
           {
             width: 12,
-            class: "q-pa-md q-col-gutter-sm",
+            class: "q-pa-sm q-col-gutter-xs text-caption",
             cols: [
               {
                 width: 12,
+                class: "text-caption",
                 dataPoint: {
                   type: "function",
                   function: (item) => `${item.name}`,
                   label: "",
                   tag: "div",
-                  class: "text-bold text-caption",
+                  class: "text-subtitle2",
                   hideLabel: true,
                 },
               },
               {
                 width: 12,
-                class: "text-caption",
                 dataPoint: {
                   type: "function",
                   function: (item) => `${this.formatCasualTime(item.start_datetime, item.end_datetime).comingUpHint}`,
@@ -285,26 +285,10 @@ export default {
               {
                 width: 12,
                 dataPoint: {
+                  type: "function",
+                  function: (item) => item.school.name,
                   label: "School",
-                  field: "school",
                   xOrientation: true,
-                },
-              },
-              {
-                width: 12,
-                dataPoint: {
-                  type: "component",
-                  componentPath: () => import('./EventButtonAttend.vue'),
-                  label: "",
-                  class: "text-right ",
-                  hideLabel: true,
-                },
-              },
-              {
-                width: 12,
-                dataPoint: {
-                  hideLabel: true,
-                  field: "actions",
                 },
               },
             ]
