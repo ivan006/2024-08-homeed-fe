@@ -8,13 +8,14 @@
         :parentKeyValuePair="parentKeyValuePair"
         :fetchFlags="fetchFlags"
         :templateListGrid="templateListGrid"
+        :templateListCalendar="templateListCalendar"
         :viewAs="{
           show: [
             'grid',
             'calendar',
             'map',
           ],
-          default: 'grid'
+          default: 'calendar'
         }"
         :allowedFilters="[
           'start_datetime'
@@ -182,6 +183,80 @@ export default {
               },
               {
                 width: 12,
+                dataPoint: {
+                  type: "function",
+                  function: (item) => `${this.formatCasualTime(item.start_datetime, item.end_datetime).comingUpHint}`,
+                  label: "Count Down",
+                  xOrientation: true,
+                },
+              },
+              {
+                width: 12,
+                dataPoint: {
+                  type: "function",
+                  function: (item) => `${this.formatCasualTime(item.start_datetime, item.end_datetime).range}`,
+                  label: "Date",
+                  xOrientation: true,
+                },
+              },
+              {
+                width: 12,
+                dataPoint: {
+                  type: "function",
+                  function: (item) => `${this.formatCasualTime(item.start_datetime, item.end_datetime).duration}`,
+                  label: "Duration",
+                  xOrientation: true,
+                },
+              },
+              {
+                width: 12,
+                dataPoint: {
+                  label: "School",
+                  field: "school",
+                  xOrientation: true,
+                },
+              },
+              {
+                width: 12,
+                dataPoint: {
+                  type: "component",
+                  componentPath: () => import('./EventButtonAttend.vue'),
+                  label: "",
+                  class: "text-right ",
+                  hideLabel: true,
+                },
+              },
+              {
+                width: 12,
+                dataPoint: {
+                  hideLabel: true,
+                  field: "actions",
+                },
+              },
+            ]
+          },
+        ],
+      },
+      templateListCalendar: {
+        cols: [
+          {
+            width: 12,
+            class: "q-pa-md q-col-gutter-sm",
+            cols: [
+              {
+                width: 12,
+                dataPoint: {
+                  type: "function",
+                  function: (item) => `${item.name}`,
+                  label: "",
+                  tag: "div",
+                  class: "text-bold text-caption",
+                  hideLabel: true,
+                },
+              },
+              {
+                width: 12,
+                class: "text-caption",
                 dataPoint: {
                   type: "function",
                   function: (item) => `${this.formatCasualTime(item.start_datetime, item.end_datetime).comingUpHint}`,
