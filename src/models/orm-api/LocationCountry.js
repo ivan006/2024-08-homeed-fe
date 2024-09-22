@@ -9,8 +9,6 @@ export default class LocationCountry extends MyBaseModel {
   static titleKey = 'name';
   static entityName = 'LocationCountry';
 
-  static fileUrlPrefix = `${import.meta.env.VITE_API_BACKEND_URL}/storage`;
-
   static openRecord(pVal, item, router) {
     // router.push({
     //   name: '/lists/location-countries/:rId/:rName',

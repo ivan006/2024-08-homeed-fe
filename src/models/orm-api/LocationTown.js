@@ -11,8 +11,6 @@ export default class LocationTown extends MyBaseModel {
   static titleKey = 'name';
   static entityName = 'LocationTown';
 
-  static fileUrlPrefix = `${import.meta.env.VITE_API_BACKEND_URL}/storage`;
-
   static openRecord(pVal, item, router) {
     // router.push({
     //   name: '/lists/location-towns/:rId/:rName',

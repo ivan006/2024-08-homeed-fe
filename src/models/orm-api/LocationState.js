@@ -10,8 +10,6 @@ export default class LocationState extends MyBaseModel {
   static titleKey = 'name';
   static entityName = 'LocationState';
 
-  static fileUrlPrefix = `${import.meta.env.VITE_API_BACKEND_URL}/storage`;
-
   static openRecord(pVal, item, router) {
     // router.push({
     //   name: '/lists/location-states/:rId/:rName',
