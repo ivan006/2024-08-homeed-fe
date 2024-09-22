@@ -1,10 +1,10 @@
 <template>
   <div>
     <q-card class="q-mb-md" style="overflow: hidden;">
+      <!--hideRelations-->
       <familyRead
         :id="id"
         :templateOverview="templateListGrid"
-        hideRelations
         @initialLoadHappened="initialLoadHappened = true"
       />
     </q-card>

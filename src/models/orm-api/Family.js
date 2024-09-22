@@ -5,6 +5,7 @@ import Attendance from 'src/models/orm-api/Attendance';
 import Child from 'src/models/orm-api/Child';
 import FamilyTy from 'src/models/orm-api/FamilyTy';
 import SchoolFamilyEnrollment from 'src/models/orm-api/SchoolFamilyEnrollment';
+import PrivateEvent from "src/models/orm-api/PrivateEvent";
 
 export default class Family extends MyBaseModel {
     static entity = 'family';
@@ -85,6 +86,7 @@ export default class Family extends MyBaseModel {
             'creator': this.belongsTo(User, 'creator_id'),
             'updater': this.belongsTo(User, 'updater_id'),
             'attendances': this.hasMany(Attendance, 'family_id'),
+            'private_events': this.hasMany(PrivateEvent, 'family_id'),
             'children': this.hasMany(Child, 'family_id'),
             'FamilyTies': this.hasMany(FamilyTy, 'family_id'),
             'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'family_id')
