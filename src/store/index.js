@@ -28,6 +28,7 @@ import LocationState from 'src/models/orm-api/LocationState';
 import LocationSubstate from 'src/models/orm-api/LocationSubstate';
 import LocationTown from 'src/models/orm-api/LocationTown';
 import LocationSuburb from 'src/models/orm-api/LocationSuburb';
+import PrivateEvent from "src/models/orm-api/PrivateEvent";
 // import User from 'src/models/User';
 
 
@@ -64,6 +65,7 @@ database.register(LocationState);
 database.register(LocationSubstate);
 database.register(LocationTown);
 database.register(LocationSuburb);
+database.register(PrivateEvent);
 // database.register(User);
 
 

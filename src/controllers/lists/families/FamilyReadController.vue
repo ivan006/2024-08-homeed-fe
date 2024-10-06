@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <q-card class="q-mb-md" style="overflow: hidden;">
       <!--hideRelations-->
       <familyRead
@@ -14,6 +15,23 @@
 
       <div class="row  q-col-gutter-md">
 
+        <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
+
+          <q-card class="">
+            <q-expansion-item
+              label="Calendar"
+              expand-separator
+              class="bordered-expansion-item"
+              @show="renderSection2=true"
+            >
+              <div class="q-pa-md">
+                <FamilyReadCalendarController
+                  v-if="renderSection2"
+                />
+              </div>
+            </q-expansion-item>
+          </q-card>
+        </div>
         <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
 
           <q-card class="">
@@ -127,10 +145,12 @@ import SchoolFamilyEnrollmentList from "src/views/lists/school-family-enrollment
 import ChildList from "src/views/lists/children/ChildList.vue";
 import FamilyTyList from "src/views/lists/family-ties/FamilyTyList.vue";
 import attendanceList from "src/views/lists/attendances/AttendanceList.vue";
+import FamilyReadCalendarController from "src/views/lists/families/FamilyReadCalendar.vue";
 
 export default {
     name: 'Family-read-controller',
     components: {
+      FamilyReadCalendarController,
       attendanceList,
       FamilyTyList,
       ChildList,
@@ -142,6 +162,7 @@ export default {
         return {
           initialLoadHappened: false,
           renderSection1: false,
+          renderSection2: false,
             id: +this.$route.params.rId,
             templateListGrid: {
               class: "q-pa-md q-col-gutter-md",
