@@ -1,42 +1,33 @@
 <template>
-  <div>
-    <!-- Use the CalendarWithMixedDataTypes component -->
-    <CalendarWithMixedDataTypes :dataTypes="dataTypes" />
-  </div>
+
+  <SuperRecord
+    :model="superRecordModel"
+    :id="+$route.params.rId"
+    :displayMapField="true"
+    @initialLoadHappened="$emit('initialLoadHappened')"
+    :configsCollection="configsCollection"
+    :allowedTabs="['calendar']"
+  >
+  </SuperRecord>
 </template>
 
 <script>
-import {CalendarWithMixedDataTypes} from 'quicklists-vue-orm-ui'
-import Attendance from "src/models/orm-api/Attendance";
-import PrivateEvent from "src/models/orm-api/PrivateEvent"; // Adjust path as needed
+import { SuperRecord } from 'quicklists-vue-orm-ui'
+import Family from 'src/models/orm-api/Family'
 
 export default {
-  name: 'ParentComponent',
-  components: {
-    CalendarWithMixedDataTypes,
+  name: 'Family-read-cal',
+  components: { SuperRecord },
+  computed: {
+    superRecordModel() {
+      return Family
+    },
   },
-  data() {
+  data(){
     return {
-      dataTypes: [
-        {
-          model: Attendance,
-          clickRow(row, item) {
-            console.log('Row clicked:', row, item);
-          },
-          parentKeyValuePair: { parentFKey: 'family_id', parentFVal: 2 },
-          templateListGrid: {
-            cols: [
-              {
-                width: 12,
-                class: "q-pa-sm q-col-gutter-xs text-caption",
-                dataPoint: {
-                  type: "function",
-                  function: (item) => `${item.event.name}`,
-                  label: "Name",
-                },
-              },
-            ]
-          },
+
+      configsCollection: {
+        Attendance: {
           templateListCalendar: {
             cols: [
               {
@@ -64,21 +55,7 @@ export default {
             ]
           },
         },
-        {
-          model: PrivateEvent,
-          clickRow(row, item) {
-            console.log('Row clicked:', row, item);
-          },
-          parentKeyValuePair: { parentFKey: 'family_id', parentFVal: this.$route.params.rId },
-          templateListGrid: {
-            cols: [
-              {
-                width: 12,
-                class: "q-pa-sm q-col-gutter-xs text-caption",
-                dataPoint: { field: 'name' },
-              },
-            ]
-          },
+        PrivateEvent: {
           templateListCalendar: {
             cols: [
               {
@@ -102,12 +79,10 @@ export default {
             ]
           },
         },
-      ],
-    };
-  },
-};
+      },
+    }
+  }
+}
 </script>
 
-<style scoped>
-/* Add styles here if needed */
-</style>
+<style scoped></style>

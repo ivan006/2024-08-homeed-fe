@@ -9,7 +9,7 @@ export default class PrivateEvent extends MyBaseModel {
   static entityUrl = '/api/private-events';
   static primaryKey = 'id';
   static titleKey = 'name';
-  static entityName = 'Event';
+  static entityName = 'Private Event';
 
   static openRecord(pVal, item, router) {
     router.push({
