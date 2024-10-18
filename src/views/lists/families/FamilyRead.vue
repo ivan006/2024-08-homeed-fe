@@ -1,13 +1,13 @@
 <template>
 
-            <SuperRecord
-                :model="superRecordModel"
-                :id="+$route.params.rId"
-                :displayMapField="true"
-                @initialLoadHappened="$emit('initialLoadHappened')"
-                :configsCollection="configsCollection"
-            >
-            </SuperRecord>
+  <SuperRecord
+    :model="superRecordModel"
+    :id="+$route.params.rId"
+    :displayMapField="true"
+    @initialLoadHappened="$emit('initialLoadHappened')"
+    :configsCollection="configsCollection"
+  >
+  </SuperRecord>
 </template>
 
 <script>
@@ -18,68 +18,68 @@ export default {
   name: 'Family-read',
   components: { SuperRecord },
   computed: {
-      superRecordModel() {
-          return Family
-      },
+    superRecordModel() {
+      return Family
+    },
   },
   data(){
-      return {
+    return {
 
-        configsCollection: {
-          Attendance: {
-            templateListCalendar: {
-              cols: [
-                {
-                  width: 12,
-                  class: "q-pa-sm q-col-gutter-xs text-caption",
-                  cols: [
-                    {
-                      width: 12,
-                      dataPoint: {
-                        type: "function",
-                        function: (item) => `${item.event.name}`,
-                        label: "Name",
-                      },
+      configsCollection: {
+        Attendance: {
+          templateListCalendar: {
+            cols: [
+              {
+                width: 12,
+                class: "q-pa-sm q-col-gutter-xs text-caption",
+                cols: [
+                  {
+                    width: 12,
+                    dataPoint: {
+                      type: "function",
+                      function: (item) => `${item.event.name}`,
+                      label: "Name",
                     },
-                    {
-                      width: 12,
-                      dataPoint: {
-                        type: "function",
-                        function: (item) => `Attendance`,
-                        label: "Type",
-                      },
+                  },
+                  {
+                    width: 12,
+                    dataPoint: {
+                      type: "function",
+                      function: (item) => `Attendance`,
+                      label: "Type",
                     },
-                  ],
-                },
-              ]
-            },
-          },
-          PrivateEvent: {
-            templateListCalendar: {
-              cols: [
-                {
-                  width: 12,
-                  class: "q-pa-sm q-col-gutter-xs text-caption",
-                  cols: [
-                    {
-                      width: 12,
-                      dataPoint: { field: 'name' },
-                    },
-                    {
-                      width: 12,
-                      dataPoint: {
-                        type: "function",
-                        function: (item) => `Private Event`,
-                        label: "Type",
-                      },
-                    },
-                  ],
-                },
-              ]
-            },
+                  },
+                ],
+              },
+            ]
           },
         },
-      }
+        PrivateEvent: {
+          templateListCalendar: {
+            cols: [
+              {
+                width: 12,
+                class: "q-pa-sm q-col-gutter-xs text-caption",
+                cols: [
+                  {
+                    width: 12,
+                    dataPoint: { field: 'name' },
+                  },
+                  {
+                    width: 12,
+                    dataPoint: {
+                      type: "function",
+                      function: (item) => `Private Event`,
+                      label: "Type",
+                    },
+                  },
+                ],
+              },
+            ]
+          },
+        },
+      },
+    }
   }
 }
 </script>
