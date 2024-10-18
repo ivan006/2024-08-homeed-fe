@@ -5,7 +5,7 @@
         :model="Post"
         :id="+route.params.aId"
         :templateOverview="templateListGrid"
-        hideRelations
+        :allowedTabs="['overview']"
         @initialLoadHappened="initialLoadHappened = true"
         :relationships="[
           // 'bookings.clients',

@@ -6,7 +6,7 @@
       :displayMapField="true"
       @initialLoadHappened="$emit('initialLoadHappened')"
       :templateOverview="templateListGrid"
-      hideRelations
+      :allowedTabs="['overview']"
   >
   </SuperRecord>
 </template>

@@ -7,7 +7,7 @@
       @initialLoadHappened="$emit('initialLoadHappened')"
       :templateOverview="templateListGrid"
       :allowedFilters="[]"
-      hideRelations
+      :allowedTabs="['overview']"
   >
   </SuperRecord>
 </template>
