@@ -15,52 +15,40 @@
           <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
             <q-card class="q-mb-md" style="overflow: hidden;">
-              <q-expansion-item
-                defaultOpened
+              <SectionComponent
                 label="Family Ties"
-                expand-separator
-                class="bordered-expansion-item"
               >
-                <q-separator />
-                <div class="q-pa-md">
 
-                  <FamilyTyList
-                    :parentKeyValuePair="{
+                <FamilyTyList
+                  :parentKeyValuePair="{
                       parentFKey: 'user_id',
                       parentFVal: +session.user.id,
                       parentItem: session.user,
                     }"
-                    :colWidth="6"
+                  :colWidth="6"
 
-                  />
-                </div>
-              </q-expansion-item>
+                />
+              </SectionComponent>
             </q-card>
 
           </div>
           <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
             <q-card class="q-mb-md" style="overflow: hidden;">
-              <q-expansion-item
-                defaultOpened
+              <SectionComponent
                 label="Jobs"
-                expand-separator
-                class="bordered-expansion-item"
               >
-                <q-separator />
-                <div class="q-pa-md">
 
-                  <job-list
-                    :parentKeyValuePair="{
+                <job-list
+                  :parentKeyValuePair="{
                       parentFKey: 'user_id',
                       parentFVal: +session.user.id,
                       parentItem: session.user,
                     }"
-                    :colWidth="6"
+                  :colWidth="6"
 
-                  />
-                </div>
-              </q-expansion-item>
+                />
+              </SectionComponent>
             </q-card>
 
           </div>
@@ -75,10 +63,12 @@ import User from "src/models/User";
 import VueCookies from "vue-cookies";
 import FamilyTyList from "src/views/lists/family-ties/FamilyTyList.vue";
 import JobList from "src/views/lists/jobs/JobList.vue";
+import SectionComponent from "src/views/SectionComponent.vue";
 
 export default {
     name: 'User-read-controller',
     components: {
+      SectionComponent,
       JobList,
       FamilyTyList,
         userRead,

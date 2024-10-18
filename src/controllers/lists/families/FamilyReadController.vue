@@ -26,26 +26,19 @@
         <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
 
           <q-card class="">
-            <q-expansion-item
-              defaultOpened
+            <SectionComponent
               label="Calendar"
-              expand-separator
-              class="bordered-expansion-item"
             >
-              <q-separator />
-              <div class="q-pa-md">
-                <familyRead
-                  :allowedTabs="['calendar']"
-                />
-
-              </div>
-            </q-expansion-item>
+              <familyRead
+                :allowedTabs="['calendar']"
+              />
+            </SectionComponent>
           </q-card>
         </div>
         <!--<div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">-->
 
         <!--  <q-card class="">-->
-        <!--    <q-expansion-item-->
+        <!--    <SectionComponent-->
         <!--      label="Attendances"-->
         <!--      expand-separator-->
         <!--      class="bordered-expansion-item"-->
@@ -63,57 +56,45 @@
         <!--        />-->
         <!--        &lt;!&ndash;:colWidth="6"&ndash;&gt;-->
         <!--      </div>-->
-        <!--    </q-expansion-item>-->
+        <!--    </SectionComponent>-->
         <!--  </q-card>-->
 
         <!--</div>-->
         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
           <q-card class="">
-            <q-expansion-item
-              defaultOpened
+            <SectionComponent
               label="Children"
-              expand-separator
-              class="bordered-expansion-item"
             >
-              <q-separator />
-              <div class="q-pa-md">
-                <child-list
-                  :parentKeyValuePair="{
+              <child-list
+                :parentKeyValuePair="{
                     parentFKey: 'family_id',
                     parentFVal: +this.$route.params.rId,
                     parentItem: {},
                   }"
-                  :colWidth="6"
+                :colWidth="6"
 
-                />
-              </div>
-            </q-expansion-item>
+              />
+            </SectionComponent>
           </q-card>
 
         </div>
         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
           <q-card class="">
-            <q-expansion-item
-              defaultOpened
+            <SectionComponent
               label="Family Ties"
-              expand-separator
-              class="bordered-expansion-item"
             >
-              <q-separator />
-              <div class="q-pa-md">
-                <FamilyTyList
-                  :parentKeyValuePair="{
+              <FamilyTyList
+                :parentKeyValuePair="{
                     parentFKey: 'family_id',
                     parentFVal: +this.$route.params.rId,
                     parentItem: {},
                   }"
-                  :colWidth="6"
+                :colWidth="6"
 
-                />
-              </div>
-            </q-expansion-item>
+              />
+            </SectionComponent>
           </q-card>
 
         </div>
@@ -121,26 +102,20 @@
         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
           <q-card class="">
-            <q-expansion-item
-              defaultOpened
+            <SectionComponent
               label="School Enrollments"
-              expand-separator
-              class="bordered-expansion-item"
             >
-              <q-separator />
-              <div class="q-pa-md">
 
-                <schoolFamilyEnrollmentList
-                  :parentKeyValuePair="{
+              <schoolFamilyEnrollmentList
+                :parentKeyValuePair="{
                     parentFKey: 'family_id',
                     parentFVal: +this.$route.params.rId,
                     parentItem: {},
                   }"
-                  :colWidth="6"
+                :colWidth="6"
 
-                />
-              </div>
-            </q-expansion-item>
+              />
+            </SectionComponent>
           </q-card>
 
         </div>
@@ -157,10 +132,12 @@ import FamilyTyList from "src/views/lists/family-ties/FamilyTyList.vue";
 import attendanceList from "src/views/lists/attendances/AttendanceList.vue";
 import Attendance from "src/models/orm-api/Attendance";
 import PrivateEvent from "src/models/orm-api/PrivateEvent";
+import SectionComponent from "src/views/SectionComponent.vue";
 
 export default {
     name: 'Family-read-controller',
     components: {
+      SectionComponent,
       // attendanceList,
       FamilyTyList,
       ChildList,

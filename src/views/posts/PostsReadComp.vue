@@ -26,15 +26,11 @@
     >
       <q-card class="q-mb-md" style="overflow: hidden;">
         <!--default-opened-->
-        <q-expansion-item
-          defaultOpened
+        <SectionComponent
           label="Passports"
-          expand-separator
-          class="bordered-expansion-item"
         >
-          <q-separator />
         ...
-        </q-expansion-item>
+        </SectionComponent>
       </q-card>
     </div>
   </div>
@@ -48,6 +44,7 @@ const router = useRouter();
 const route = useRoute();
 
 import { ref } from 'vue';
+import SectionComponent from "src/views/SectionComponent.vue";
 
 const renderRooms = ref(false);
 
