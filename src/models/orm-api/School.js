@@ -40,6 +40,9 @@ export default class School extends MyBaseModel {
         'image': {
           usageType: 'fileImageType'
         },
+        'about_us': {
+          usageType: 'htmlField'
+        },
         'creator_id': {
           autoFill(item){
             const session = VueCookies.get('VITE_AUTH');
@@ -81,6 +84,7 @@ export default class School extends MyBaseModel {
           'id': this.attr('').nullable(),
           'name': this.attr(''),
           'image': this.attr(''),
+          'about_us': this.attr(''),
           'creator_id': this.attr('').nullable(),
           'updater_id': this.attr('').nullable(),
           'created_at': this.attr('').nullable(),
