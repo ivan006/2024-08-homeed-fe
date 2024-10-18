@@ -16,15 +16,15 @@
 
             <q-card class="q-mb-md" style="overflow: hidden;">
               <q-expansion-item
+                defaultOpened
                 label="Family Ties"
                 expand-separator
                 class="bordered-expansion-item"
-                @show="renderSection1=true"
               >
+                <q-separator />
                 <div class="q-pa-md">
 
                   <FamilyTyList
-                    v-if="renderSection1"
                     :parentKeyValuePair="{
                       parentFKey: 'user_id',
                       parentFVal: +session.user.id,
@@ -42,15 +42,15 @@
 
             <q-card class="q-mb-md" style="overflow: hidden;">
               <q-expansion-item
+                defaultOpened
                 label="Jobs"
                 expand-separator
                 class="bordered-expansion-item"
-                @show="renderSection1=true"
               >
+                <q-separator />
                 <div class="q-pa-md">
 
                   <job-list
-                    v-if="renderSection1"
                     :parentKeyValuePair="{
                       parentFKey: 'user_id',
                       parentFVal: +session.user.id,

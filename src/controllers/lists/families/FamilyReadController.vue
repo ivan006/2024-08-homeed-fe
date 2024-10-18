@@ -7,6 +7,14 @@
         :id="id"
         :templateOverview="templateListGrid"
         @initialLoadHappened="initialLoadHappened = true"
+        :allowedTabs="[
+          'overview',
+          // 'attendances',
+          // 'private_events',
+          // 'children',
+          // 'FamilyTies',
+          // 'schoolFamilyEnrollments',
+        ]"
       />
     </q-card>
     <div
@@ -19,14 +27,14 @@
 
           <q-card class="">
             <q-expansion-item
+              defaultOpened
               label="Calendar"
               expand-separator
               class="bordered-expansion-item"
-              @show="renderSection2=true"
             >
+              <q-separator />
               <div class="q-pa-md">
                 <familyRead
-                  v-if="renderSection2"
                   :allowedTabs="['calendar']"
                 />
 
@@ -63,14 +71,14 @@
 
           <q-card class="">
             <q-expansion-item
+              defaultOpened
               label="Children"
               expand-separator
               class="bordered-expansion-item"
-              @show="renderSection1=true"
             >
+              <q-separator />
               <div class="q-pa-md">
                 <child-list
-                  v-if="renderSection1"
                   :parentKeyValuePair="{
                     parentFKey: 'family_id',
                     parentFVal: +this.$route.params.rId,
@@ -88,14 +96,14 @@
 
           <q-card class="">
             <q-expansion-item
+              defaultOpened
               label="Family Ties"
               expand-separator
               class="bordered-expansion-item"
-              @show="renderSection1=true"
             >
+              <q-separator />
               <div class="q-pa-md">
                 <FamilyTyList
-                  v-if="renderSection1"
                   :parentKeyValuePair="{
                     parentFKey: 'family_id',
                     parentFVal: +this.$route.params.rId,
@@ -114,15 +122,15 @@
 
           <q-card class="">
             <q-expansion-item
+              defaultOpened
               label="School Enrollments"
               expand-separator
               class="bordered-expansion-item"
-              @show="renderSection1=true"
             >
+              <q-separator />
               <div class="q-pa-md">
 
                 <schoolFamilyEnrollmentList
-                  v-if="renderSection1"
                   :parentKeyValuePair="{
                     parentFKey: 'family_id',
                     parentFVal: +this.$route.params.rId,

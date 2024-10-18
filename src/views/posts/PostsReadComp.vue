@@ -27,11 +27,12 @@
       <q-card class="q-mb-md" style="overflow: hidden;">
         <!--default-opened-->
         <q-expansion-item
+          defaultOpened
           label="Passports"
           expand-separator
           class="bordered-expansion-item"
-          @show="renderRooms=true"
         >
+          <q-separator />
         ...
         </q-expansion-item>
       </q-card>
