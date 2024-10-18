@@ -25,8 +25,9 @@
               @show="renderSection2=true"
             >
               <div class="q-pa-md">
-                <FamilyReadCalendarController
+                <familyRead
                   v-if="renderSection2"
+                  :allowedTabs="['calendar']"
                 />
 
               </div>
@@ -146,14 +147,12 @@ import SchoolFamilyEnrollmentList from "src/views/lists/school-family-enrollment
 import ChildList from "src/views/lists/children/ChildList.vue";
 import FamilyTyList from "src/views/lists/family-ties/FamilyTyList.vue";
 import attendanceList from "src/views/lists/attendances/AttendanceList.vue";
-import FamilyReadCalendarController from "src/views/lists/families/FamilyReadCalendar.vue";
 import Attendance from "src/models/orm-api/Attendance";
 import PrivateEvent from "src/models/orm-api/PrivateEvent";
 
 export default {
     name: 'Family-read-controller',
     components: {
-      FamilyReadCalendarController,
       // attendanceList,
       FamilyTyList,
       ChildList,

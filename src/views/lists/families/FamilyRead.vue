@@ -6,6 +6,7 @@
     :displayMapField="true"
     @initialLoadHappened="$emit('initialLoadHappened')"
     :configsCollection="configsCollection"
+    :allowedTabs="allowedTabs"
   >
   </SuperRecord>
 </template>
@@ -16,13 +17,21 @@ import Family from 'src/models/orm-api/Family'
 
 export default {
   name: 'Family-read',
-  components: { SuperRecord },
+  components: {SuperRecord},
+  props: {
+    allowedTabs: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    },
+  },
   computed: {
     superRecordModel() {
       return Family
     },
   },
-  data(){
+  data() {
     return {
 
       configsCollection: {
@@ -63,7 +72,7 @@ export default {
                 cols: [
                   {
                     width: 12,
-                    dataPoint: { field: 'name' },
+                    dataPoint: {field: 'name'},
                   },
                   {
                     width: 12,
