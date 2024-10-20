@@ -84,6 +84,7 @@
           <q-card class="">
             <SectionComponent
               label="Family Ties"
+              noBorder
             >
               <FamilyTyList
                 :parentKeyValuePair="{

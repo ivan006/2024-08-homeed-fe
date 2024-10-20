@@ -17,6 +17,7 @@
             <q-card class="q-mb-md" style="overflow: hidden;">
               <SectionComponent
                 label="Family Ties"
+                noBorder
               >
 
                 <FamilyTyList

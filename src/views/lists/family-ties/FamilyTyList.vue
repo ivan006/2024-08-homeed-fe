@@ -7,11 +7,13 @@
         :parentKeyValuePair="parentKeyValuePair"
         :fetchFlags="fetchFlags"
         :templateListGrid="templateListGrid"
+        :templateListTable="templateListTable"
         :viewAs="{
           show: [],
-          default: 'grid'
+          default: 'table'
         }"
         :allowedFilters="[]"
+        noBorder
     />
 </template>
 
@@ -82,7 +84,35 @@ export default {
             ]
           },
         ],
-      }
+      },
+      templateListTable: [
+        // {
+        //   type: "function",
+        //   function: (item) => `${item.dayNumber}`,
+        //   label: "Day",
+        // },
+        // {
+        //   type: "function",
+        //   function: (item) => `${item.date} `,
+        //   label: "Date",
+        // },
+        // {
+        //   type: "function",
+        //   function: (item) => `${item.title} `,
+        //   label: "Title",
+        // },
+        {
+          field: "family",
+        },
+        {
+          field: "user",
+        },
+        {
+          hideLabel: true,
+          field: "actions",
+        },
+
+      ],
     }
   },
   computed: {

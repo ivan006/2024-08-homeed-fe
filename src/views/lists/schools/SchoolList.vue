@@ -70,6 +70,13 @@ export default {
                 width: 12,
                 dataPoint: {
                   hideLabel: true,
+                  field: "about_us",
+                },
+              },
+              {
+                width: 12,
+                dataPoint: {
+                  hideLabel: true,
                   field: "actions",
                 },
               },

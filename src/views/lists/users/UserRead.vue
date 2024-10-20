@@ -51,6 +51,13 @@ export default {
                 // xOrientation: true,
               },
             },
+            {
+              width: 12,
+              dataPoint: {
+                hideLabel: true,
+                field: "actions",
+              },
+            },
           ],
         },
       }

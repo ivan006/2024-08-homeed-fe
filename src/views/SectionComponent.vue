@@ -7,7 +7,7 @@
     </div>
     <q-separator />
 
-    <div class="q-pa-md">
+    <div :class="noBorder ? 'q-py-md' : 'q-pa-md'">
       <slot name="default"></slot>
     </div>
   </div>
@@ -17,7 +17,13 @@
 export default {
   name: "SectionComponent",
   props: {
-    label: String
+    label: String,
+    noBorder: {
+      type: Boolean,
+      default: () => {
+        return false
+      }
+    },
   }
 }
 </script>
