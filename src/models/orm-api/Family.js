@@ -53,22 +53,14 @@ export default class Family extends MyBaseModel {
             {}
           )
           .then((response) => {
-            // // this.fetchData();
-            // this.$emit('fetchData');
-            // this.editItemData.showModal = false;
-            // this.formServerErrors = {};
-            // this.$emit("editComplete");
-
-            console.log('user')
-            console.log(response.response.data.data)
             session.user = response.response.data.data
 
             const expireDate = new Date(session.expireDate);  // Parse expireDate from the cookie's content
-            console.log(session)
-            console.log(expireDate)
-            VueCookies.set('VITE_AUTH', session, {
-              expires: expireDate
-            });
+            const now = new Date();
+
+            const durationInSeconds = Math.floor((expireDate - now) / 1000);
+
+            VueCookies.set('VITE_AUTH', session, `${durationInSeconds}s`);
           })
           .catch((err) => {
             // this.formServerErrors = err.response.data;
