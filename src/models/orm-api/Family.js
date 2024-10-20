@@ -35,6 +35,48 @@ export default class Family extends MyBaseModel {
         creatable: () => true,
     };
 
+
+    static hooks = {
+        createComplete: (response) => {
+          console.log('help')
+          console.log(response.response.data.data)
+
+
+          const session = VueCookies.get('VITE_AUTH');
+          return User.Update(
+            {
+              id: session.user.id,
+              primary_family_id: response.response.data.data.id,
+            },
+            [],
+            {},
+            {}
+          )
+          .then((response) => {
+            // // this.fetchData();
+            // this.$emit('fetchData');
+            // this.editItemData.showModal = false;
+            // this.formServerErrors = {};
+            // this.$emit("editComplete");
+
+            console.log('user')
+            console.log(response.response.data.data)
+            session.user = response.response.data.data
+
+            const expireDate = new Date(session.expireDate);  // Parse expireDate from the cookie's content
+            console.log(session)
+            console.log(expireDate)
+            VueCookies.set('VITE_AUTH', session, {
+              expires: expireDate
+            });
+          })
+          .catch((err) => {
+            // this.formServerErrors = err.response.data;
+            // this.$emit("editComplete");
+          });
+        },
+    };
+
     static fieldsMetadata = {
         'id': {},
             'name': {},
