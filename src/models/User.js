@@ -70,7 +70,7 @@ export default class User extends MyBaseModel {
       'old_id': this.attr('').nullable(),
       'name': this.attr(''),
       'primary_family_id': this.attr('').nullable(),
-      'primary_family': this.belongsTo(User, 'primary_family_id'),
+      'primary_family': this.belongsTo(Family, 'primary_family_id'),
       // 'email': this.attr('').nullable(),
       // 'email_verified_at': this.attr('').nullable(),
       // 'password': this.attr('').nullable(),
