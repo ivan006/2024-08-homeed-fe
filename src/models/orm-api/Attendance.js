@@ -34,7 +34,10 @@ export default class Attendance extends MyBaseModel {
     static rules = {
         readables: () => true,
         readable: (item) => true,
-        editable: (item) => true,
+      editable: (item) => {
+        const session = VueCookies.get('VITE_AUTH');
+        return item.creator_id === session.user.id
+      },
         creatable: () => true,
     };
 
