@@ -82,7 +82,7 @@ const linksList = [
   //   route: '/lists/families',
   // },
   // {
-  //   title: 'Family Ties',
+  //   title: 'Family Links',
   //   route: '/lists/family-ties',
   // },
   // {

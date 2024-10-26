@@ -83,7 +83,7 @@
 
           <q-card class="">
             <SectionComponent
-              label="Family Ties"
+              label="Family Links"
               noBorder
             >
               <FamilyLinkList
