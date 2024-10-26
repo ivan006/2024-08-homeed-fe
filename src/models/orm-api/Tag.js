@@ -6,7 +6,7 @@ export default class Tag extends MyBaseModel {
     static entityUrl = '/api/tags';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static entityName = 'Tag';
+    static entityHumanName = 'Tag';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/tags/:rId/:rName',

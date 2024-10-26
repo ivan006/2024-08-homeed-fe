@@ -9,7 +9,7 @@ export default class Child extends MyBaseModel {
     static entityUrl = '/api/children';
     static primaryKey = 'id';
     static titleKey = 'name';
-    static entityName = 'Child';
+    static entityHumanName = 'Child';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/children/:rId/:rName',

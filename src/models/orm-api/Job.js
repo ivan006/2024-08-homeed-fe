@@ -8,7 +8,7 @@ export default class Job extends MyBaseModel {
     static entityUrl = '/api/jobs';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static entityName = 'Job';
+    static entityHumanName = 'Job';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/jobs/:rId/:rName',

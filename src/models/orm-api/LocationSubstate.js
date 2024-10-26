@@ -9,7 +9,7 @@ export default class LocationSubstate extends MyBaseModel {
   static entityUrl = '/api/location-substates';
   static primaryKey = 'id';
   static titleKey = 'name';
-  static entityName = 'LocationSubstate';
+  static entityHumanName = 'LocationSubstate';
 
   static openRecord(pVal, item, router) {
     // router.push({

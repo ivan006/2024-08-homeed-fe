@@ -7,7 +7,7 @@ export default class LocationCountry extends MyBaseModel {
   static entityUrl = '/api/location-countries';
   static primaryKey = 'id';
   static titleKey = 'name';
-  static entityName = 'LocationCountry';
+  static entityHumanName = 'LocationCountry';
 
   static openRecord(pVal, item, router) {
     // router.push({

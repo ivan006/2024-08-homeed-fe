@@ -10,7 +10,7 @@ export default class LocationSuburb extends MyBaseModel {
   static entityUrl = '/api/location-suburbs';
   static primaryKey = 'id';
   static titleKey = 'name';
-  static entityName = 'LocationSuburb';
+  static entityHumanName = 'LocationSuburb';
 
   static openRecord(pVal, item, router) {
     // router.push({

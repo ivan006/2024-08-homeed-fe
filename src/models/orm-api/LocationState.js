@@ -8,7 +8,7 @@ export default class LocationState extends MyBaseModel {
   static entityUrl = '/api/location-states';
   static primaryKey = 'id';
   static titleKey = 'name';
-  static entityName = 'LocationState';
+  static entityHumanName = 'LocationState';
 
   static openRecord(pVal, item, router) {
     // router.push({

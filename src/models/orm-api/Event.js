@@ -15,7 +15,7 @@ export default class Event extends MyBaseModel {
   static entityUrl = '/api/events';
   static primaryKey = 'id';
   static titleKey = 'name';
-  static entityName = 'Event';
+  static entityHumanName = 'Event';
 
   static openRecord(pVal, item, router) {
     router.push({

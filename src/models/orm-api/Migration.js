@@ -6,7 +6,7 @@ export default class Migration extends MyBaseModel {
     static entityUrl = '/api/migration-s';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static entityName = 'Migration';
+    static entityHumanName = 'Migration';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/migration-s/:rId/:rName',
