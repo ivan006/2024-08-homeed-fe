@@ -57,7 +57,7 @@ export default class PrivateEvent extends MyBaseModel {
         if (item.creator_id) {
           return item.creator_id
         } else {
-          return session.user.id
+          return session?.user.id
         }
       }
     },

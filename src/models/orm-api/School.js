@@ -52,7 +52,7 @@ export default class School extends MyBaseModel {
             if (item.creator_id){
               return item.creator_id
             } else {
-              return session.user.id
+              return session?.user.id
             }
           }
         },
@@ -60,7 +60,7 @@ export default class School extends MyBaseModel {
         'updater_id': {
           autoFill(item){
             const session = VueCookies.get('VITE_AUTH');
-            return session.user.id
+            return session?.user.id
           }
         },
 
