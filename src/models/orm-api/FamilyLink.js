@@ -28,7 +28,10 @@ export default class FamilyLink extends MyBaseModel {
         readables: () => true,
         readable: (item) => false,
         editable: (item) => true,
-        creatable: () => true,
+      creatable: () => {
+        const session = VueCookies.get('VITE_AUTH');
+        return !!session
+      },
     };
 
     static fieldsMetadata = {

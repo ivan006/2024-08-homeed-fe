@@ -27,7 +27,10 @@ export default class LocationCountry extends MyBaseModel {
     readables: () => true,
     readable: (item) => true,
     editable: (item) => true,
-    creatable: () => true,
+      creatable: () => {
+        const session = VueCookies.get('VITE_AUTH');
+        return !!session
+      },
   };
 
   static fieldsMetadata = {

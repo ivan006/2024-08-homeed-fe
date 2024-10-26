@@ -34,7 +34,10 @@ export default class SchoolFamilyEnrollment extends MyBaseModel {
         const session = VueCookies.get('VITE_AUTH');
         return item.creator_id === session?.user.id
       },
-        creatable: () => true,
+      creatable: () => {
+        const session = VueCookies.get('VITE_AUTH');
+        return !!session
+      },
     };
 
     static fieldsMetadata = {
