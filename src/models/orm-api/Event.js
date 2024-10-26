@@ -38,7 +38,7 @@ export default class Event extends MyBaseModel {
     readable: (item) => true,
     editable: (item) => {
       const session = VueCookies.get('VITE_AUTH');
-      return item.creator_id === session.user.id
+      return item.creator_id === session?.user.id
     },
     creatable: () => true,
   };
