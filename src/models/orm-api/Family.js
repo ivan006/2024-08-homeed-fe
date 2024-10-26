@@ -3,7 +3,7 @@ import VueCookies from 'vue-cookies';
 import User from 'src/models/User';
 import Attendance from 'src/models/orm-api/Attendance';
 import Child from 'src/models/orm-api/Child';
-import FamilyTy from 'src/models/orm-api/FamilyTy';
+import FamilyLink from 'src/models/orm-api/FamilyLink';
 import SchoolFamilyEnrollment from 'src/models/orm-api/SchoolFamilyEnrollment';
 import PrivateEvent from "src/models/orm-api/PrivateEvent";
 
@@ -125,7 +125,7 @@ export default class Family extends MyBaseModel {
             'attendances': this.hasMany(Attendance, 'family_id'),
             'private_events': this.hasMany(PrivateEvent, 'family_id'),
             'children': this.hasMany(Child, 'family_id'),
-            'FamilyTies': this.hasMany(FamilyTy, 'family_id'),
+            'FamilyTies': this.hasMany(FamilyLink, 'family_id'),
             'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'family_id')
         };
     }

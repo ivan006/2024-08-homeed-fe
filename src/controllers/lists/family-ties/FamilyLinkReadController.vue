@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import familyTyRead from 'src/views/lists/family-ties/FamilyTyRead.vue'
+import familyTyRead from 'src/views/lists/family-ties/FamilyLinkRead.vue'
 
 export default {
     name: 'FamilyTy-read-controller',

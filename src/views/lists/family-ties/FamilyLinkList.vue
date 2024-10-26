@@ -19,7 +19,7 @@
 
 <script>
 import { SuperTable } from 'quicklists-vue-orm-ui'
-import FamilyTy from 'src/models/orm-api/FamilyTy'
+import FamilyLink from 'src/models/orm-api/FamilyLink'
 
 export default {
   name: 'FamilyTy-list',
@@ -117,7 +117,7 @@ export default {
   },
   computed: {
       superTableModel() {
-          return FamilyTy
+          return FamilyLink
       },
   },
   methods: {

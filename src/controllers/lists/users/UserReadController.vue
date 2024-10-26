@@ -62,7 +62,7 @@
 import userRead from 'src/views/lists/users/UserRead.vue'
 import User from "src/models/User";
 import VueCookies from "vue-cookies";
-import FamilyTyList from "src/views/lists/family-ties/FamilyTyList.vue";
+import FamilyTyList from "src/views/lists/family-ties/FamilyLinkList.vue";
 import JobList from "src/views/lists/jobs/JobList.vue";
 import SectionComponent from "src/views/SectionComponent.vue";
 

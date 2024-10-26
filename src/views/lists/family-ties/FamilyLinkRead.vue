@@ -10,14 +10,14 @@
 
 <script>
 import { SuperRecord } from 'quicklists-vue-orm-ui'
-import FamilyTy from 'src/models/orm-api/FamilyTy'
+import FamilyLink from 'src/models/orm-api/FamilyLink'
 
 export default {
     name: 'FamilyTy-read',
     components: { SuperRecord },
     computed: {
         superRecordModel() {
-            return FamilyTy
+            return FamilyLink
         },
     },
 }

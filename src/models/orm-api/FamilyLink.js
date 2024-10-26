@@ -3,7 +3,7 @@ import VueCookies from 'vue-cookies';
 import Family from 'src/models/orm-api/Family';
 import User from 'src/models/User';
 
-export default class FamilyTy extends MyBaseModel {
+export default class FamilyLink extends MyBaseModel {
     static entity = 'familyty';
     static entityUrl = '/api/family-ties';
     static primaryKey = 'id';
