@@ -67,6 +67,7 @@ export default class Attendance extends MyBaseModel {
         'child_id': {
           linkablesRule(item){
             const session = VueCookies.get('VITE_AUTH');
+            if (!session) return {id: 0}
 
             const familyIds = session.user.family_memberships.map(membership => membership.family_id);
             const familyIdsString = familyIds.join(',');
