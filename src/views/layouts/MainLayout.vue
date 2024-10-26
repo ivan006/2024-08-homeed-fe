@@ -134,6 +134,24 @@ const linksList = computed(() => {
       title: 'My Account',
       route: myAccount,
     })
+    linksList.push({
+      title: 'Logout',
+      function: ()=>{
+        VueCookies.remove('VITE_AUTH');
+        window.location.reload(true);
+
+      },
+    })
+  } else {
+
+    linksList.push({
+      title: 'Login',
+      route: '/login',
+    })
+    linksList.push({
+      title: 'Register',
+      route: '/register',
+    })
   }
 
   return linksList

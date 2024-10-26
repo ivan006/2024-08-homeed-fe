@@ -6,18 +6,9 @@ const routes = [
     meta: { requiresAuth: false },
     children: [
       {
-        path: 'login-old',
+        path: '/login-old',
+        name: '/login-old',
         component: () => import('src/controllers/auth/LoginPageOld.vue'),
-        meta: { requiresAuth: false }
-      },
-      {
-        path: 'login',
-        component: () => import('src/controllers/auth/SigninView.vue'),
-        meta: { requiresAuth: false }
-      },
-      {
-        path: 'register',
-        component: () => import('src/controllers/auth/JoinView.vue'),
         meta: { requiresAuth: false }
       },
       {
@@ -30,6 +21,18 @@ const routes = [
         component: () => import('src/views/layouts/MainLayout.vue'),
         redirect: to => { return '/lists/events' },
         children: [
+          {
+            path: '/login',
+            name: '/login',
+            component: () => import('src/controllers/auth/SigninView.vue'),
+            meta: { requiresAuth: false }
+          },
+          {
+            path: '/register',
+            name: '/register',
+            component: () => import('src/controllers/auth/JoinView.vue'),
+            meta: { requiresAuth: false }
+          },
           {
             path: '/lists/attendances',
             name: '/lists/attendances',

@@ -1,9 +1,10 @@
 <template>
   <q-item
-    v-if="props.route"
     clickable
-    tag="router-link"
-    :to="props.route"
+    :tag="props.external ? 'a' : 'router-link'"
+    :href="props.external"
+    @click="click"
+    target="_blank"
     :active-class="'q-item--highlighted'"
     :class="{ 'q-item--active': isActive, 'q-pl-lg': props.indent }"
   >
@@ -18,7 +19,7 @@
   </q-item>
 
   <q-item
-    v-else
+    v-if="false"
     clickable
     tag="a"
     :href="props.external"
@@ -34,11 +35,15 @@
       <q-item-label v-if="props.caption" caption>{{ props.caption }}</q-item-label>
     </q-item-section>
   </q-item>
+
 </template>
 
 <script setup>
 import { computed } from 'vue';
 
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 defineOptions({
   name: 'EssentialLink'
 });
@@ -55,6 +60,10 @@ const props = defineProps({
   route: {
     type: String,
     default: null
+  },
+  function: {
+    type: Function,
+    default: ()=>{}
   },
   external: {
     type: String,
@@ -77,6 +86,16 @@ const props = defineProps({
 const isActive = computed(() => {
   return props.route && props.route === props.activeRoute;
 });
+
+const click = () => {
+  if (props.route){
+    router.push({ name: props.route});
+  } else {
+    props.function()
+  }
+};
+
+
 </script>
 
 <style>
