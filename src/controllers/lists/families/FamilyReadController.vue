@@ -86,7 +86,7 @@
               label="Family Ties"
               noBorder
             >
-              <FamilyTyList
+              <FamilyLinkList
                 :parentKeyValuePair="{
                     parentFKey: 'family_id',
                     parentFVal: +this.$route.params.rId,
@@ -129,7 +129,7 @@
 import familyRead from 'src/views/lists/families/FamilyRead.vue'
 import SchoolFamilyEnrollmentList from "src/views/lists/school-family-enrollments/SchoolFamilyEnrollmentList.vue";
 import ChildList from "src/views/lists/children/ChildList.vue";
-import FamilyTyList from "src/views/lists/family-ties/FamilyLinkList.vue";
+import FamilyLinkList from "src/views/lists/family-ties/FamilyLinkList.vue";
 import attendanceList from "src/views/lists/attendances/AttendanceList.vue";
 import Attendance from "src/models/orm-api/Attendance";
 import PrivateEvent from "src/models/orm-api/PrivateEvent";
@@ -140,7 +140,7 @@ export default {
     components: {
       SectionComponent,
       // attendanceList,
-      FamilyTyList,
+      FamilyLinkList,
       ChildList,
       SchoolFamilyEnrollmentList,
         familyRead,

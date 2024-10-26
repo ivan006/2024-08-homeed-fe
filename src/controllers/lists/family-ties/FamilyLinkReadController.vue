@@ -11,7 +11,7 @@
 import familyLinkRead from 'src/views/lists/family-ties/FamilyLinkRead.vue'
 
 export default {
-    name: 'FamilyTy-read-controller',
+    name: 'FamilyLink-read-controller',
     components: {
         familyLinkRead,
     },

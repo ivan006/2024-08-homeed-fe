@@ -14,7 +14,7 @@
 import familyLinkList from 'src/views/lists/family-ties/FamilyLinkList.vue'
 
 export default {
-    name: 'FamilyTy-list-controller',
+    name: 'FamilyLink-list-controller',
     components: {
         familyLinkList,
     },

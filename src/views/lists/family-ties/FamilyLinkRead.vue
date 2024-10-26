@@ -13,7 +13,7 @@ import { SuperRecord } from 'quicklists-vue-orm-ui'
 import FamilyLink from 'src/models/orm-api/FamilyLink'
 
 export default {
-    name: 'FamilyTy-read',
+    name: 'FamilyLink-read',
     components: { SuperRecord },
     computed: {
         superRecordModel() {

@@ -22,7 +22,7 @@ import { SuperTable } from 'quicklists-vue-orm-ui'
 import FamilyLink from 'src/models/orm-api/FamilyLink'
 
 export default {
-  name: 'FamilyTy-list',
+  name: 'FamilyLink-list',
   components: {
       SuperTable,
   },

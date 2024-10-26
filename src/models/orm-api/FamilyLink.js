@@ -8,7 +8,7 @@ export default class FamilyLink extends MyBaseModel {
     static entityUrl = '/api/family-ties';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static entityName = 'FamilyTy';
+    static entityName = 'FamilyLink';
     static openRecord(pVal, item, router){
       router.push({
         name: '/lists/family-ties/:rId/:rName',

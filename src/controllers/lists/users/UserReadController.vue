@@ -20,7 +20,7 @@
                 noBorder
               >
 
-                <FamilyTyList
+                <FamilyLinkList
                   :parentKeyValuePair="{
                       parentFKey: 'user_id',
                       parentFVal: +session.user.id,
@@ -62,7 +62,7 @@
 import userRead from 'src/views/lists/users/UserRead.vue'
 import User from "src/models/User";
 import VueCookies from "vue-cookies";
-import FamilyTyList from "src/views/lists/family-ties/FamilyLinkList.vue";
+import FamilyLinkList from "src/views/lists/family-ties/FamilyLinkList.vue";
 import JobList from "src/views/lists/jobs/JobList.vue";
 import SectionComponent from "src/views/SectionComponent.vue";
 
@@ -71,7 +71,7 @@ export default {
     components: {
       SectionComponent,
       JobList,
-      FamilyTyList,
+      FamilyLinkList,
         userRead,
     },
   data() {
