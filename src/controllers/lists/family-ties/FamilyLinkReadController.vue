@@ -2,18 +2,18 @@
 
     <div>
         <q-card class="q-mb-md" style="overflow: hidden;">
-            <familyTyRead :id="id" />
+            <familyLinkRead :id="id" />
         </q-card>
     </div>
 </template>
 
 <script>
-import familyTyRead from 'src/views/lists/family-ties/FamilyLinkRead.vue'
+import familyLinkRead from 'src/views/lists/family-ties/FamilyLinkRead.vue'
 
 export default {
     name: 'FamilyTy-read-controller',
     components: {
-        familyTyRead,
+        familyLinkRead,
     },
 
     data() {

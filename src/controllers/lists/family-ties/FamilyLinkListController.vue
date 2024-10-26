@@ -2,7 +2,7 @@
 
     <div>
         <q-card class="q-pa-md q-mt-md">
-            <familyTyList
+            <familyLinkList
                 :parentKeyValuePair="parentKeyValuePair"
                 :fetchFlags="fetchFlags"
             />
@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import familyTyList from 'src/views/lists/family-ties/FamilyLinkList.vue'
+import familyLinkList from 'src/views/lists/family-ties/FamilyLinkList.vue'
 
 export default {
     name: 'FamilyTy-list-controller',
     components: {
-        familyTyList,
+        familyLinkList,
     },
 
     data() {
