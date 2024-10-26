@@ -4,7 +4,7 @@ import Family from 'src/models/orm-api/Family';
 import User from 'src/models/User';
 
 export default class FamilyLink extends MyBaseModel {
-    static entity = 'familyty';
+    static entity = 'familylink';
     static entityUrl = '/api/family-ties';
     static primaryKey = 'id';
     static titleKey = 'id';

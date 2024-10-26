@@ -125,7 +125,7 @@ export default class Family extends MyBaseModel {
             'attendances': this.hasMany(Attendance, 'family_id'),
             'private_events': this.hasMany(PrivateEvent, 'family_id'),
             'children': this.hasMany(Child, 'family_id'),
-            'FamilyTies': this.hasMany(FamilyLink, 'family_id'),
+            'FamilyLinks': this.hasMany(FamilyLink, 'family_id'),
             'schoolFamilyEnrollments': this.hasMany(SchoolFamilyEnrollment, 'family_id')
         };
     }

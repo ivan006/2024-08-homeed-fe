@@ -12,7 +12,7 @@
           // 'attendances',
           // 'private_events',
           // 'children',
-          // 'FamilyTies',
+          // 'FamilyLinks',
           // 'schoolFamilyEnrollments',
         ]"
       />

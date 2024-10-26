@@ -125,7 +125,7 @@ const routes = [
             name: '/lists/family-ties',
             component: () => import('src/controllers/lists/family-ties/FamilyLinkListController.vue'),
             meta: {
-              breadcrumbName: 'FamilyTies',
+              breadcrumbName: 'FamilyLinks',
               breadcrumbParentName: '',
             },
           },
