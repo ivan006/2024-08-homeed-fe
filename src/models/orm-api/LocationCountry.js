@@ -1,6 +1,7 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import {FieldUsageTypes} from 'quicklists-vue-orm-ui'
 import LocationState from "src/models/orm-api/LocationState";
+import VueCookies from "vue-cookies";
 
 export default class LocationCountry extends MyBaseModel {
   static entity = 'LocationCountry';

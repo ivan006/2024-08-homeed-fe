@@ -59,9 +59,17 @@ export default class Event extends MyBaseModel {
       usageType: FieldUsageTypes.timeRangeEnd(),
     },
     'school_id': {
-      linkablesRule: () => {
-        return {}
-      }
+      // linkablesRule: () => {
+      //   return {}
+      // }
+
+      linkablesRule(item){
+        const session = VueCookies.get('VITE_AUTH');
+        if (!session) return {id: 0}
+        return {
+          creator_id: session.user.id
+        }
+      },
     },
     'creator_id': {
       autoFill(item) {

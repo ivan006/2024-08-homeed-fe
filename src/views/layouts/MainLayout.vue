@@ -138,7 +138,7 @@ const linksList = computed(() => {
       title: 'Logout',
       function: ()=>{
         VueCookies.remove('VITE_AUTH');
-        window.location.reload(true);
+        window.location.href = '/';
 
       },
     })

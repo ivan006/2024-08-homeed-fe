@@ -4,6 +4,7 @@ import LocationCountry from "src/models/orm-api/LocationCountry";
 import LocationState from "src/models/orm-api/LocationState";
 import LocationSubstate from "src/models/orm-api/LocationSubstate";
 import LocationTown from "src/models/orm-api/LocationTown";
+import VueCookies from "vue-cookies";
 
 export default class LocationSuburb extends MyBaseModel {
   static entity = 'LocationSuburb';

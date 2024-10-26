@@ -3,6 +3,7 @@ import {FieldUsageTypes} from 'quicklists-vue-orm-ui'
 import LocationCountry from "src/models/orm-api/LocationCountry";
 import LocationState from "src/models/orm-api/LocationState";
 import LocationSubstate from "src/models/orm-api/LocationSubstate";
+import VueCookies from "vue-cookies";
 
 export default class LocationTown extends MyBaseModel {
   static entity = 'LocationTown';

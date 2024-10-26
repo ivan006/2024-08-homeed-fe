@@ -89,7 +89,7 @@ const isActive = computed(() => {
 
 const click = () => {
   if (props.route){
-    router.push({ name: props.route});
+    router.push({ path: props.route});
   } else {
     props.function()
   }
