@@ -8,7 +8,7 @@
       <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
         <q-card class="q-pa-md">
           <q-form @submit.prevent="submit">
-            <div class="text-h6">Login</div>
+            <div class="text-h6 q-mb-md">Login</div>
             <template v-if="!session">
               <q-input
                 v-model="form.email"

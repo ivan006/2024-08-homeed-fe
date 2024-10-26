@@ -8,7 +8,7 @@
         <q-card class="q-pa-md">
           <template v-if="!checkEmail">
             <q-form ref="form" @submit="join" >
-              <div class="text-h6">Register</div>
+              <div class="text-h6 q-mb-md">Register</div>
               <q-input
                 v-model="entity.name"
                 label="Full Name"
@@ -59,7 +59,8 @@
               <div
                 class="q-mb-sm"
               >
-                What type of group would you like?
+                <!--What type of group would you like?-->
+                Please make a group
               </div>
 
 
