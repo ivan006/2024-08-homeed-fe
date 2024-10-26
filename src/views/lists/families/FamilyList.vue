@@ -24,6 +24,12 @@ export default {
   },
 
   props: {
+    colWidth: {
+      type: Number,
+      default: () => {
+        return 3
+      }
+    },
     parentKeyValuePair: {
       type: Object,
       default: () => ({})

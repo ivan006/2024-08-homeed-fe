@@ -10,7 +10,7 @@
         :templateListTable="templateListTable"
         :viewAs="{
           show: [],
-          default: 'grid'
+          default: 'table'
         }"
         :allowedFilters="[]"
         noBorder
