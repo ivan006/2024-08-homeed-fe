@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import familyLinkRead from 'src/views/lists/family-ties/FamilyLinkRead.vue'
+import familyLinkRead from 'src/views/lists/family-links/FamilyLinkRead.vue'
 
 export default {
     name: 'FamilyLink-read-controller',

@@ -10,7 +10,7 @@
         :templateListTable="templateListTable"
         :viewAs="{
           show: [],
-          default: 'table'
+          default: 'grid'
         }"
         :allowedFilters="[]"
         noBorder
@@ -123,7 +123,7 @@ export default {
   methods: {
       openRecord(pVal, item, router) {
           router.push({
-              name: '/lists/family-ties/:rId/:rName',
+              name: '/lists/family-links/:rId/:rName',
               params: {
                   rId: pVal,
                   rName: pVal,

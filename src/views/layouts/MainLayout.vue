@@ -83,7 +83,7 @@ const linksList = [
   // },
   // {
   //   title: 'Family Links',
-  //   route: '/lists/family-ties',
+  //   route: '/lists/family-links',
   // },
   // {
   //   title: 'Migrations',

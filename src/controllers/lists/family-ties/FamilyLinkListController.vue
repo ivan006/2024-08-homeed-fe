@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import familyLinkList from 'src/views/lists/family-ties/FamilyLinkList.vue'
+import familyLinkList from 'src/views/lists/family-links/FamilyLinkList.vue'
 
 export default {
     name: 'FamilyLink-list-controller',

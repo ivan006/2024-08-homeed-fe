@@ -5,13 +5,13 @@ import User from 'src/models/User';
 
 export default class FamilyLink extends MyBaseModel {
     static entity = 'familylink';
-    static entityUrl = '/api/family-ties';
+    static entityUrl = '/api/family-links';
     static primaryKey = 'id';
     static titleKey = 'id';
     static entityHumanName = 'Family Link';
     static openRecord(pVal, item, router){
       router.push({
-        name: '/lists/family-ties/:rId/:rName',
+        name: '/lists/family-links/:rId/:rName',
         params: {
           rId: pVal,
           rName: pVal,
