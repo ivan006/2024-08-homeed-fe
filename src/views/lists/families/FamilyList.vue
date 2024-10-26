@@ -7,6 +7,7 @@
                 :displayMapField="false"
                 :parentKeyValuePair="parentKeyValuePair"
                 :fetchFlags="fetchFlags"
+                noBorder
             />
 
 </template>
