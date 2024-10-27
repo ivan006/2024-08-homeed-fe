@@ -14,7 +14,7 @@
         <div class="row  q-col-gutter-md">
           <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
-            <q-card class="q-mb-md" style="overflow: hidden;">
+            <q-card class="" style="overflow: hidden;">
               <SectionComponent
                 label="Families"
                 noBorder
@@ -35,7 +35,7 @@
           </div>
           <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
-            <q-card class="q-mb-md" style="overflow: hidden;">
+            <q-card class="" style="overflow: hidden;">
               <SectionComponent
                 label="Family Links"
                 noBorder
@@ -56,7 +56,7 @@
           </div>
           <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
-            <q-card class="q-mb-md" style="overflow: hidden;">
+            <q-card class="" style="overflow: hidden;">
               <SectionComponent
                 label="Schools"
                 noBorder
@@ -77,7 +77,7 @@
           </div>
           <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
 
-            <q-card class="q-mb-md" style="overflow: hidden;">
+            <q-card class="" style="overflow: hidden;">
               <SectionComponent
                 label="Jobs"
               >
