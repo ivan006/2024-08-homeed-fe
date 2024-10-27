@@ -20,6 +20,7 @@
         :allowedFilters="[
           'start_datetime'
         ]"
+        :noBorder="noBorder"
     />
 
 
@@ -38,6 +39,12 @@ export default {
     },
 
     props: {
+        noBorder: {
+          type: Boolean,
+          default: () => {
+            return false
+          }
+        },
         parentKeyValuePair: {
             type: Object,
             default: () => ({})

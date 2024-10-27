@@ -8,7 +8,7 @@
     :parentKeyValuePair="parentKeyValuePair"
     :fetchFlags="fetchFlags"
     :allowedFilters="[]"
-    noBorder
+    :noBorder="noBorder"
   />
 
 </template>
@@ -28,6 +28,12 @@ export default {
       type: Number,
       default: () => {
         return 3
+      }
+    },
+    noBorder: {
+      type: Boolean,
+      default: () => {
+        return false
       }
     },
     parentKeyValuePair: {
