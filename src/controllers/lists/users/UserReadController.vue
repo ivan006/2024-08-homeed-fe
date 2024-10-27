@@ -26,6 +26,7 @@
                       parentItem: {},
                     }"
                   :colWidth="6"
+                  noBorder
                 />
                 <!--:fetchFlags="fetchFlags"-->
               </SectionComponent>
@@ -67,6 +68,7 @@
                       parentItem: {},
                     }"
                   :colWidth="6"
+                  noBorder
                 />
                 <!--:fetchFlags="fetchFlags"-->
               </SectionComponent>
