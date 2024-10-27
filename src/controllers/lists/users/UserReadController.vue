@@ -2,7 +2,7 @@
     <div>
       <q-card class="q-mb-md" style="overflow: hidden;">
           <userRead
-            :id="+session.user.id"
+            :id="+$route.params.rId"
             @initialLoadHappened="initialLoadHappened = true"
           />
       </q-card>
@@ -22,8 +22,8 @@
                 <familyList
                   :parentKeyValuePair="{
                       parentFKey: 'creator_id',
-                      parentFVal: +session.user.id,
-                      parentItem: session.user,
+                      parentFVal: +$route.params.rId,
+                      parentItem: {},
                     }"
                   :colWidth="6"
                 />
@@ -43,8 +43,8 @@
                 <FamilyLinkList
                   :parentKeyValuePair="{
                       parentFKey: 'user_id',
-                      parentFVal: +session.user.id,
-                      parentItem: session.user,
+                      parentFVal: +$route.params.rId,
+                      parentItem: {},
                     }"
                   :colWidth="6"
 
@@ -63,8 +63,8 @@
                 <schoolList
                   :parentKeyValuePair="{
                       parentFKey: 'creator_id',
-                      parentFVal: +session.user.id,
-                      parentItem: session.user,
+                      parentFVal: +$route.params.rId,
+                      parentItem: {},
                     }"
                   :colWidth="6"
                 />
@@ -83,8 +83,8 @@
                 <job-list
                   :parentKeyValuePair="{
                       parentFKey: 'user_id',
-                      parentFVal: +session.user.id,
-                      parentItem: session.user,
+                      parentFVal: +$route.params.rId,
+                      parentItem: {},
                     }"
                   :colWidth="6"
 

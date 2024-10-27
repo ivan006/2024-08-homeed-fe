@@ -13,7 +13,7 @@
           default: 'table'
         }"
       :allowedFilters="[]"
-      noBorder
+      :noBorder="noBorder"
   />
 
 </template>
@@ -29,6 +29,12 @@ export default {
   },
 
   props: {
+    noBorder: {
+      type: Boolean,
+      default: () => {
+        return false
+      }
+    },
     colWidth: {
       type: Number,
       default: () => {
