@@ -4,6 +4,7 @@
       <template v-for="link in linksList" :key="link.title || link.groupTitle">
         <template v-if="link.groupTitle">
           <q-item-label header>{{ link.groupTitle }}</q-item-label>
+
           <EssentialLink
             v-for="sublink in link.links"
             :key="sublink.title"
@@ -69,6 +70,7 @@ const linksList = computed(() => {
     //   route: '/lists/children',
     // },
     {
+      icon: 'event',
       title: 'Events',
       route: '/lists/events',
     },
@@ -113,6 +115,7 @@ const linksList = computed(() => {
     //   route: '/lists/jobs',
     // },
     {
+      icon: 'school',
       title: 'Schools',
       route: '/lists/schools',
     },
@@ -120,10 +123,10 @@ const linksList = computed(() => {
     //   title: 'Tags',
     //   route: '/lists/tags',
     // },
-    {
-      title: 'Users',
-      route: '/lists/users',
-    },
+    // {
+    //   title: 'Users',
+    //   route: '/lists/users',
+    // },
   ];
 
 
@@ -131,10 +134,22 @@ const linksList = computed(() => {
     const myAccount = `/lists/users/${session.value.user.id}/${session.value.user.name}`
 
     linksList.push({
+      icon: 'person',
       title: 'My Account',
       route: myAccount,
     })
     linksList.push({
+      icon: 'favorite',
+      title: 'Favourites',
+      route: '/lists/favourites',
+    })
+    linksList.push({
+      icon: 'book',
+      title: 'My Timetable',
+      route: '/lists/my-timetable',
+    })
+    linksList.push({
+      icon: 'logout',
       title: 'Logout',
       function: ()=>{
         VueCookies.remove('VITE_AUTH');
@@ -145,10 +160,12 @@ const linksList = computed(() => {
   } else {
 
     linksList.push({
+      icon: 'person',
       title: 'Login',
       route: '/login',
     })
     linksList.push({
+      icon: 'edit',
       title: 'Register',
       route: '/register',
     })

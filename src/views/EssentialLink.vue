@@ -6,14 +6,20 @@
     @click="click"
     target="_blank"
     :active-class="'q-item--highlighted'"
-    :class="{ 'q-item--active': isActive, 'q-pl-lg': props.indent }"
+    :class="{ 'q-pl-lg': props.indent }"
+    :style="isActive ? 'background-color: rgba(0, 31, 63, 0.1)' : ''"
   >
-    <q-item-section avatar v-if="props.icon">
-      <q-icon :name="props.icon" />
-    </q-item-section>
+    <!--<q-item-section avatar v-if="props.icon" style="width: 20px;">-->
+    <!--  <q-icon :name="props.icon" />-->
+    <!--</q-item-section>-->
 
     <q-item-section>
-      <q-item-label :style="isActive ? 'font-weight: bold;': ''">{{ props.title }}</q-item-label>
+      <q-item-label :style="isActive ? 'font-weight: bold;': ''">
+        <template v-if="props.icon">
+          <q-icon  :name="props.icon" size="sm" style="opacity: 80%" />
+        </template>
+        {{ props.title }}
+      </q-item-label>
       <q-item-label v-if="props.caption" caption>{{ props.caption }}</q-item-label>
     </q-item-section>
   </q-item>
@@ -98,8 +104,8 @@ const click = () => {
 
 </script>
 
-<style>
-.q-item--active {
-  background-color: rgba(0, 31, 63, 0.1);
-}
+<style lang="scss">
+//.q-item--active {
+//  background-color: rgba(0, 31, 63, 0.1);
+//}
 </style>
