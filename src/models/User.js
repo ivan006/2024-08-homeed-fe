@@ -48,6 +48,15 @@ export default class User extends MyBaseModel {
     // 'password': {},
     // 'status': {},
     // 'remember_token': {},
+    'primary_family_id': {
+      linkablesRule(item){
+        const session = VueCookies.get('VITE_AUTH');
+        if (!session) return {id: 0}
+        return {
+          creator_id: session.user.id
+        }
+      },
+    },
 
         'created_at': {
           autoFill(item){
@@ -57,7 +66,7 @@ export default class User extends MyBaseModel {
               const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
               return currentTimestamp
             }
-          }
+          },
         },
         'updated_at': {
           autoFill(item){

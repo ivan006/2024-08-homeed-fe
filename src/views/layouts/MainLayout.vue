@@ -133,20 +133,26 @@ const linksList = computed(() => {
   if (session.value){
     const myAccount = `/lists/users/${session.value.user.id}/${session.value.user.name}`
 
+    if (session.value.user.primary_family_id){
+
+      const family = session.value.user.primary_family
+      const myTimetable = `/lists/families/${family.id}/${family.name}`
+
+      // linksList.push({
+      //   icon: 'favorite',
+      //   title: 'Favourites',
+      //   route: myTimetable,
+      // })
+      linksList.push({
+        icon: 'book',
+        title: 'My Family',
+        route: myTimetable,
+      })
+    }
     linksList.push({
       icon: 'person',
       title: 'My Account',
       route: myAccount,
-    })
-    linksList.push({
-      icon: 'favorite',
-      title: 'Favourites',
-      route: '/lists/favourites',
-    })
-    linksList.push({
-      icon: 'book',
-      title: 'My Timetable',
-      route: '/lists/my-timetable',
     })
     linksList.push({
       icon: 'logout',

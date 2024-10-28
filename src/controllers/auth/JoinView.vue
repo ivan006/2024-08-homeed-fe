@@ -170,61 +170,105 @@ export default {
     join() {
       if (this.$refs.form.validate()) {
         this.loading = true;
-        User.Register(this.entity)
-          .then((response) => {
-            const user = response.response.data.user
 
 
-            const session = VueCookies.get('VITE_AUTH');
-            if (this.intention == 'Customer') {
 
-              Family.Store(
-                {
-                  name: this.groupName,
-                  creator_id: user.id,
-                  updater_id: user.id,
-                },
-                [],
-                {},
-                {}
-              )
-                .then(() => {
-                  this.checkEmail = true
-                  this.loading = false
-                })
-                .catch(() => {
-                  this.loading = false
-                })
+        const session = VueCookies.get('VITE_AUTH');
+        let groupRequest = null
+        if (this.intention === 'Customer') {
+          groupRequest = Family.Store(
+            {
+              name: this.groupName,
+              // creator_id: user.id,
+              // updater_id: user.id,
+            },
+            [],
+            {},
+            {}
+          )
+        } else {
+          groupRequest = School.Store(
+            {
+              name: this.groupName,
+              // creator_id: user.id,
+              // updater_id: user.id,
+            },
+            [],
+            {},
+            {}
+          )
 
-            } else {
+        }
 
-              School.Store(
-                {
-                  name: this.groupName,
-                  creator_id: user.id,
-                  updater_id: user.id,
-                },
-                [],
-                {},
-                {}
-              )
-                .then(() => {
-                  this.checkEmail = true
-                  this.loading = false
-                })
-                .catch(() => {
-                  this.loading = false
-                })
 
+        groupRequest
+          .then((groupResponse) => {
+
+            const group = groupResponse.response.data.data
+
+            if (this.intention === 'Customer') {
+              // console.log('family')
+              // console.log(family)
+              this.entity.primary_family_id = group.id
             }
+            User.Register(this.entity)
+              .then((response) => {
+
+                const user = response.response.data.user
+
+                let groupRequest = null
+                if (this.intention === 'Customer') {
+                  groupRequest = Family.Update(
+                    {
+                      id: group.id,
+                      creator_id: user.id,
+                      updater_id: user.id,
+                    },
+                    [],
+                    {},
+                    {}
+                  )
+                } else {
+                  groupRequest = School.Update(
+                    {
+                      id: group.id,
+                      creator_id: user.id,
+                      updater_id: user.id,
+                    },
+                    [],
+                    {},
+                    {}
+                  )
+
+                }
+
+                groupRequest
+                  .then((response) => {
+
+                    this.checkEmail = true
+                    this.loading = false
+                  })
+                  .catch((errors) => {
+                    if (errors.response && errors.response.data.errors) {
+                      this.setErrors(errors.response.data.errors);
+                    }
+
+                  });
+
+
+              })
+              .catch((errors) => {
+                if (errors.response && errors.response.data.errors) {
+                  this.setErrors(errors.response.data.errors);
+                }
+                this.loading = false
+              });
           })
-          .catch((errors) => {
-            if (errors.response && errors.response.data.errors) {
-              this.setErrors(errors.response.data.errors);
-            }
-            this.loading = false;
-          });
+          .catch(() => {
+            this.loading = false
+          })
       }
+
     },
   },
   mounted() {
