@@ -16,7 +16,7 @@
     <q-item-section>
       <q-item-label :style="isActive ? 'font-weight: bold;': ''">
         <template v-if="props.icon">
-          <q-icon  :name="props.icon" size="sm" style="opacity: 80%" />
+          <q-icon  :name="props.icon" size="sm" style="opacity: 50%" />
         </template>
         {{ props.title }}
       </q-item-label>
