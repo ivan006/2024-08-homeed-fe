@@ -84,7 +84,7 @@ export default {
   },
   methods: {
     submit() {
-      Session.deleteAll();
+      // Session.deleteAll();
       this.loading = true;
       Session.signIn(this.form)
         .then((response) => {
