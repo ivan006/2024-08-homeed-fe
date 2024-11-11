@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     formatCasualTime(start, end) {
-      Helpers.formatCasualTime(start, end)
+      return Helpers.formatCasualTime(start, end)
     }
   },
   data() {
