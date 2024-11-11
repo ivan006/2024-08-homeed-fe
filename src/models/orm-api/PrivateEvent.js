@@ -50,9 +50,17 @@ export default class PrivateEvent extends MyBaseModel {
       usageType: FieldUsageTypes.timeRangeEnd(),
     },
     'family_id': {
-      linkablesRule: () => {
-        return {}
-      }
+      linkablesRule(item){
+        const session = VueCookies.get('VITE_AUTH');
+        if (!session) return {id: 0}
+
+        const familyIds = session.user.family_memberships.map(membership => membership.family_id);
+        familyIds.push(session.user.primary_family.id);
+        const familyIdsString = familyIds.join(',');
+        return {
+          family_id: familyIds.length ? familyIdsString : 0
+        }
+      },
     },
     'creator_id': {
       autoFill(item) {

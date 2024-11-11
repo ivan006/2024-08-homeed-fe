@@ -73,9 +73,10 @@ export default class Attendance extends MyBaseModel {
             if (!session) return {id: 0}
 
             const familyIds = session.user.family_memberships.map(membership => membership.family_id);
+            familyIds.push(session.user.primary_family.id);
             const familyIdsString = familyIds.join(',');
             return {
-              family_id: familyIdsString
+              family_id: familyIds.length ? familyIdsString : 0
             }
           },
         },

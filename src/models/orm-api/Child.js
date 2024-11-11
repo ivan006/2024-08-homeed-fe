@@ -47,9 +47,10 @@ export default class Child extends MyBaseModel {
             const session = VueCookies.get('VITE_AUTH');
             if (!session) return {id: 0}
             const familyIds = session.user.family_memberships.map(membership => membership.family_id);
+            familyIds.push(session.user.primary_family.id);
             const familyIdsString = familyIds.join(',');
             return {
-              id: familyIdsString
+              id: familyIds.length ? familyIdsString : 0
             }
           },
         },

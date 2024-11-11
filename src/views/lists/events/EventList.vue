@@ -143,6 +143,7 @@ export default {
                 width: 12,
                 dataPoint: {
                   type: "component",
+                  // componentPath: () => import('./EventImage.vue'),
                   componentPath: () => import('./EventButtonAttend.vue'),
                   label: "",
                   class: "text-right ",
