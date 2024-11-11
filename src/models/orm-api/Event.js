@@ -103,8 +103,6 @@ export default class Event extends MyBaseModel {
         return currentTimestamp
       }
     },
-    'latitude': {},
-    'longitude': {},
 
 
     'location_google_id': {
@@ -181,8 +179,6 @@ export default class Event extends MyBaseModel {
       'school': this.belongsTo(School, 'school_id'),
       'updater': this.belongsTo(User, 'updater_id'),
       'attendances': this.hasMany(Attendance, 'event_id'),
-      'latitude': this.attr('').nullable(),
-      'longitude': this.attr('').nullable(),
 
       'location_google_id': this.attr('').nullable(),
       'location_address_street_address': this.attr('').nullable(),
