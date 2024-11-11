@@ -119,7 +119,9 @@
             </q-form>
           </template>
           <template v-else>
-            Check your emails
+            Your account has been registered!
+            <br>
+            We have sent you an email with instructions to verify your email address.
           </template>
         </q-card>
       </div>
