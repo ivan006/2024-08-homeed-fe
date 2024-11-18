@@ -32,4 +32,4 @@ yarn-error.log*
 # local .env.local files
 # .env.local*
 
-.env.developmentd
+.env.development
