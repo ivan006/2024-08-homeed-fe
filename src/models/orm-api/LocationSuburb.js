@@ -1,5 +1,5 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import {FieldUsageTypes} from 'quicklists-vue-orm-ui'
+import {FieldUsageTypes} from 'wizweb-fe'
 import LocationCountry from "src/models/orm-api/LocationCountry";
 import LocationState from "src/models/orm-api/LocationState";
 import LocationSubstate from "src/models/orm-api/LocationSubstate";

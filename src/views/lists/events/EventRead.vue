@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { SuperRecord } from 'quicklists-vue-orm-ui'
+import { SuperRecord } from 'wizweb-fe'
 import Event from 'src/models/orm-api/Event'
 import moment from 'moment';
 import Helpers from "src/models/helpers/Helpers";

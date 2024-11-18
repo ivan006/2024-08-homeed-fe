@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { SuperTable } from 'quicklists-vue-orm-ui'
+import { SuperTable } from 'wizweb-fe'
 import PostTag from 'src/models/orm-api/PostTag'
 
 export default {

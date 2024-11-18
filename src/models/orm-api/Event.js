@@ -3,7 +3,7 @@ import VueCookies from 'vue-cookies';
 import User from 'src/models/User';
 import School from 'src/models/orm-api/School';
 import Attendance from 'src/models/orm-api/Attendance';
-import {FieldUsageTypes} from 'quicklists-vue-orm-ui'
+import {FieldUsageTypes} from 'wizweb-fe'
 import LocationSuburb from "src/models/orm-api/LocationSuburb";
 import LocationCountry from "src/models/orm-api/LocationCountry";
 import LocationState from "src/models/orm-api/LocationState";

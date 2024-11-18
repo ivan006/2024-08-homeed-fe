@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { SuperTable } from 'quicklists-vue-orm-ui'
+import { SuperTable } from 'wizweb-fe'
 import School from 'src/models/orm-api/School'
 
 export default {

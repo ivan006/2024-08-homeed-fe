@@ -23,7 +23,7 @@
 
 <script setup>
 import Post from "src/models/orm-api/Post";
-import {SuperTable} from "quicklists-vue-orm-ui";
+import {SuperTable} from 'wizweb-fe'
 import { useRouter } from 'vue-router';
 const router = useRouter();
 

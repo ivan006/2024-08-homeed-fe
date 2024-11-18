@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { SuperRecord } from 'quicklists-vue-orm-ui'
+import { SuperRecord } from 'wizweb-fe'
 import Child from 'src/models/orm-api/Child'
 
 export default {

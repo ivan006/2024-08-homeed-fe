@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { SuperRecord } from 'quicklists-vue-orm-ui'
+import { SuperRecord } from 'wizweb-fe'
 import Attendance from 'src/models/orm-api/Attendance'
 
 export default {

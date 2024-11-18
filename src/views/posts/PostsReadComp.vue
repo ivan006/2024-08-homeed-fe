@@ -38,7 +38,7 @@
 
 <script setup>
 import Post from "src/models/orm-api/Post";
-import {SuperRecord} from "quicklists-vue-orm-ui";
+import {SuperRecord} from 'wizweb-fe'
 import { useRouter, useRoute } from 'vue-router';
 const router = useRouter();
 const route = useRoute();

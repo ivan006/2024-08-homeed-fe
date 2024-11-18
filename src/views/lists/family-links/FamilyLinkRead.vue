@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { SuperRecord } from 'quicklists-vue-orm-ui'
+import { SuperRecord } from 'wizweb-fe'
 import FamilyLink from 'src/models/orm-api/FamilyLink'
 
 export default {

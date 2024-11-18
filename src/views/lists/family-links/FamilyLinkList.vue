@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { SuperTable } from 'quicklists-vue-orm-ui'
+import { SuperTable } from 'wizweb-fe'
 import FamilyLink from 'src/models/orm-api/FamilyLink'
 
 export default {

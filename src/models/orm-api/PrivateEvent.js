@@ -2,7 +2,7 @@ import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import VueCookies from 'vue-cookies';
 import User from 'src/models/User';
 import Family from 'src/models/orm-api/Family';
-import {FieldUsageTypes} from 'quicklists-vue-orm-ui'
+import {FieldUsageTypes} from 'wizweb-fe'
 
 export default class PrivateEvent extends MyBaseModel {
   static entity = 'private-event';

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { SuperTable } from 'quicklists-vue-orm-ui'
+import { SuperTable } from 'wizweb-fe'
 import Attendance from 'src/models/orm-api/Attendance'
 export default {
   name: "EventButtonAttend",
