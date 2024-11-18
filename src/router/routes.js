@@ -34,6 +34,16 @@ const routes = [
             meta: { requiresAuth: false }
           },
           {
+            path: '/about',
+            name: '/about',
+            component: () => import('src/controllers/AboutController.vue'),
+            meta: {
+              breadcrumbName: 'About',
+              breadcrumbParentName: '',
+              requiresAuth: false,
+            },
+          },
+          {
             path: '/lists/attendances',
             name: '/lists/attendances',
             component: () => import('src/controllers/lists/attendances/AttendanceListController.vue'),

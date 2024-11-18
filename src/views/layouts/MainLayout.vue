@@ -70,7 +70,8 @@ const linksList = computed(() => {
     //   route: '/lists/children',
     // },
     {
-      icon: 'event',
+      // icon: 'event',
+      icon: 'manage_search',
       title: 'Events',
       route: '/lists/events',
     },
@@ -176,6 +177,13 @@ const linksList = computed(() => {
       route: '/register',
     })
   }
+
+  linksList.push({
+    // icon: 'event',
+    icon: 'info',
+    title: 'About',
+    route: '/about',
+  })
 
   return linksList
 

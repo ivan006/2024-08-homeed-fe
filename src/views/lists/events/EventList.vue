@@ -18,7 +18,9 @@
           default: 'grid'
         }"
         :allowedFilters="[
-          'start_datetime'
+          // 'start_datetime',
+          'start_datetime',
+          'school_id',
         ]"
         :noBorder="noBorder"
     />
