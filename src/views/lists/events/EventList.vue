@@ -32,7 +32,6 @@
 <script>
 import { SuperTable } from 'wizweb-fe'
 import Event from 'src/models/orm-api/Event'
-import moment from 'moment';
 import Helpers from "src/models/helpers/Helpers";
 
 export default {
