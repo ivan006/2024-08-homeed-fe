@@ -5,7 +5,7 @@
       :id="+$route.params.rId"
       :displayMapField="true"
       @initialLoadHappened="$emit('initialLoadHappened')"
-      :templateOverview="templateListGrid"
+      :templateOverview="templateOverview"
       :allowedTabs="['overview']"
   >
   </SuperRecord>
@@ -20,8 +20,7 @@ export default {
   components: { SuperRecord },
   data() {
     return {
-      templateListGrid: {
-        colWidth: this.colWidth,
+      templateOverview: {
         cols: [
           {
             width: 12,

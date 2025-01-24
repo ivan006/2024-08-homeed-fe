@@ -12,6 +12,7 @@
           default: 'grid'
         }"
         :allowedFilters="[]"
+        :gridColWidth="colWidth"
     />
 </template>
 
@@ -29,7 +30,6 @@ export default {
   data() {
     return {
       templateListGrid: {
-        colWidth: this.colWidth,
         cols: [
           {
             width: 12,
